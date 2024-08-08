@@ -6,6 +6,7 @@ public abstract class Character : MonoBehaviour
 {
     public Animator animatorCompo;
     public AgentMovement movementCompo;
+    public bool isStop = false;
 
     public bool isDead = false;
     protected virtual void Awake()
@@ -14,6 +15,7 @@ public abstract class Character : MonoBehaviour
         movementCompo = GetComponent <AgentMovement>();
         movementCompo.Initialize(this);
     }
+    public abstract void EndTriggerCall();
     #region Flip Character
     public bool IsFacingRight()
     {
@@ -22,6 +24,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void HandleSpriteFlip(Vector2 targetPosition)
     {
+        if (isStop) return;
         bool isRight = IsFacingRight();
         if (targetPosition.x < transform.position.x && isRight)
         {

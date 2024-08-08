@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PlayerEnum
 {
     Idle,
-    Attack,
+    Axe,
+    Hammer,
+    Dead,
     Run
 }
 public class PlayerState : MonoBehaviour

@@ -35,6 +35,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Axe"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc7ed664-de10-459b-ab89-beceaebbc078"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4342875b-0c7b-4740-b420-ed6e6225b92b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Axe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +121,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Input
         m_Input = asset.FindActionMap("Input", throwIfNotFound: true);
         m_Input_Move = m_Input.FindAction("Move", throwIfNotFound: true);
+        m_Input_Axe = m_Input.FindAction("Axe", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,11 +184,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Input;
     private List<IInputActions> m_InputActionsCallbackInterfaces = new List<IInputActions>();
     private readonly InputAction m_Input_Move;
+    private readonly InputAction m_Input_Axe;
     public struct InputActions
     {
         private @PlayerInput m_Wrapper;
         public InputActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Input_Move;
+        public InputAction @Axe => m_Wrapper.m_Input_Axe;
         public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -180,6 +203,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Axe.started += instance.OnAxe;
+            @Axe.performed += instance.OnAxe;
+            @Axe.canceled += instance.OnAxe;
         }
 
         private void UnregisterCallbacks(IInputActions instance)
@@ -187,6 +213,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Axe.started -= instance.OnAxe;
+            @Axe.performed -= instance.OnAxe;
+            @Axe.canceled -= instance.OnAxe;
         }
 
         public void RemoveCallbacks(IInputActions instance)
@@ -207,5 +236,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IInputActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnAxe(InputAction.CallbackContext context);
     }
 }

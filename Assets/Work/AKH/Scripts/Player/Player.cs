@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Character
 {
@@ -8,36 +7,54 @@ public class Player : Character
 
     public PlayerInput playerInput;
 
-    [SerializeField]private float _speed;
+    [SerializeField] private float _speed;
     protected override void Awake()
     {
         base.Awake();
         playerInput = new();
         playerInput.Enable();
+        playerInput.Input.Axe.performed += ChangeAxeState;
         StateMachine = new PlayerStateMachine();
 
         StateMachine.AddState(PlayerEnum.Idle, new PlayerIdleState(this, StateMachine, "Idle"));
         StateMachine.AddState(PlayerEnum.Run, new PlayerRunState(this, StateMachine, "Run"));
+        StateMachine.AddState(PlayerEnum.Axe, new PlayerAxeState(this, StateMachine, "Axe"));
 
-        StateMachine.Initialize(PlayerEnum.Idle,this);
+        StateMachine.Initialize(PlayerEnum.Idle, this);
     }
+
+    private void ChangeAxeState(InputAction.CallbackContext context)
+    {
+        StateMachine.ChangeState(PlayerEnum.Axe);
+    }
+
     private void Update()
     {
-        Vector2 vector2 = playerInput.Input.Move.ReadValue<Vector2>();
-        movementCompo.SetMovement(vector2*_speed);
-        HandleSpriteFlip(vector2);
+        Vector2 input = playerInput.Input.Move.ReadValue<Vector2>();
+        movementCompo.SetMovement(input * _speed);
+        HandleSpriteFlip(input);
         StateMachine.CurrentState.UpdateState();
     }
-    public override void HandleSpriteFlip(Vector2 vector2)
+    public override void HandleSpriteFlip(Vector2 dir)
     {
+        if(isStop) return;
         bool isRight = IsFacingRight();
-        if (vector2.x < 0 && isRight)
+        if (dir.x < 0 && isRight)
         {
             transform.eulerAngles = new Vector3(0, -180f, 0);
         }
-        else if (vector2.x > 0 && !isRight)
+        else if (dir.x > 0 && !isRight)
         {
             transform.eulerAngles = Vector3.zero;
         }
+    }
+    public void OnDestroy()
+    {
+        playerInput.Input.Axe.performed -= ChangeAxeState;
+    }
+
+    public override void EndTriggerCall()
+    {
+        StateMachine.CurrentState.AnimationEndTrigger();
     }
 }
