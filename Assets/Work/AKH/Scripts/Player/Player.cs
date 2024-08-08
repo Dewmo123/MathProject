@@ -25,6 +25,8 @@ public class Player : Character
 
     private void ChangeAxeState(InputAction.CallbackContext context)
     {
+        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        HandleSpriteFlip(mouse);
         StateMachine.ChangeState(PlayerEnum.Axe);
     }
 

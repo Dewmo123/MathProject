@@ -16,6 +16,10 @@ public class PlayerAxeState : PlayerState
     {
         base.UpdateState();
         _player.movementCompo.StopImmediately();
+        if (_player.playerInput.Input.Axe.IsPressed()&&_endTriggerCalled)
+        {
+            _stateMachine.ChangeState(PlayerEnum.Axe);
+        }
         if (_endTriggerCalled)
         {
             _stateMachine.ChangeState(PlayerEnum.Idle);

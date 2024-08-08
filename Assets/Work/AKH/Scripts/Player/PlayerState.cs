@@ -10,7 +10,7 @@ public enum PlayerEnum
     Dead,
     Run
 }
-public class PlayerState : MonoBehaviour
+public class PlayerState
 {
     protected Player _player;
     protected PlayerStateMachine _stateMachine;
