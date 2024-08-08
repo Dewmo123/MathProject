@@ -835,6 +835,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 473071508563358226, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f9ea01a8282dc794c8647ae3d53f2876, type: 2}
+    - target: {fileID: 473071508563358226, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3343106513212194144, guid: f9ea01a8282dc794c8647ae3d53f2876, type: 2}
+    - target: {fileID: 473071508563358226, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916870869829626879, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_GlobalFontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f9ea01a8282dc794c8647ae3d53f2876, type: 2}
     - target: {fileID: 5942531439646659705, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
       propertyPath: m_Name
       value: QuestionUI
