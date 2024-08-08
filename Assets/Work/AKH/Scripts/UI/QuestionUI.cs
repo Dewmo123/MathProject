@@ -7,7 +7,7 @@ public class QuestionUI : MonoBehaviour
 {
     private ProblemSO _problem;
     [SerializeField] private TextMeshProUGUI _problemTxt;
-    [SerializeField] private TMP_InputField _answerTxt;
+    [SerializeField] private TextMeshProUGUI _answerTxt;
     
     private void OnEnable() 
     {
