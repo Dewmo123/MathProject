@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   cnt:
-    _value: 0
+    _value: 1
   matName: Rock
   sprite: {fileID: 21300000, guid: 9091c75c2544fad42846332963f73c38, type: 3}
