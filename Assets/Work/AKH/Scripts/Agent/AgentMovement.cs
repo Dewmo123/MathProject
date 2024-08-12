@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class AgentMovement : MonoBehaviour
 {
-    public Character character;
+    public Agent character;
     public Rigidbody2D rbCompo;
     public Vector2 vector2 { get; private set; }
-    public void Initialize(Character agent)
+    public void Initialize(Agent agent)
     {
         character = agent;
         rbCompo = GetComponent<Rigidbody2D>();

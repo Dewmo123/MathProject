@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : Character
+public class Player : Agent
 {
+    public Hungry hungryCompo;
     private PlayerStateMachine StateMachine;
 
     public PlayerInput playerInput;
@@ -11,9 +12,14 @@ public class Player : Character
     protected override void Awake()
     {
         base.Awake();
+        hungryCompo = GetComponent<Hungry>();
+        hungryCompo.Initialize(this);
+
         playerInput = new();
         playerInput.Enable();
+
         playerInput.Input.Axe.performed += ChangeAxeState;
+
         StateMachine = new PlayerStateMachine();
 
         StateMachine.AddState(PlayerEnum.Idle, new PlayerIdleState(this, StateMachine, "Idle"));

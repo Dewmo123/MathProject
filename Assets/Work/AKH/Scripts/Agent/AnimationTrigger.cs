@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
-    [SerializeField] private Character _char;
+    [SerializeField] private Agent _char;
     public void EndTriggerCall()
     {
         _char.EndTriggerCall();

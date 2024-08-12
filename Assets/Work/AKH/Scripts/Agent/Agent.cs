@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour
+public abstract class Agent : MonoBehaviour
 {
     public Animator animatorCompo;
     public AgentMovement movementCompo;
+    public Health healthCompo;
     public bool isStop = false;
 
     public bool isDead = false;
     protected virtual void Awake()
     {
+        healthCompo = GetComponent<Health>();
         animatorCompo = transform.Find("Visual").GetComponent<Animator>();
         movementCompo = GetComponent <AgentMovement>();
+        healthCompo.Initialize(this);
         movementCompo.Initialize(this);
     }
     public abstract void EndTriggerCall();
