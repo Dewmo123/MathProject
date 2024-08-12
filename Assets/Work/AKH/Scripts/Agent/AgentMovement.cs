@@ -23,7 +23,6 @@ public class AgentMovement : MonoBehaviour
     }
     public void StopImmediately()
     {
-        vector2 = Vector2.zero;
-        rbCompo.velocity = vector2;
+        SetMovement(Vector2.zero);
     }
 }

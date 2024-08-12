@@ -9,7 +9,7 @@ public abstract class Agent : MonoBehaviour
     public Health healthCompo;
     public bool isStop = false;
 
-    public bool isDead = false;
+    public bool isDead { get; protected set; }
     protected virtual void Awake()
     {
         healthCompo = GetComponent<Health>();

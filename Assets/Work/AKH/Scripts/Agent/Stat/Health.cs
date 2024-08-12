@@ -15,6 +15,13 @@ public class Health : MonoBehaviour
         _agent = agent;
         ResetHealth();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TakeDamage(10);
+        }
+    }
     public void ResetHealth()
     {
         health = _maxHealth;

@@ -25,10 +25,19 @@ public class Player : Agent
         StateMachine.AddState(PlayerEnum.Idle, new PlayerIdleState(this, StateMachine, "Idle"));
         StateMachine.AddState(PlayerEnum.Run, new PlayerRunState(this, StateMachine, "Run"));
         StateMachine.AddState(PlayerEnum.Axe, new PlayerAxeState(this, StateMachine, "Axe"));
+        StateMachine.AddState(PlayerEnum.Dead, new PlayerDeadState(this, StateMachine, "Dead"));
 
         StateMachine.Initialize(PlayerEnum.Idle, this);
     }
-
+    public void SetDeadState()
+    {
+        StateMachine.ChangeState(PlayerEnum.Dead);
+    }
+    public void SetDead()
+    {
+        isStop = true;
+        isDead = true;
+    }
     private void ChangeAxeState(InputAction.CallbackContext context)
     {
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);

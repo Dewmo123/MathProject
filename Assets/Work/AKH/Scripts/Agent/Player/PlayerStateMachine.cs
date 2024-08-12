@@ -16,6 +16,7 @@ public class PlayerStateMachine
     }
     public void ChangeState(PlayerEnum newState)
     {
+        if(player.isDead) return;
         CurrentState.Exit();
         CurrentState = stateDictionary[newState];
         CurrentState.Enter();
