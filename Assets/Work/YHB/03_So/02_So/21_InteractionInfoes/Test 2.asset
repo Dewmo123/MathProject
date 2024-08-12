@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
   m_Name: Test 2
   m_EditorClassIdentifier: 
-  _code: 
+  _code: home
   _canInteraction: 0
-  _bigTitle: 0
-  _second: 0.5
-  _str: 
+  _bigTitle: 1
+  _activationTime: 5
+  _str: "\uC9D1"
+  _canActivation: 1

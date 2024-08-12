@@ -42,15 +42,15 @@ public class InteractionObject : MonoBehaviour
 
     [Header("So Setting")]
     [Tooltip("딕셔너리의 키로 들어갈 이름입니다.")]
-    public string _codeSet;
+    [SerializeField] private string _codeSet;
     [Tooltip("F키를 띄울지 여부입니다.")]
-    public bool _canInteractionSet;
+    [SerializeField] private bool _canInteractionSet;
     [Tooltip("플레이어에게 표시딜 때 크게 표시 되는 지 여부입니다.")]
-    public bool _bigTitleSet;
-    [Tooltip("몇초 동안 문장을 띄울지 정합니다. (뜨고 사라지는 0.4초 제외)")]
-    public float _secondSet = 0.5f;
+    [SerializeField] private bool _bigTitleSet;
     [Tooltip("게임에 표시될 문장입니다.")]
-    public string _strSet;
+    [SerializeField] private string _strSet;
+    [Tooltip("다시 활성화 될때 까지의 시간")]
+    [SerializeField] private float _activationTimeSet;
 
     #endregion
 
@@ -74,6 +74,7 @@ public class InteractionObject : MonoBehaviour
         _position.x = transform.position.x + _movePosition.x; // 좌표 초기화
         _position.y = transform.position.y + _movePosition.y;
 
+        _interactionObjectInfo._canActivation = true;
         _interactionInfoUI._interactionObjectInfo.Add(_interactionObjectInfo._code, _interactionObjectInfo);
     }
 
@@ -97,7 +98,7 @@ public class InteractionObject : MonoBehaviour
         }
         else if (!_enterCollision && _canInteraction) // 인터렉션 불가 (범위에서 벗어남)
         {
-            _intaractioner.CanNotInteraction();
+            _intaractioner.CanNotInteraction(_interactionObjectInfo._canInteraction);
             _canInteraction = false;
         }
     }
@@ -114,21 +115,15 @@ public class InteractionObject : MonoBehaviour
 
         _interactionObjectInfo._code = _codeSet;
         _interactionObjectInfo._canInteraction = _canInteractionSet;
-        _interactionObjectInfo._bigTitle = _bigTitleSet;
-        _interactionObjectInfo._second = _secondSet;
+        _interactionObjectInfo._bigTitle = !_canInteractionSet;
         _interactionObjectInfo._str = _strSet;
+        _interactionObjectInfo._activationTime = _activationTimeSet > 0 ? _activationTimeSet : 0;
 
         _codeSet = _interactionObjectInfo._code;
         _canInteractionSet = _interactionObjectInfo._canInteraction;
         _bigTitleSet = _interactionObjectInfo._bigTitle;
-        _secondSet = _interactionObjectInfo._second;
         _strSet = _interactionObjectInfo._str;
-
-        if (_bigTitleSet)
-        {
-            _canInteractionSet = false;
-            _interactionObjectInfo._canInteraction = false;
-        }
+        _activationTimeSet = _interactionObjectInfo._activationTime;
     }
 
     protected virtual void OnDrawGizmosSelected()
