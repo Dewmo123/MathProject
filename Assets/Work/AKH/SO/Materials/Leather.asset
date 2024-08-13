@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Leather
   m_EditorClassIdentifier: 
   cnt:
-    _value: 0
+    _value: 1
   matName: Leather
   sprite: {fileID: 21300000, guid: b4f82ebf7a2ba3249855dd606b9699d8, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   cnt:
-    _value: 0
+    _value: 1
   matName: Fish
   sprite: {fileID: 21300000, guid: bc5dd14e3a454d04390111dfd30d2645, type: 3}

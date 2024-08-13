@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   cnt:
-    _value: 0
+    _value: 1
   matName: Wood
   sprite: {fileID: 21300000, guid: dd1a74fedb5ef414392562a6647f1302, type: 3}

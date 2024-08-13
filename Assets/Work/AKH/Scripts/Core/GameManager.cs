@@ -13,6 +13,10 @@ public class GameManager : MonoSingleton<GameManager>
         {
             items[Random.Range(0, items.Count)].cnt.Value++;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            items[Random.Range(0, items.Count)].cnt.Value=0;
+        }
     }
     public ProblemSO GetRandomProblem()
     {
