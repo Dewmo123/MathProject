@@ -7,6 +7,8 @@ public class Hungry : MonoBehaviour
 {
     public UnityEvent OnDeadEvent;
     public UnityEvent OnHitEvent;
+    public UnityEvent OnChangeEvent;
+    public UnityEvent OnRestoreEvent;
 
     public int hungry { get; private set; }
     [SerializeField] private int _maxHungry;
@@ -21,10 +23,14 @@ public class Hungry : MonoBehaviour
     {
         hungry = _maxHungry;
     }
-    public void TakeDamage(int damage)
+    public void ChangeHungry(int damage)
     {
-        hungry -= damage;
-        OnHitEvent?.Invoke();
+        hungry += damage;
+        OnChangeEvent.Invoke();
+        if (damage < 0)
+            OnHitEvent?.Invoke();
+        else if(damage > 0) 
+            OnRestoreEvent?.Invoke();
         if (hungry <= 0)
             OnDeadEvent?.Invoke();
     }

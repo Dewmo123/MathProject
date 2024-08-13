@@ -3006,7 +3006,6 @@ MonoBehaviour:
   movementCompo: {fileID: 0}
   healthCompo: {fileID: 0}
   isStop: 0
-  isDead: 0
   hungryCompo: {fileID: 0}
   _speed: 5
 --- !u!114 &1245181847
@@ -3022,6 +3021,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRestoreEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDeadEvent:
@@ -3070,6 +3075,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRestoreEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHungry: 100
 --- !u!224 &1277724344 stripped
 RectTransform:

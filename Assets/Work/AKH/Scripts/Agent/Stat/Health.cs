@@ -4,6 +4,8 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public UnityEvent OnHitEvent;
+    public UnityEvent OnChangeEvent;
+    public UnityEvent OnRestoreEvent;
     public UnityEvent OnDeadEvent;
 
     public int health { get; private set; }
@@ -19,22 +21,26 @@ public class Health : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            TakeDamage(10);
+            ChangeHp(-10);
         }
     }
     public void ResetHealth()
     {
         health = _maxHealth;
     }
-    public void TakeDamage(int damage)
+    public void ChangeHp(int damage)
     {
-        health -= damage;
-        OnHitEvent?.Invoke();
+        health = Mathf.Clamp(health + damage,0,_maxHealth);
+        OnChangeEvent?.Invoke();
+        if (damage < 0)
+            OnHitEvent?.Invoke();
+        else if(damage > 0)
+            OnRestoreEvent?.Invoke();
         if (health <= 0)
             OnDeadEvent?.Invoke();
     }
     public float GetNormalizedHealth()
     {
-        return health/(float)_maxHealth;
+        return health / (float)_maxHealth;
     }
 }

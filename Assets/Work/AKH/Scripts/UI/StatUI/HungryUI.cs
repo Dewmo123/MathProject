@@ -19,7 +19,7 @@ public class HungryUI : PlayerConnectUI
         _backBarImage = transform.Find("BackBar").GetComponent<Image>();
         _playerHungry = _player.hungryCompo;
 
-        _playerHungry.OnHitEvent.AddListener(HandleHitEvnet);
+        _playerHungry.OnChangeEvent.AddListener(HandleHitEvnet);
     }
 
     private void HandleHitEvnet()

@@ -19,7 +19,7 @@ public class HealthUI : PlayerConnectUI
         _backBarImage = transform.Find("BackBar").GetComponent<Image>();
         _playerHealth = _player.healthCompo;
 
-        _playerHealth.OnHitEvent.AddListener(HandleHitEvnet);
+        _playerHealth.OnChangeEvent.AddListener(HandleHitEvnet);
     }
 
     private void HandleHitEvnet()
