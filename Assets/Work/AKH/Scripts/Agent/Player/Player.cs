@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : Agent
 {
     public Hungry hungryCompo;
+    public Water waterCompo;
     private PlayerStateMachine StateMachine;
 
     public PlayerInput playerInput;
@@ -14,6 +15,9 @@ public class Player : Agent
         base.Awake();
         hungryCompo = GetComponent<Hungry>();
         hungryCompo.Initialize(this);
+
+        waterCompo = GetComponent<Water>();
+        waterCompo.Initialize(this);
 
         playerInput = new();
         playerInput.Enable();
