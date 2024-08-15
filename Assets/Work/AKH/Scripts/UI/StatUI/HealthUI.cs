@@ -24,7 +24,7 @@ public class HealthUI : PlayerConnectUI
 
     private void HandleHitEvnet()
     {
-        _barImage.fillAmount = _playerHealth.GetNormalizedHealth();
+        _barImage.fillAmount = _playerHealth.GetNormalizedValue();
         _lastHitTime = Time.time;
         transform.DOShakePosition(0.3f, 1f, 100);
     }

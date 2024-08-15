@@ -118,6 +118,7 @@ MonoBehaviour:
   healthCompo: {fileID: 0}
   isStop: 0
   hungryCompo: {fileID: 0}
+  waterCompo: {fileID: 0}
   _speed: 5
 --- !u!114 &1771824596654270130
 MonoBehaviour:
@@ -145,13 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d71a412e3cd10a4480d1ed14b47ea6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHitEvent:
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
     m_PersistentCalls:
       m_Calls: []
   OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRestoreEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDeadEvent:
@@ -169,7 +170,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maxHealth: 100
+  _maxValue: 100
 --- !u!114 &6986366646619431145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa93f6e4f0b1a1b45900f91f317d89c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
@@ -197,16 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRestoreEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHungry: 100
+  _maxValue: 100
 --- !u!114 &1090208243069986910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,13 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c71ad938f6d5004095b4ba093e6b5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHitEvent:
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
     m_PersistentCalls:
       m_Calls: []
   OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRestoreEvent:
     m_PersistentCalls:
       m_Calls: []
   OnDeadEvent:
@@ -243,7 +244,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maxWater: 0
+  _maxValue: 100
 --- !u!1 &3884384654698862136
 GameObject:
   m_ObjectHideFlags: 0

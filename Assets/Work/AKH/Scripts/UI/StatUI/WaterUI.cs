@@ -24,7 +24,7 @@ public class WaterUI : PlayerConnectUI
 
     private void HandleHitEvnet()
     {
-        _barImage.fillAmount = _playerWater.GetNormalizedWater();
+        _barImage.fillAmount = _playerWater.GetNormalizedValue();
         _lastHitTime = Time.time;
         transform.DOShakePosition(0.3f, 1f, 100);
     }
