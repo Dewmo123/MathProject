@@ -65,6 +65,7 @@ public class PlayerInteractionUI : MonoBehaviour
 
         if (_interactionObjectInfo[code]._canInteraction)
         {
+            _fKeyImage.gameObject.SetActive(true);
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0, 0), 0));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond)); // °¡·Î·Î ÆìÁü
@@ -74,7 +75,7 @@ public class PlayerInteractionUI : MonoBehaviour
         {
             StartCoroutine(ActivationTimeSet(code));
 
-            _bigTitleImage.rectTransform.Find("Text").GetComponent<TextMeshProUGUI>().text = _interactionObjectInfo[code]._str;
+            _bigTitleText.text = _interactionObjectInfo[code]._str;
 
             interactionUISequence.Append(_bigTitleImage.DOFade(0, 0));
             interactionUISequence.Join(_bigTitleText.DOFade(0, 0));
@@ -102,6 +103,7 @@ public class PlayerInteractionUI : MonoBehaviour
 
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0, 0), _OnSecond)); // »ç¶óÁü
+            _fKeyImage.gameObject.SetActive(false);
 
             interactionUISequence.OnComplete(() => interactionUISequence.Complete());
         }
