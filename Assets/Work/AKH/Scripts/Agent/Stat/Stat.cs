@@ -10,7 +10,7 @@ public abstract class Stat : MonoBehaviour
     public UnityEvent OnChangeEvent;
     public UnityEvent OnDeadEvent;
 
-    public int value {  get; private set; }
+    [field:SerializeField]public float value {  get; private set; }
     [SerializeField] private int _maxValue;
 
     private Agent _agent;
@@ -24,7 +24,7 @@ public abstract class Stat : MonoBehaviour
     {
         value = _maxValue;
     }
-    public void ChangeValue(int damage)
+    public void ChangeValue(float damage)
     {
         value = Mathf.Clamp(value + damage, 0, _maxValue);
         OnChangeEvent?.Invoke();
@@ -37,6 +37,6 @@ public abstract class Stat : MonoBehaviour
     }
     public float GetNormalizedValue()
     {
-        return value / (float)_maxValue;
+        return value / _maxValue;
     }
 }

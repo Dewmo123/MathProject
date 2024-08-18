@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f7387fffe1a8541bdf73ccdce27ec4, type: 3}
   m_Name: Thunderstorm
   m_EditorClassIdentifier: 
+  weatherEnum: 2
   weatherName: Thunderstorm
   sprite: {fileID: 290614955, guid: 708ff1a67e5be4d46a9bcb3eefd486a0, type: 3}
   hungryPerSec: 0

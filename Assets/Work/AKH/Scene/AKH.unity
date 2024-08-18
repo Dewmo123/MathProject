@@ -3352,7 +3352,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c8e7c0c64a45f4eab13f5e1e863e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weathers: []
+  weathers:
+    _pairs:
+    - _key: 0
+      _value: {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
+    - _key: 1
+      _value: {fileID: 11400000, guid: 9b29095166e635b459b37a3a9b74dd2c, type: 2}
+    - _key: 2
+      _value: {fileID: 11400000, guid: d557c799c4d3b65449f556fc6b56368b, type: 2}
+    - _key: 4
+      _value: {fileID: 11400000, guid: 0274588fb56184b459467fe4cb90b342, type: 2}
+    - _key: 3
+      _value: {fileID: 11400000, guid: 6d573c5742a5d8e488cc361209489cb2, type: 2}
+  _hitTime: 1
 --- !u!1001 &1456816269
 PrefabInstance:
   m_ObjectHideFlags: 0
