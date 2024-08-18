@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Hungry : Stat
+public class Water : Stat
 {
 
 }

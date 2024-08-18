@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HungryUI : PlayerConnectUI
+public class WaterUI : PlayerConnectUI
 {
     private Image _barImage;
     private Image _backBarImage;
-    private Hungry _playerHungry;
+    private Water _playerWater;
 
     [SerializeField] private float _waitingTime;
     private float _lastHitTime;
     private bool _ischaseFill;
     public override void AfterFindPlayer()
     {
-        _barImage = transform.Find("HungryBar").GetComponent<Image>();
+        _barImage = transform.Find("WaterBar").GetComponent<Image>();
         _backBarImage = transform.Find("BackBar").GetComponent<Image>();
-        _playerHungry = _player.hungryCompo;
+        _playerWater = _player.waterCompo;
 
-        _playerHungry.OnChangeEvent.AddListener(HandleHitEvnet);
+        _playerWater.OnChangeEvent.AddListener(HandleHitEvnet);
     }
 
     private void HandleHitEvnet()
     {
-        _barImage.fillAmount = _playerHungry.GetNormalizedValue();
+        _barImage.fillAmount = _playerWater.GetNormalizedValue();
         _lastHitTime = Time.time;
         transform.DOShakePosition(0.3f, 1f, 100);
     }
