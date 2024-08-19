@@ -3,23 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeatherManager : MonoBehaviour
+public class WeatherManager : MonoSingleton<WeatherManager>
 {
-    private Player player;
-    public SerializableDictionary<WeatherEnum, WeatherSO> weathers;
-    private float _currentTime;
-    [SerializeField] private float _hitTime;
+    public List<WeatherSO> weathers;
+    public Queue<WeatherSO> weatherQueue;
     private void Awake()
     {
-        player = GameManager.instance.Player;
-    }
-    private void Update()
-    {
-        if (_currentTime >= _hitTime)
+        weatherQueue = new Queue<WeatherSO>();
+        for(int i = 1; i <= 57; i++)
         {
-            player.hungryCompo.ChangeValue(weathers.Dictionary[WeatherEnum.Sunny].hungryPerSec);
-            _currentTime = 0;
+            WeatherSO weather = weathers[Random.Range(0, weathers.Count)];
+            weatherQueue.Enqueue(weather);
         }
-        _currentTime += Time.deltaTime;
     }
 }

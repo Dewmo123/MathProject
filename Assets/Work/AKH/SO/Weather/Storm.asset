@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Storm
   m_EditorClassIdentifier: 
   weatherEnum: 3
-  weatherName: Storm
+  weatherName: "\uD3ED\uD48D"
   sprite: {fileID: -1211223806, guid: 708ff1a67e5be4d46a9bcb3eefd486a0, type: 3}
+  healthPerSec: 0
   hungryPerSec: 0
   waterPerSec: 0
-  degreePerSec: 0

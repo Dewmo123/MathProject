@@ -26,7 +26,6 @@ public class HealthUI : PlayerConnectUI
     {
         _barImage.fillAmount = _playerHealth.GetNormalizedValue();
         _lastHitTime = Time.time;
-        transform.DOShakePosition(0.3f, 1f, 100);
     }
     private void Update()
     {

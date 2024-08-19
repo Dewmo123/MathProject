@@ -1166,6 +1166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546543437}
+  - component: {fileID: 546543438}
   m_Layer: 5
   m_Name: WeatherUI
   m_TagString: Untagged
@@ -1194,6 +1195,21 @@ RectTransform:
   m_AnchoredPosition: {x: 1758, y: -28}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &546543438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546543436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c8e7c0c64a45f4eab13f5e1e863e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitTime: 3
+  _weatherImage: {fileID: 1367914601}
+  _weatherTxt: {fileID: 1563948922}
 --- !u!1001 &592117783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3349,22 +3365,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1432296832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c8e7c0c64a45f4eab13f5e1e863e0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 99ae11f41b93bf049b6bf3eacb7699dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weathers:
-    _pairs:
-    - _key: 0
-      _value: {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
-    - _key: 1
-      _value: {fileID: 11400000, guid: 9b29095166e635b459b37a3a9b74dd2c, type: 2}
-    - _key: 2
-      _value: {fileID: 11400000, guid: d557c799c4d3b65449f556fc6b56368b, type: 2}
-    - _key: 4
-      _value: {fileID: 11400000, guid: 0274588fb56184b459467fe4cb90b342, type: 2}
-    - _key: 3
-      _value: {fileID: 11400000, guid: 6d573c5742a5d8e488cc361209489cb2, type: 2}
-  _hitTime: 1
+  - {fileID: 11400000, guid: 9b29095166e635b459b37a3a9b74dd2c, type: 2}
+  - {fileID: 11400000, guid: 0274588fb56184b459467fe4cb90b342, type: 2}
+  - {fileID: 11400000, guid: 6d573c5742a5d8e488cc361209489cb2, type: 2}
+  - {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
+  - {fileID: 11400000, guid: d557c799c4d3b65449f556fc6b56368b, type: 2}
 --- !u!1001 &1456816269
 PrefabInstance:
   m_ObjectHideFlags: 0
