@@ -37,19 +37,26 @@ public class PlayerInteractionUI : MonoBehaviour
 
     private void Initialize()
     {
+        if (_playerTrm == null)
+        {
+            Debug.LogWarning($"{gameObject.name} can't find player. So, You have to put {gameObject.name}'s interactor");
+        }
+
         _interactionObjectInfo = new();
         mainCam = Camera.main;
         _bigTitleText = _bigTitleImage.rectTransform.Find("Text").GetComponent<TextMeshProUGUI>();
 
         _fKeyImage.gameObject.SetActive(false);
-        _titleImage.gameObject.SetActive(false);
+        _titleImage.DOScale(Vector3.zero, 0);
         _bigTitleImage.DOFade(0, 0);
+        _bigTitleText.DOFade(0, 0);
     }
 
     private void GetPlayerPos()
     {
         Vector2 playerPos = mainCam.WorldToScreenPoint(_playerTrm.position);
         _fKeyImage.position = new Vector2(playerPos.x, playerPos.y + _upYPos);
+        _titleImage.position = new Vector2(playerPos.x, playerPos.y - _upYPos / 2);
     }
 
     private IEnumerator ActivationTimeSet(string code)
@@ -68,7 +75,7 @@ public class PlayerInteractionUI : MonoBehaviour
         if (_interactionObjectInfo[code]._canInteraction)
         {
             _fKeyImage.gameObject.SetActive(true);
-            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0, 0), 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, 0));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond)); // ∞°∑Œ∑Œ ∆Ï¡¸
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 1), _OnSecond)); // ¡§ªÛ»≠
@@ -89,13 +96,11 @@ public class PlayerInteractionUI : MonoBehaviour
             return;
         }
 
-        _titleImage.gameObject.SetActive(true);
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0, 0), 0));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(1, 0.3f), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(1, 1), _OnSecond));
+        _titleImage.Find("Text").GetComponent<TextMeshProUGUI>().text = _interactionObjectInfo[code]._str;
 
-        interactionUISequence.OnComplete(() => interactionUISequence.Complete());
+        interactionUISequence.Join(_titleImage.DOScale(Vector3.zero, 0));
+        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 1), _OnSecond));
+        interactionUISequence.Append(_titleImage.DOScale(new Vector3(4, 1), _OnSecond));
     }
 
     public void OutFadeInteractionUI(bool canInteraction)
@@ -107,17 +112,12 @@ public class PlayerInteractionUI : MonoBehaviour
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 1), 0));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond)); // ∞°∑Œ∑Œ ¡¢«Ù¡¸
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
-            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0, 0), _OnSecond)); // ªÁ∂Û¡¸
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, _OnSecond)); // ªÁ∂Û¡¸
             _fKeyImage.gameObject.SetActive(false);
-            return;
         }
 
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(1, 1), 0));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(1, 0.3f), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0, 0), _OnSecond));
-        _fKeyImage.gameObject.SetActive(false);
-
-        interactionUISequence.OnComplete(() => interactionUISequence.Complete());
+        interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), 0));
+        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 1), _OnSecond));
+        interactionUISequence.Append(_titleImage.DOScale(Vector3.zero, 0));
     }
 }
