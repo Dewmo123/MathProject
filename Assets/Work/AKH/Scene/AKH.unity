@@ -1156,6 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9717850893563124b8f88ae5250b3eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _barName: Water
   _waitingTime: 1
 --- !u!1 &546543436
 GameObject:
@@ -3323,6 +3324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43240a905bb17b4180648cf6feba512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _barName: Hungry
   _waitingTime: 1
 --- !u!1 &1432296832
 GameObject:
@@ -4040,6 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde3d57ca8315684c97f9a54f31d1a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _barName: Health
   _waitingTime: 1
 --- !u!1 &1821832900
 GameObject:
