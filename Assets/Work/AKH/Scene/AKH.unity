@@ -4902,6 +4902,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2735511926657274837, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2735511926657274837, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
@@ -4944,6 +4948,22 @@ PrefabInstance:
     - target: {fileID: 4733188768350032129, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428898391331624288, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5771605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428898391331624288, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2034233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428898391331624288, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.04559481
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428898391331624288, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.46296334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
