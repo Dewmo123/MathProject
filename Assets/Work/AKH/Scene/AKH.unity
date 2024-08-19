@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c8e7c0c64a45f4eab13f5e1e863e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitTime: 3
+  _hitTime: 1
   _weatherImage: {fileID: 1367914601}
   _weatherTxt: {fileID: 1563948922}
 --- !u!1001 &592117783
