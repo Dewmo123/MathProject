@@ -13,6 +13,10 @@ public class InteractionObjectInfoSo : ScriptableObject
     [Tooltip("F키를 띄울지 여부입니다.")]
     public bool _canInteraction;
 
+    [Header("Title")]
+    [Tooltip("제목을 띄울지 여부입니다.")]
+    public bool _title;
+
     [Header("BigTitleSet")]
     [Tooltip("플레이어에게 표시딜 때 크게 표시 되는 지 여부입니다.")]
     public bool _bigTitle;

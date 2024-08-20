@@ -45,6 +45,8 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private string _codeSet;
     [Tooltip("F키를 띄울지 여부입니다.")]
     [SerializeField] private bool _canInteractionSet;
+    [Tooltip("제목을 띄울지 여부입니다.")]
+    [SerializeField] public bool _titleSet;
     [Tooltip("플레이어에게 표시딜 때 크게 표시 되는 지 여부입니다.")]
     [SerializeField] private bool _bigTitleSet;
     [Tooltip("게임에 표시될 문장입니다.")]
@@ -98,7 +100,7 @@ public class InteractionObject : MonoBehaviour
         }
         else if (!_enterCollision && _canInteraction) // 인터렉션 불가 (범위에서 벗어남)
         {
-            _intaractioner.CanNotInteraction(_interactionObjectInfo._canInteraction);
+            _intaractioner.CanNotInteraction(_interactionObjectInfo._canInteraction, _interactionObjectInfo._title);
             _canInteraction = false;
         }
     }
@@ -113,9 +115,23 @@ public class InteractionObject : MonoBehaviour
                 break;
         }
 
+        if (_canInteractionSet || _titleSet)
+        {
+            if (_bigTitleSet)
+            {
+                _bigTitleSet = false;
+            }
+        }
+        else
+        {
+            _bigTitleSet = true;
+            _titleSet = false;
+        }
+
         _interactionObjectInfo._code = _codeSet;
         _interactionObjectInfo._canInteraction = _canInteractionSet;
-        _interactionObjectInfo._bigTitle = !_canInteractionSet;
+        _interactionObjectInfo._title = _titleSet;
+        _interactionObjectInfo._bigTitle = _bigTitleSet;
         _interactionObjectInfo._str = _strSet;
         _interactionObjectInfo._activationTime = _activationTimeSet > 0 ? _activationTimeSet : 0;
 

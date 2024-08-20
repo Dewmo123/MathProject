@@ -30,7 +30,7 @@ public class PlayerInteractionUI : MonoBehaviour
         Initialize();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         GetPlayerPos();
     }
@@ -72,13 +72,34 @@ public class PlayerInteractionUI : MonoBehaviour
     {
         Sequence interactionUISequence = DOTween.Sequence();
 
-        if (_interactionObjectInfo[code]._canInteraction)
+        if (_interactionObjectInfo[code]._canInteraction && _interactionObjectInfo[code]._title)
+        {
+            _titleImage.Find("Text").GetComponent<TextMeshProUGUI>().text = _interactionObjectInfo[code]._str;
+            _fKeyImage.gameObject.SetActive(true);
+
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(Vector3.zero, 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(Vector3.one, _OnSecond));
+            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 1), _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), _OnSecond));
+        }
+        else if (_interactionObjectInfo[code]._canInteraction)
         {
             _fKeyImage.gameObject.SetActive(true);
             interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, 0));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond)); // 가로로 펴짐
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 1), _OnSecond)); // 정상화
+        }
+        else if (_interactionObjectInfo[code]._title)
+        {
+            _titleImage.Find("Text").GetComponent<TextMeshProUGUI>().text = _interactionObjectInfo[code]._str;
+
+            interactionUISequence.Join(_titleImage.DOScale(Vector3.zero, 0));
+            interactionUISequence.Append(_titleImage.DOScale(Vector3.one, _OnSecond));
+            interactionUISequence.Append(_titleImage.DOScale(new Vector3(4, 1), _OnSecond));
         }
         else if (_interactionObjectInfo[code]._bigTitle && _interactionObjectInfo[code]._canActivation)
         {
@@ -95,29 +116,35 @@ public class PlayerInteractionUI : MonoBehaviour
             interactionUISequence.Join(_bigTitleText.DOFade(0, _OnSecond * 6));
             return;
         }
-
-        _titleImage.Find("Text").GetComponent<TextMeshProUGUI>().text = _interactionObjectInfo[code]._str;
-
-        interactionUISequence.Join(_titleImage.DOScale(Vector3.zero, 0));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 1), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(4, 1), _OnSecond));
     }
 
-    public void OutFadeInteractionUI(bool canInteraction)
+    public void OutFadeInteractionUI(bool canInteraction, bool title)
     {
         Sequence interactionUISequence = DOTween.Sequence();
 
-        if (canInteraction)
+        if (canInteraction && title)
         {
-            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 1), 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.one, 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), 0));
+            interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(Vector3.one, _OnSecond));
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, _OnSecond));
+            interactionUISequence.Join(_titleImage.DOScale(Vector3.zero, _OnSecond));
+        }
+        else if (canInteraction)
+        {
+            interactionUISequence.Append(_fKeyImage.DOScale(Vector3.one, 0));
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(1, 0.3f), _OnSecond)); // 가로로 접혀짐
             interactionUISequence.Append(_fKeyImage.DOScale(new Vector3(0.1f, 0.3f), _OnSecond));
             interactionUISequence.Append(_fKeyImage.DOScale(Vector3.zero, _OnSecond)); // 사라짐
             _fKeyImage.gameObject.SetActive(false);
         }
-
-        interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), 0));
-        interactionUISequence.Append(_titleImage.DOScale(new Vector3(0.1f, 1), _OnSecond));
-        interactionUISequence.Append(_titleImage.DOScale(Vector3.zero, 0));
+        else if(title)
+        {
+            interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), 0));
+            interactionUISequence.Append(_titleImage.DOScale(Vector3.one, _OnSecond));
+            interactionUISequence.Append(_titleImage.DOScale(Vector3.zero, _OnSecond));
+        }
     }
 }
