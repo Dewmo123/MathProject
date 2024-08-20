@@ -17,9 +17,12 @@ public class WeatherUI : PlayerConnectUI
     {
         _curWeather = new NotifyValue<WeatherSO>();
         _curWeather.OnvalueChanged += HandleWeatherChanged;
+    }
+    protected override void Start()
+    {
+        base.Start();
         _curWeather.Value = WeatherManager.instance.weatherQueue.Dequeue();
     }
-
     private void HandleWeatherChanged(WeatherSO prev, WeatherSO next)
     {
         _weatherImage.sprite = next.sprite;
