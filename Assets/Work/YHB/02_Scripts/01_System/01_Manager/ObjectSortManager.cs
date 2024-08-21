@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSortManager : MonoBehaviour
+public class ObjectSortManager : MonoSingleton<ObjectSortManager>
 {
-    [SerializeField] private List<Transform> _live;
-    [SerializeField] private List<Transform> _unLive;
+    [SerializeField] private List<SpriteRenderer> _live;
+    [SerializeField] private List<SpriteRenderer> _unLive;
 
     private void Awake()
     {
@@ -19,17 +19,17 @@ public class ObjectSortManager : MonoBehaviour
 
     private void Updating()
     {
-        foreach (Transform item in _live)
+        foreach (SpriteRenderer item in _live)
         {
-            item.Find("Visual").GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(item.position.y * -10);
+            item.sortingOrder = Mathf.RoundToInt(item.transform.parent.position.y * -100);
         }
     }
 
     private void Initialize()
     {
-        foreach (Transform item in _unLive)
+        foreach (SpriteRenderer item in _unLive)
         {
-            item.Find("Visual").GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(item.position.y * -10);
+            item.sortingOrder = Mathf.RoundToInt(item.transform.parent.position.y * -100);
         }
     }
 }
