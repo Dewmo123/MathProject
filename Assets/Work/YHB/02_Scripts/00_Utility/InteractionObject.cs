@@ -10,6 +10,10 @@ enum Shape
 
 public class InteractionObject : MonoBehaviour
 {
+    [Header("Player")]
+    [Tooltip("플레이어")]
+    [SerializeField] private Interactioner _intaractioner;
+
     [Header("Target Layer")]
     [Tooltip("상호 작용 주체")]
     [SerializeField] private LayerMask _layer;
@@ -30,9 +34,15 @@ public class InteractionObject : MonoBehaviour
     [Tooltip("해당 오브젝트의 So")]
     [SerializeField] private InteractionObjectInfoSo _interactionObjectInfo;
 
+    [Header("UI")]
+    [Tooltip("인터렉션 창을 띄어주는 UI")]
+    [SerializeField] private PlayerInteractionUI _interactionInfoUI;
+
     #region SoSynchronization
 
     [Header("So Setting")]
+    [Tooltip("딕셔너리의 키로 들어갈 이름입니다.")]
+    [SerializeField] private string _codeSet;
     [Tooltip("F키를 띄울지 여부입니다.")]
     [SerializeField] private bool _canInteractionSet;
     [Tooltip("제목을 띄울지 여부입니다.")]
@@ -41,6 +51,8 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private bool _bigTitleSet;
     [Tooltip("게임에 표시될 문장입니다.")]
     [SerializeField] private string _strSet;
+    [Tooltip("다시 활성화 될때 까지의 시간")]
+    [SerializeField] private float _activationTimeSet;
 
     #endregion
 
@@ -64,7 +76,8 @@ public class InteractionObject : MonoBehaviour
         _position.x = transform.position.x + _movePosition.x; // 좌표 초기화
         _position.y = transform.position.y + _movePosition.y;
 
-        PlayerInteractionUI.instance.InteractionInfoAdd(_interactionObjectInfo);
+        _interactionObjectInfo._canActivation = true;
+        _interactionInfoUI._interactionObjectInfo.Add(_interactionObjectInfo._code, _interactionObjectInfo);
     }
 
     public void ChackInteraction()
@@ -82,12 +95,12 @@ public class InteractionObject : MonoBehaviour
 
         if (_enterCollision && !_canInteraction) // 인터렉션 가능 (범위에 들어옴)
         {
-            PlayerInteractionUI.instance.FadeInteractionUI(_interactionObjectInfo._code);
+            _intaractioner.CanInteraction(_interactionObjectInfo._code);
             _canInteraction = true;
         }
         else if (!_enterCollision && _canInteraction) // 인터렉션 불가 (범위에서 벗어남)
         {
-            PlayerInteractionUI.instance.OutFadeInteractionUI(_interactionObjectInfo._code);
+            _intaractioner.CanNotInteraction(_interactionObjectInfo._canInteraction, _interactionObjectInfo._title);
             _canInteraction = false;
         }
     }
@@ -115,11 +128,18 @@ public class InteractionObject : MonoBehaviour
             _titleSet = false;
         }
 
-        _interactionObjectInfo._code = _interactionObjectInfo.name;
+        _interactionObjectInfo._code = _codeSet;
         _interactionObjectInfo._canInteraction = _canInteractionSet;
         _interactionObjectInfo._title = _titleSet;
         _interactionObjectInfo._bigTitle = _bigTitleSet;
         _interactionObjectInfo._str = _strSet;
+        _interactionObjectInfo._activationTime = _activationTimeSet > 0 ? _activationTimeSet : 0;
+
+        _codeSet = _interactionObjectInfo._code;
+        _canInteractionSet = _interactionObjectInfo._canInteraction;
+        _bigTitleSet = _interactionObjectInfo._bigTitle;
+        _strSet = _interactionObjectInfo._str;
+        _activationTimeSet = _interactionObjectInfo._activationTime;
     }
 
     protected virtual void OnDrawGizmosSelected()
