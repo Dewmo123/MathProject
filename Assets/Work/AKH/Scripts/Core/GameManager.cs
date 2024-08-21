@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField] private List<ProblemSO> problems;
+    public bool isUI { get; private set; } = false;
     [field:SerializeField]public Player Player { get; private set; }
     public List<ItemSO> items;
     private void Update()
@@ -22,5 +23,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         int num = Random.Range(0, problems.Count);
         return problems[num];
+    }
+    public void SetUI(bool value)
+    {
+        isUI = value;
     }
 }

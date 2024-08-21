@@ -44,6 +44,7 @@ public class Player : Agent
     }
     private void ChangeAxeState(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.isUI) return;
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         HandleSpriteFlip(mouse);
         StateMachine.ChangeState(PlayerEnum.Axe);
