@@ -12,8 +12,8 @@ public class Interactioner : MonoBehaviour
         _playerInteractionUI.FadeInteractionUI(code);
     }
 
-    public void CanNotInteraction(bool canInteraction, bool tile)
+    public void CanNotInteraction(string code)
     {
-        _playerInteractionUI.OutFadeInteractionUI(canInteraction, tile);
+        _playerInteractionUI.OutFadeInteractionUI(code);
     }
 }
