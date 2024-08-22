@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
-  m_Name: ArgyllIslandSO 6
+  m_Name: CaelidIsland
   m_EditorClassIdentifier: 
   _code: 
   _canInteraction: 0
