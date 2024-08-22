@@ -22,7 +22,13 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     {
         StartCoroutine(FindPlayer());
         SetWeathers();
-        GameManager.instance.DayCnt.OnvalueChanged += (int prev, int next) => { cnt = next - 2; Debug.Log(cnt); };
+        GameManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
+    }
+
+    private void HandleDayChange(int prev, int next)
+    {
+        cnt = next - 2; Debug.Log(cnt);
+        _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value++ % 57];
     }
 
     private void Start()
@@ -37,10 +43,6 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value++ % 57];
-        }
         if (_currentTime >= _hitTime && _player != null)
         {
             _curWeather = _coreWeatherCompo.curWeather.Value;
@@ -63,6 +65,6 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     public WeatherSO GetNextWeather()
     {
         cnt++;
-        return curWeathers[cnt%57];
+        return curWeathers[cnt % 57];
     }
 }
