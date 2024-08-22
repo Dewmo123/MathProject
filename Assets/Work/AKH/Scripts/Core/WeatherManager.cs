@@ -1,18 +1,15 @@
-using SerializableDictionary.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class WeatherManager : MonoSingleton<WeatherManager>
 {
-    public event Action DayChangeEvent;
 
     private Player _player;
 
     [SerializeField] private float _hitTime;
-    [SerializeField] private WeatherUI _coreWeather;
+    [SerializeField] private WeatherUI _coreWeatherCompo;
 
     private WeatherSO _curWeather;
 
@@ -21,23 +18,17 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 
     private float _currentTime;
     private int cnt = -1;
-    public NotifyValue<int> DayCnt;
     private void Awake()
     {
-        DayCnt = new NotifyValue<int>();
-        DayCnt.Value = 1;
-        DayCnt.OnvalueChanged += HandleDayChanged;
-        SetWeathers();
-        _coreWeather.curWeather.Value = curWeathers[DayCnt.Value++];
         StartCoroutine(FindPlayer());
+        SetWeathers();
+        GameManager.instance.DayCnt.OnvalueChanged += (int prev, int next) => { cnt = next - 2;Debug.Log(cnt); };
     }
 
-    private void HandleDayChanged(int prev, int next)
+    private void Start()
     {
-        cnt = DayCnt.Value - 2;
-        DayChangeEvent?.Invoke();
+        _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value - 1];
     }
-
     private IEnumerator FindPlayer()
     {
         yield return new WaitUntil(() => GameManager.instance.Player != null);
@@ -48,11 +39,11 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            _coreWeather.curWeather.Value = curWeathers[DayCnt.Value++];
+            _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value++];
         }
         if (_currentTime >= _hitTime && _player != null)
         {
-            _curWeather = _coreWeather.curWeather.Value;
+            _curWeather = _coreWeatherCompo.curWeather.Value;
             _currentTime = 0;
             _player.healthCompo.ChangeValue(_curWeather.healthPerSec);
             _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
@@ -71,9 +62,9 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     }
     public WeatherSO GetNextWeather()
     {
-        if (cnt < curWeathers.Count)
+        if (cnt < curWeathers.Count - 1)
             cnt++;
-        else cnt = -1;
+        else cnt = 0;
         return curWeathers[cnt];
     }
 }

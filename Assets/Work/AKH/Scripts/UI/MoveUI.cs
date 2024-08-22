@@ -24,7 +24,6 @@ public abstract class MoveUI : MonoBehaviour
 
     protected virtual void HandleCnt(int prev, int next)
     {
-        Debug.Log(next);
         if (next == 1)
         {
             Move(_firstPos);

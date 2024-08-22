@@ -7,11 +7,11 @@ public class WeatherListUI : MonoBehaviour
     [SerializeField]private List<WeatherUI> weatherList;
     private void Start()
     {
-        SetUI();
-        WeatherManager.instance.DayChangeEvent += SetUI;
+        SetUI(0,0);
+        GameManager.instance.DayCnt.OnvalueChanged += SetUI;
     }
     
-    public void SetUI()
+    public void SetUI(int prev, int next)
     {
         foreach(var UI in weatherList)
         {
