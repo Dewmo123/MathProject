@@ -18,4 +18,9 @@ public class WeatherListUI : MonoBehaviour
             UI.curWeather.Value = WeatherManager.instance.GetNextWeather();
         }
     }
+    private void OnDestroy()
+    {
+        GameManager.instance.DayCnt.OnvalueChanged -= SetUI;
+        
+    }
 }

@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class TimeUI : MonoBehaviour
+public class TimeUI : MoveUI
 {
     public NotifyValue<int> min;
     public NotifyValue<int> hour;
@@ -11,16 +11,21 @@ public class TimeUI : MonoBehaviour
     public float curTime { get; private set; } = 0;
     private TextMeshProUGUI _timeTxt;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _timeTxt = GetComponent<TextMeshProUGUI>();
         min.OnvalueChanged += HandleMinChange;
         hour.OnvalueChanged += HandleHourChange;
         hour.Value = 8;
     }
+    private void Start()
+    {
+        GameManager.instance.Player.playerInput.Input.UI.performed += (InputAction.CallbackContext context) => { moveCnt.Value++; };
+    }
     private void HandleHourChange(int prev, int next)
     {
-        if (next == 24)
+        if (next == 9)
         {
             GameManager.instance.DayCnt.Value++;
             hour.Value = 8;
@@ -40,12 +45,21 @@ public class TimeUI : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(curTime);
         curTime += Time.deltaTime;
         if (curTime >= changeMinVal)
         {
             min.Value += 10;
             curTime = 0;
         }
+    }
+
+    public override void Move(int pos)
+    {
+        rTransform.DOMoveX(pos, time);
+    }
+    private void OnDestroy()
+    {
+        min.OnvalueChanged -= HandleMinChange;
+        hour.OnvalueChanged -= HandleHourChange;
     }
 }
