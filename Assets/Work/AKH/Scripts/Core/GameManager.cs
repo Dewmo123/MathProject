@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoSingleton<GameManager>
+public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [SerializeField] private List<ProblemSO> problems;
     public bool isUI { get; private set; } = false;
 
@@ -19,8 +21,16 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         DayCnt.Value = 1;
+        if (instance == null)
+            instance = this;
     }
-
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 
 
     public ProblemSO GetRandomProblem()

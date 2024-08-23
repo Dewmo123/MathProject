@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WeatherManager : MonoSingleton<WeatherManager>
+public class WeatherManager : MonoBehaviour
 {
+    public static WeatherManager instance;
 
     private Player _player;
 
@@ -22,6 +23,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     private int cnt = -1;
     private void Awake()
     {
+        if (instance == null) instance = this;
         StartCoroutine(FindPlayer());
         SetWeathers();
         GameManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
