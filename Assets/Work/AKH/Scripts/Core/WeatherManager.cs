@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WeatherManager : MonoSingleton<WeatherManager>
@@ -10,6 +11,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 
     [SerializeField] private float _hitTime;
     [SerializeField] private WeatherUI _coreWeatherCompo;
+    [SerializeField] private TextMeshProUGUI _dayCntTxt;
 
     private WeatherSO _curWeather;
 
@@ -22,7 +24,14 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     {
         StartCoroutine(FindPlayer());
         SetWeathers();
-        GameManager.instance.DayCnt.OnvalueChanged += (int prev, int next) => { cnt = next - 2;Debug.Log(cnt); };
+        GameManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
+    }
+
+    private void HandleDayChange(int prev, int next)
+    {
+        cnt = next - 2;
+        _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value-1 % 57];
+        _dayCntTxt.text = $"Day : {next}";
     }
 
     private void Start()
@@ -37,10 +46,6 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value++];
-        }
         if (_currentTime >= _hitTime && _player != null)
         {
             _curWeather = _coreWeatherCompo.curWeather.Value;
@@ -62,9 +67,11 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     }
     public WeatherSO GetNextWeather()
     {
-        if (cnt < curWeathers.Count - 1)
-            cnt++;
-        else cnt = 0;
-        return curWeathers[cnt];
+        cnt++;
+        return curWeathers[cnt % 57];
+    }
+    private void OnDestroy()
+    {
+        GameManager.instance.DayCnt.OnvalueChanged -= HandleDayChange;
     }
 }

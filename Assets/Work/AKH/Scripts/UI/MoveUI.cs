@@ -21,7 +21,6 @@ public abstract class MoveUI : MonoBehaviour
 
         rTransform = GetComponent<RectTransform>();
     }
-
     protected virtual void HandleCnt(int prev, int next)
     {
         if (next == 1)
@@ -37,4 +36,8 @@ public abstract class MoveUI : MonoBehaviour
         }
     }
     public abstract void Move(int pos);
+    private void OnDestroy()
+    {
+        moveCnt.OnvalueChanged -= HandleCnt;
+    }
 }
