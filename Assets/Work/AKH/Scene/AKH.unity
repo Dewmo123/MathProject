@@ -1974,7 +1974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742286038}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1995,7 +1995,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   problems:
   - {fileID: 11400000, guid: fe4d4c4737c3ac64b8a40f63a4cfc431, type: 2}
-  <Player>k__BackingField: {fileID: 1245181846}
   DayCnt:
     _value: 0
   <items>k__BackingField:
@@ -2986,8 +2985,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 742286039}
   - {fileID: 1432296833}
+  - {fileID: 742286039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1081102640
@@ -3375,17 +3374,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9c8e7c0c64a45f4eab13f5e1e863e0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1245181846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4101045865045738417, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
-  m_PrefabInstance: {fileID: 1011788163432940165}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa8b65ed48f97b54f89a2e6e31fcb0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1277724344 stripped
