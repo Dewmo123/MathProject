@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -21,8 +22,13 @@ public class WeatherManager : MonoBehaviour
 
     private float _currentTime;
     private int cnt = -1;
+
+    private WaitForSeconds _waitSleep;
+    [SerializeField] private float _sleepTime;
+
     private void Awake()
     {
+        _waitSleep = new WaitForSeconds(_sleepTime);
         if (instance == null) instance = this;
         StartCoroutine(FindPlayer());
         SetWeathers();
@@ -31,9 +37,17 @@ public class WeatherManager : MonoBehaviour
 
     private void HandleDayChange(int prev, int next)
     {
+        StartCoroutine(Sleep());
         cnt = next - 2;
         _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value-1 % 57];
         _dayCntTxt.text = $"Day : {next}";
+    }
+
+    private IEnumerator Sleep()
+    {
+        GameManager.instance.SetTimeStop(true);
+        yield return _waitSleep;
+        GameManager.instance.SetTimeStop(false);
     }
 
     private void Start()
@@ -48,15 +62,18 @@ public class WeatherManager : MonoBehaviour
 
     private void Update()
     {
-        if (_currentTime >= _hitTime && _player != null)
+        if (!GameManager.instance.isTimeStop)
         {
-            _curWeather = _coreWeatherCompo.curWeather.Value;
-            _currentTime = 0;
-            _player.healthCompo.ChangeValue(_curWeather.healthPerSec);
-            _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
-            _player.waterCompo.ChangeValue(_curWeather.waterPerSec);
+            if (_currentTime >= _hitTime && _player != null)
+            {
+                _curWeather = _coreWeatherCompo.curWeather.Value;
+                _currentTime = 0;
+                _player.healthCompo.ChangeValue(_curWeather.healthPerSec);
+                _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
+                _player.waterCompo.ChangeValue(_curWeather.waterPerSec);
+            }
+            _currentTime += Time.deltaTime;
         }
-        _currentTime += Time.deltaTime;
     }
     private void SetWeathers()
     {

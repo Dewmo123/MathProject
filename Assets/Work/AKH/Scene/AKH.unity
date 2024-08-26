@@ -3551,6 +3551,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
   - {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
   curWeathers: []
+  _sleepTime: 1
 --- !u!1001 &1456816269
 PrefabInstance:
   m_ObjectHideFlags: 0

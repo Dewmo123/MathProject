@@ -45,7 +45,7 @@ public class TimeUI : MoveUI
     }
     private void Update()
     {
-        if (GameManager.instance.isTimeStop)
+        if (!GameManager.instance.isTimeStop)
         {
             curTime += Time.deltaTime;
             if (curTime >= changeMinVal)
