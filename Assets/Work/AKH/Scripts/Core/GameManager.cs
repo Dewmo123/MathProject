@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
             return _player;
         }
     }
-    public NotifyValue<int> DayCnt;
-    public bool isTimeStop { get; private set; } = false;
 
     [field: SerializeField] public List<ItemSO> items { get; private set; }
 
@@ -32,25 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        DayCnt.Value = 1;
     }
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SetTimeStop(true);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SetTimeStop(false);
-        }
-    }
-
-
     public ProblemSO GetRandomProblem()
     {
         int num = UnityEngine.Random.Range(0, problems.Count);
@@ -60,8 +40,5 @@ public class GameManager : MonoBehaviour
     {
         isUI = value;
     }
-    public void SetTimeStop(bool value)
-    {
-        isTimeStop = value;
-    }
+
 }

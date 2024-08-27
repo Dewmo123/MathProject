@@ -1,9 +1,9 @@
-using System;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeatherManager : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class WeatherManager : MonoBehaviour
 
     [SerializeField] private float _hitTime;
     [SerializeField] private WeatherUI _coreWeatherCompo;
-    [SerializeField] private TextMeshProUGUI _dayCntTxt;
+
 
     private WeatherSO _curWeather;
 
@@ -23,36 +23,27 @@ public class WeatherManager : MonoBehaviour
     private float _currentTime;
     private int cnt = -1;
 
-    private WaitForSeconds _waitSleep;
-    [SerializeField] private float _sleepTime;
+
 
     private void Awake()
     {
-        _waitSleep = new WaitForSeconds(_sleepTime);
         if (instance == null) instance = this;
         StartCoroutine(FindPlayer());
         SetWeathers();
-        GameManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
+        TimeManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
     }
 
     private void HandleDayChange(int prev, int next)
     {
-        StartCoroutine(Sleep());
         cnt = next - 2;
-        _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value-1 % 57];
-        _dayCntTxt.text = $"Day : {next}";
+        _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % 57];
     }
 
-    private IEnumerator Sleep()
-    {
-        GameManager.instance.SetTimeStop(true);
-        yield return _waitSleep;
-        GameManager.instance.SetTimeStop(false);
-    }
+
 
     private void Start()
     {
-        _coreWeatherCompo.curWeather.Value = curWeathers[GameManager.instance.DayCnt.Value - 1];
+        _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1];
     }
     private IEnumerator FindPlayer()
     {
@@ -62,7 +53,7 @@ public class WeatherManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.instance.isTimeStop)
+        if (!TimeManager.instance.isTimeStop)
         {
             if (_currentTime >= _hitTime && _player != null)
             {
@@ -91,6 +82,6 @@ public class WeatherManager : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.instance.DayCnt.OnvalueChanged -= HandleDayChange;
+        TimeManager.instance.DayCnt.OnvalueChanged -= HandleDayChange;
     }
 }
