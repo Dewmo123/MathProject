@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventorySectionUI : MonoBehaviour
 {
     private List<ItemSO> items;
-    private void Awake()
+    private void Start()
     {
         items = GameManager.instance.items;
         foreach (var item in items)
