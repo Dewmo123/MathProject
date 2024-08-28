@@ -5,8 +5,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInteractionUI : MonoSingleton<PlayerInteractionUI>
+public class PlayerInteractionUI : MonoBehaviour
 {
+    public static PlayerInteractionUI instance = null;
+
     [Header("FKeySet")]
     [Tooltip("중앙에서 얼마나 올릴지 여부입니다.")]
     [SerializeField] private float _upYPos = 200;
@@ -37,6 +39,11 @@ public class PlayerInteractionUI : MonoSingleton<PlayerInteractionUI>
 
     private void Initialize()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
         if (_playerTrm == null)
         {
             Debug.LogWarning($"{gameObject.name} can't find player. So, You have to put {gameObject.name}'s interactor");
