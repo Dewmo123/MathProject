@@ -5,11 +5,10 @@ using UnityEngine;
 public class WeatherListUI : MonoBehaviour
 {
     [SerializeField]private List<WeatherUI> weatherList;
-
     private void Start()
     {
         SetUI(0,0);
-        TimeManager.instance.DayCnt.OnvalueChanged += SetUI;
+        GameManager.instance.DayCnt.OnvalueChanged += SetUI;
     }
     
     public void SetUI(int prev, int next)
@@ -19,10 +18,9 @@ public class WeatherListUI : MonoBehaviour
             UI.curWeather.Value = WeatherManager.instance.GetNextWeather();
         }
     }
-
     private void OnDestroy()
     {
-        TimeManager.instance.DayCnt.OnvalueChanged -= SetUI;
+        GameManager.instance.DayCnt.OnvalueChanged -= SetUI;
         
     }
 }
