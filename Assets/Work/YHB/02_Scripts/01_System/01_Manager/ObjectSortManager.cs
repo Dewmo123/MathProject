@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSortManager : MonoSingleton<ObjectSortManager>
+public class ObjectSortManager : MonoBehaviour
 {
+    public static ObjectSortManager instance = null;
+
     [SerializeField] private List<SpriteRenderer> _live;
     [SerializeField] private List<SpriteRenderer> _unLive;
 
@@ -17,17 +19,22 @@ public class ObjectSortManager : MonoSingleton<ObjectSortManager>
         Updating();
     }
 
-    private void Updating()
+    private void Initialize()
     {
-        foreach (SpriteRenderer item in _live)
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        foreach (SpriteRenderer item in _unLive)
         {
             item.sortingOrder = Mathf.RoundToInt(item.transform.parent.position.y * -100);
         }
     }
 
-    private void Initialize()
+    private void Updating()
     {
-        foreach (SpriteRenderer item in _unLive)
+        foreach (SpriteRenderer item in _live)
         {
             item.sortingOrder = Mathf.RoundToInt(item.transform.parent.position.y * -100);
         }
