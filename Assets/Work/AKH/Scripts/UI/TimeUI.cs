@@ -27,7 +27,7 @@ public class TimeUI : MoveUI
     {
         if (next == 9)
         {
-            TimeManager.instance.DayCnt.Value++;
+            GameManager.instance.DayCnt.Value++;
             hour.Value = 8;
         }
         _timeTxt.text = (hour.Value < 10 ? "0" : "") + $"{next}:{min.Value}" + (min.Value == 0 ? "0" : "");
@@ -45,14 +45,11 @@ public class TimeUI : MoveUI
     }
     private void Update()
     {
-        if (!TimeManager.instance.isTimeStop)
+        curTime += Time.deltaTime;
+        if (curTime >= changeMinVal)
         {
-            curTime += Time.deltaTime;
-            if (curTime >= changeMinVal)
-            {
-                min.Value += 10;
-                curTime = 0;
-            }
+            min.Value += 10;
+            curTime = 0;
         }
     }
 
