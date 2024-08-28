@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : MonoSingleton<PoolManager>
+public class PoolManager : MonoBehaviour
 {
+    public static PoolManager instance = null;
+
     public PoolListSO poolList;
 
     private Dictionary<string, Pool> _pools;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         _pools = new Dictionary<string, Pool>();
         foreach(PoolItemSO  so in poolList.list)
         {
