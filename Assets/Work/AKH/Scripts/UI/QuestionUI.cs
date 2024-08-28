@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using TexDrawLib;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuestionUI : MonoBehaviour
 {
+    public UnityEvent SolveSuccess;
+    public UnityEvent SolveFail;
     private ProblemSO _problem;
-    [SerializeField] private TextMeshProUGUI _problemTxt;
+    [SerializeField] private TEXDraw _problemTxt;
     [SerializeField] private TMP_InputField _answerTxt;
-    
-    private void OnEnable() 
+
+    private void OnEnable()
     {
         _problem = GameManager.instance.GetRandomProblem();
         _problemTxt.text = _problem.Question;
@@ -17,12 +19,8 @@ public class QuestionUI : MonoBehaviour
     public void Answer()
     {
         if (_answerTxt.text == _problem.Answer)
-        {
-            Debug.Log("good");
-        }
+            SolveSuccess?.Invoke();
         else
-        {
-            Debug.Log("Bad");
-        }
+            SolveFail?.Invoke();
     }
 }
