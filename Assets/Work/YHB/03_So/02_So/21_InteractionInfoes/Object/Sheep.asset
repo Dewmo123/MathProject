@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _code: 
   _canInteraction: 0
-  _title: 0
   _bigTitle: 0
-  _activationTime: 0
+  _second: 0.5
   _str: 
-  _canActivation: 1
