@@ -9,7 +9,6 @@ public class NatureHitState : NatureState
     }
     public override void UpdateState()
     {
-        Debug.Log("EndTirgger");
         if (_endTriggerCalled)
         {
             _stateMachine.ChangeState(NatureType.Idle);
