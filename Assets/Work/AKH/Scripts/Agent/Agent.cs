@@ -22,6 +22,10 @@ public abstract class Agent : MonoBehaviour
     {
         isDead = value;
     }
+    public virtual void Attack()
+    {
+
+    }
     public abstract void EndTriggerCall();
     #region Flip Character
     public bool IsFacingRight()

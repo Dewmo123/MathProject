@@ -6,13 +6,16 @@ public class Player : Agent
     public Hungry hungryCompo;
     public Water waterCompo;
     private PlayerStateMachine StateMachine;
+    private DamageCaster _damageCasterCompo;
 
     public PlayerInput playerInput;
 
     [SerializeField] private float _speed;
+    [SerializeField] private int _damage;
     protected override void Awake()
     {
         base.Awake();
+        _damageCasterCompo = GetComponentInChildren<DamageCaster>();
         hungryCompo = GetComponent<Hungry>();
         hungryCompo.Initialize(this);
 
@@ -78,5 +81,9 @@ public class Player : Agent
     public override void EndTriggerCall()
     {
         StateMachine.CurrentState.AnimationEndTrigger();
+    }
+    public override void Attack()
+    {
+        _damageCasterCompo.CastDamage(_damage);
     }
 }

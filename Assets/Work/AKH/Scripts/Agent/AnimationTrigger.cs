@@ -9,4 +9,8 @@ public class AnimationTrigger : MonoBehaviour
     {
         _char.EndTriggerCall();
     }
+    public void AttackTriggerCall()
+    {
+        _char.Attack();
+    }
 }
