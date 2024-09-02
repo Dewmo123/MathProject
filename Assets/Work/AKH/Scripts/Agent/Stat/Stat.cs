@@ -7,6 +7,8 @@ public abstract class Stat : MonoBehaviour
 {
     public UnityEvent OnDeadEvent;
     public UnityEvent OnChangeEvent;
+    public UnityEvent OnDecEvent;
+    public UnityEvent OnIncEvent;
 
     [field:SerializeField]public float value {  get; private set; }
     [SerializeField] private int _maxValue;
@@ -26,6 +28,10 @@ public abstract class Stat : MonoBehaviour
     {
         value = Mathf.Clamp(value + damage, 0, _maxValue);
         OnChangeEvent?.Invoke();
+        if (damage < 0)
+            OnDecEvent?.Invoke();
+        else if (damage > 0)
+            OnIncEvent?.Invoke();
         if (value <= 0)
             OnDeadEvent?.Invoke();
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Agent : MonoBehaviour
 {
-    public Animator animatorCompo;
-    public AgentMovement movementCompo;
-    public Health healthCompo;
+    public Animator animatorCompo { get; private set; }
+    public AgentMovement movementCompo { get; private set; }
+    public Health healthCompo { get; private set; }
     public bool isStop = false;
 
     public bool isDead { get; protected set; }
@@ -17,6 +17,10 @@ public abstract class Agent : MonoBehaviour
         movementCompo = GetComponent <AgentMovement>();
         healthCompo.Initialize(this);
         movementCompo.Initialize(this);
+    }
+    public virtual void SetDead(bool value)
+    {
+        isDead = value;
     }
     public abstract void EndTriggerCall();
     #region Flip Character

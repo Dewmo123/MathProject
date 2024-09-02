@@ -19,7 +19,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -65,7 +65,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &5428898391331624288
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,8 +98,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.04559481, y: 0.46296334}
+  m_Size: {x: 0.5771605, y: 1.2034233}
   m_Direction: 0
 --- !u!114 &4101045865045738417
 MonoBehaviour:
@@ -113,9 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8b65ed48f97b54f89a2e6e31fcb0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorCompo: {fileID: 0}
-  movementCompo: {fileID: 0}
-  healthCompo: {fileID: 0}
   isStop: 0
   hungryCompo: {fileID: 0}
   waterCompo: {fileID: 0}
@@ -146,15 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d71a412e3cd10a4480d1ed14b47ea6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDecEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIncEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
@@ -170,6 +158,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <value>k__BackingField: 0
   _maxValue: 100
 --- !u!114 &6986366646619431145
 MonoBehaviour:
@@ -183,15 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa93f6e4f0b1a1b45900f91f317d89c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDecEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIncEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
@@ -207,6 +196,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <value>k__BackingField: 0
   _maxValue: 100
 --- !u!114 &1090208243069986910
 MonoBehaviour:
@@ -220,15 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c71ad938f6d5004095b4ba093e6b5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDecEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIncEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
@@ -244,6 +234,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <value>k__BackingField: 0
   _maxValue: 100
 --- !u!1 &3884384654698862136
 GameObject:
