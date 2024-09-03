@@ -12,6 +12,8 @@ public enum DiffucultEnum
 public class ProblemSO : ScriptableObject
 {
     public DiffucultEnum diffucult;
-    public string Question;
+    public Sprite Question;
     public string Answer;
+    public int Width;
+    public int Height;
 }

@@ -25,7 +25,7 @@ public class TimeUI : MoveUI
     }
     private void HandleHourChange(int prev, int next)
     {
-        if (next == 9)
+        if (next == 24)
         {
             TimeManager.instance.DayCnt.Value++;
             hour.Value = 8;
