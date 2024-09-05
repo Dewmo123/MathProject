@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class QuestionUI : MonoBehaviour
+public class QuestionUI : InteractionUI
 {
     public UnityEvent SolveSuccess;
     public UnityEvent SolveFail;
@@ -13,12 +13,16 @@ public class QuestionUI : MonoBehaviour
     [SerializeField] private Image _problemImage;
     [SerializeField] private TMP_InputField _answerTxt;
 
-    private void OnEnable()
+    private void Start()
+    {
+        AddDic();
+        Set();
+    }
+    private void Set()
     {
         _problem = GameManager.instance.GetRandomProblem();
         SetProblem();
     }
-
     private void SetProblem()
     {
         _problemImage.rectTransform.sizeDelta = new Vector2(_problem.Width, _problem.Height);
@@ -31,5 +35,10 @@ public class QuestionUI : MonoBehaviour
             SolveSuccess?.Invoke();
         else
             SolveFail?.Invoke();
+    }
+
+    public override void AddDic()
+    {
+        InteractionManager.instance.InteractionUIDic.Add(MyType, this);
     }
 }

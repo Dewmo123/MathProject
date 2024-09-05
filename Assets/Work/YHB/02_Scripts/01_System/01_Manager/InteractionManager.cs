@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class PlayerInteractionUI : MonoBehaviour
+public enum UIType
 {
-    public static PlayerInteractionUI instance = null;
+    Problem,
+    Totem,
+}
+public class InteractionManager : MonoBehaviour
+{
+    public static InteractionManager instance = null;
+
+    public Dictionary<UIType, InteractionUI> InteractionUIDic;
 
     [Header("FKeySet")]
     [Tooltip("중앙에서 얼마나 올릴지 여부입니다.")]
@@ -24,6 +30,7 @@ public class PlayerInteractionUI : MonoBehaviour
 
     [HideInInspector] public Dictionary<string, InteractionObjectInfoSo> _interactionObjectInfo;
 
+
     private Camera mainCam;
     private TextMeshProUGUI _bigTitleText;
 
@@ -31,7 +38,6 @@ public class PlayerInteractionUI : MonoBehaviour
     {
         Initialize();
     }
-
     private void Update()
     {
         GetPlayerPos();
@@ -48,7 +54,7 @@ public class PlayerInteractionUI : MonoBehaviour
         {
             Debug.LogWarning($"{gameObject.name} can't find player. So, You have to put {gameObject.name}'s interactor");
         }
-
+        InteractionUIDic = new Dictionary<UIType, InteractionUI>();
         _interactionObjectInfo = new();
         mainCam = Camera.main;
         _bigTitleText = _bigTitleImage.rectTransform.Find("Text").GetComponent<TextMeshProUGUI>();

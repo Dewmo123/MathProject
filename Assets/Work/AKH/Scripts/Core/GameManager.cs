@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private List<ProblemSO> problems;
     public bool isUI { get; private set; } = false;
+    public bool isInteractionUI { get; private set; } = false;
     private Player _player;
     public Player Player
     {
@@ -40,5 +41,8 @@ public class GameManager : MonoBehaviour
     {
         isUI = value;
     }
-
+    public void SetInteractionUI(bool value)
+    {
+        isInteractionUI = value;
+    }
 }

@@ -40,4 +40,8 @@ public abstract class MoveUI : MonoBehaviour
     {
         moveCnt.OnvalueChanged -= HandleCnt;
     }
+    public void IncreaseCnt()
+    {
+        moveCnt.Value++;
+    }
 }

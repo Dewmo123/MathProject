@@ -47,7 +47,7 @@ public class Player : Agent
     }
     private void ChangeAxeState(InputAction.CallbackContext context)
     {
-        if (GameManager.instance.isUI) return;
+        if (GameManager.instance.isUI||GameManager.instance.isInteractionUI) return;
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         HandleSpriteFlip(mouse);
         StateMachine.ChangeState(PlayerEnum.Axe);
@@ -55,11 +55,22 @@ public class Player : Agent
 
     private void Update()
     {
+        Move();
+        StateMachine.CurrentState.UpdateState();
+    }
+
+    private void Move()
+    {
+        if (GameManager.instance.isInteractionUI)
+        {
+            StateMachine.ChangeState(PlayerEnum.Idle);
+            return;
+        }
         Vector2 input = playerInput.Input.Move.ReadValue<Vector2>();
         movementCompo.SetMovement(input * _speed);
         HandleSpriteFlip(input);
-        StateMachine.CurrentState.UpdateState();
     }
+
     public override void HandleSpriteFlip(Vector2 dir)
     {
         if(isStop) return;

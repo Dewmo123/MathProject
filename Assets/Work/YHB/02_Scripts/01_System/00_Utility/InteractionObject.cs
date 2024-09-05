@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 enum Shape
 {
@@ -31,6 +33,7 @@ public class InteractionObject : MonoBehaviour
     [Tooltip("해당 오브젝트의 So")]
     [SerializeField] private InteractionObjectInfoSo _interactionObjectInfo;
 
+    [SerializeField] private UIType _type;
     #region SoSynchronization
 
     [Header("So Setting")]
@@ -64,8 +67,17 @@ public class InteractionObject : MonoBehaviour
     {
         _position.x = transform.position.x + _movePosition.x; // 좌표 초기화
         _position.y = transform.position.y + _movePosition.y;
+        if (_canInteractionSet)
+            GameManager.instance.Player.playerInput.Input.Interaction.performed += HandleInteraction;
+        InteractionManager.instance.InteractionInfoAdd(_interactionObjectInfo);
+    }
 
-        PlayerInteractionUI.instance.InteractionInfoAdd(_interactionObjectInfo);
+    private void HandleInteraction(InputAction.CallbackContext context)
+    {
+        if (context.performed&&_canInteraction)
+        {
+            InteractionManager.instance.InteractionUIDic[_type].IncreaseCnt();
+        }
     }
 
     public void ChackInteraction()
@@ -83,12 +95,12 @@ public class InteractionObject : MonoBehaviour
 
         if (_enterCollision && !_canInteraction) // 인터렉션 가능 (범위에 들어옴)
         {
-            PlayerInteractionUI.instance.FadeInteractionUI(_interactionObjectInfo._code);
+            InteractionManager.instance.FadeInteractionUI(_interactionObjectInfo._code);
             _canInteraction = true;
         }
         else if (!_enterCollision && _canInteraction) // 인터렉션 불가 (범위에서 벗어남)
         {
-            PlayerInteractionUI.instance.OutFadeInteractionUI(_interactionObjectInfo._code);
+            InteractionManager.instance.OutFadeInteractionUI(_interactionObjectInfo._code);
             _canInteraction = false;
         }
     }

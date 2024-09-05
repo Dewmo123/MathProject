@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebfd4a7d-f310-4c11-9772-b0e7e82019a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""UI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5dcdcc7a-1413-42fe-bb22-48e29010fecc"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Input_Move = m_Input.FindAction("Move", throwIfNotFound: true);
         m_Input_Axe = m_Input.FindAction("Axe", throwIfNotFound: true);
         m_Input_UI = m_Input.FindAction("UI", throwIfNotFound: true);
+        m_Input_Interaction = m_Input.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Input_Move;
     private readonly InputAction m_Input_Axe;
     private readonly InputAction m_Input_UI;
+    private readonly InputAction m_Input_Interaction;
     public struct InputActions
     {
         private @PlayerInput m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Input_Move;
         public InputAction @Axe => m_Wrapper.m_Input_Axe;
         public InputAction @UI => m_Wrapper.m_Input_UI;
+        public InputAction @Interaction => m_Wrapper.m_Input_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @UI.started += instance.OnUI;
             @UI.performed += instance.OnUI;
             @UI.canceled += instance.OnUI;
+            @Interaction.started += instance.OnInteraction;
+            @Interaction.performed += instance.OnInteraction;
+            @Interaction.canceled += instance.OnInteraction;
         }
 
         private void UnregisterCallbacks(IInputActions instance)
@@ -245,6 +271,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @UI.started -= instance.OnUI;
             @UI.performed -= instance.OnUI;
             @UI.canceled -= instance.OnUI;
+            @Interaction.started -= instance.OnInteraction;
+            @Interaction.performed -= instance.OnInteraction;
+            @Interaction.canceled -= instance.OnInteraction;
         }
 
         public void RemoveCallbacks(IInputActions instance)
@@ -267,5 +296,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAxe(InputAction.CallbackContext context);
         void OnUI(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }
