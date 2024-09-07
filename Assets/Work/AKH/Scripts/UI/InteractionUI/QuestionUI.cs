@@ -16,11 +16,10 @@ public class QuestionUI : InteractionUI
     private void Start()
     {
         AddDic();
-        Set();
     }
-    private void Set()
+    public void Set(DiffucultEnum type)
     {
-        _problem = GameManager.instance.GetRandomProblem();
+        _problem = GameManager.instance.GetRandomProblem(type);
         SetProblem();
     }
     private void SetProblem()

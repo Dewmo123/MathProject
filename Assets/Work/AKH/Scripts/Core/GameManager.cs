@@ -1,3 +1,4 @@
+using SerializableDictionary.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private List<ProblemSO> problems;
+    public SerializableDictionary<DiffucultEnum, List<ProblemSO>> problemDic;
     public bool isUI { get; private set; } = false;
     public bool isInteractionUI { get; private set; } = false;
     private Player _player;
@@ -32,10 +34,10 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
     }
-    public ProblemSO GetRandomProblem()
+    public ProblemSO GetRandomProblem(DiffucultEnum type)
     {
-        int num = UnityEngine.Random.Range(0, problems.Count);
-        return problems[num];
+        int num = UnityEngine.Random.Range(0, problemDic.Dictionary[type].Count);
+        return problemDic.Dictionary[type][num];
     }
     public void SetUI(bool value)
     {
