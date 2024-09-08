@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+        foreach(var item in problems)
+        {
+            if (!problemDic.Dictionary[item.diffucult].Contains(item))
+                problemDic.Dictionary[item.diffucult].Add(item);
+        }
     }
     public ProblemSO GetRandomProblem(DiffucultEnum type)
     {
