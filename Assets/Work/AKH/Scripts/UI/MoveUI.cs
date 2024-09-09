@@ -9,8 +9,11 @@ using UnityEngine.UI;
 public abstract class MoveUI : MonoBehaviour
 {
     protected NotifyValue<int> moveCnt;
+    public int MoveCnt => moveCnt.Value;
+
     protected float time = 0.3f;
     protected RectTransform rTransform;
+
     [SerializeField] protected int _firstPos;
     [SerializeField] protected int _secondPos;
     protected virtual void Awake()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad4e09558523f148a397cdcf7c06022, type: 3}
   m_Name: Problem1 1
   m_EditorClassIdentifier: 
-  diffucult: 0
+  diffucult: 1
   Question: {fileID: -2011788806, guid: 242ddea8e4a7a5b4dafd7640465c8142, type: 3}
   Answer: 1
   Width: 1200
