@@ -7,6 +7,10 @@ public abstract class InteractionUI : MoveUI
 {
     [field:SerializeField]public UIType MyType { get; protected set; }
     public abstract void AddDic();
+    public virtual void Start()
+    {
+        AddDic();
+    }
     protected override void HandleCnt(int prev, int next)
     {
         if (next == 1)

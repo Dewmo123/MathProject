@@ -8,6 +8,7 @@ public enum UIType
 {
     Problem,
     Totem,
+    Table,
 }
 public class InteractionManager : MonoBehaviour
 {
