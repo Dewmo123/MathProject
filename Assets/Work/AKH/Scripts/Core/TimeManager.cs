@@ -22,7 +22,7 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-        DayCnt.Value = 1;
+        DayCnt = new NotifyValue<int>(1);
         _waitSleep = new WaitForSeconds(_sleepTime);
         DayCnt.OnvalueChanged += HandleDayChange;
     }

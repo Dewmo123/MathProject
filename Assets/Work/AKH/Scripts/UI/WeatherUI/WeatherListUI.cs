@@ -16,7 +16,7 @@ public class WeatherListUI : MonoBehaviour
     {
         foreach(var UI in weatherList)
         {
-            UI.curWeather.Value = WeatherManager.instance.GetNextWeather();
+            UI.curWeather.Value = GameManager.instance.GetNextWeather();
         }
     }
 
