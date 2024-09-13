@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c03a1dc083d06d49a529b46c49f430d, type: 3}
   m_Name: Cloth2
   m_EditorClassIdentifier: 
+  clothName: "\uCC9C \uC637"
   clothImage: {fileID: -1561108099, guid: 94939fa41a0fd124eba8cc2c09ee5bd3, type: 3}
   decHealthPerSec: 0.7
   decWaterPerSec: 0.7
+  leatherCount: 35
+  durability: 2
+  info: "\uCD08\uB2F9 \uCCB4\uB825, \uC218\uBD84 \uAC10\uC18C\uB7C9 30% \uAC10\uC18C"

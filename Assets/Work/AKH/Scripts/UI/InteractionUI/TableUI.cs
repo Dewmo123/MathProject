@@ -5,18 +5,21 @@ using UnityEngine.UI;
 
 public class TableUI : InteractionUI
 {
-    public ClothSO CurCloth { get; private set; }
-    [SerializeField] private ClothSO _noneCloth;
-    [SerializeField] private Image _clothImage;
+    private ClothUI _coreCloth;
+    private ItemSO _leather;
     protected override void Awake()
     {
         base.Awake();
-        CurCloth = _noneCloth;
+        _coreCloth = GetComponentInChildren<ClothUI>();
+        _leather = GameManager.instance.GetItemSO("Leather");
     }
     public void ChangeCloth(ClothSO cloth)
     {
-        CurCloth = cloth;
-        _clothImage.sprite = cloth.clothImage;
+        if (_leather.cnt.Value > cloth.leatherCount)
+        {
+            _leather.cnt.Value -= cloth.leatherCount;
+            _coreCloth.SetCurCloth(cloth);
+        }
     }
     public override void AddDic()
     {

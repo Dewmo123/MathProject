@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c03a1dc083d06d49a529b46c49f430d, type: 3}
   m_Name: None
   m_EditorClassIdentifier: 
-  clothImage: {fileID: 79623817, guid: 94939fa41a0fd124eba8cc2c09ee5bd3, type: 3}
+  clothName: 
+  clothImage: {fileID: 990235358, guid: 94939fa41a0fd124eba8cc2c09ee5bd3, type: 3}
   decHealthPerSec: 1
   decWaterPerSec: 1
+  leatherCount: 0
+  durability: 999
+  info: 

@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float _hitTime;
     [SerializeField] private WeatherUI _coreWeatherCompo;
-    [SerializeField] private TableUI _tableCompo;
+    [SerializeField] private ClothUI _coreClothCompo;
 
     private WeatherSO _curWeather;
     private ClothSO _curCloth;
@@ -61,12 +61,13 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P)) TimeManager.instance.DayCnt.Value++;
         if (!TimeManager.instance.isTimeStop)
         {
             if (_currentTime >= _hitTime && _player != null)
             {
                 _curWeather = _coreWeatherCompo.curWeather.Value;
-                _curCloth = _tableCompo.CurCloth;
+                _curCloth = _coreClothCompo.CurCloth.Value;
                 _currentTime = 0;
                 _player.healthCompo.ChangeValue(_curWeather.healthPerSec*_curCloth.decHealthPerSec);
                 _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
@@ -93,6 +94,14 @@ public class GameManager : MonoBehaviour
     {
         cnt = next - 2;
         _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % 57];
+    }
+    public ItemSO GetItemSO(string name)
+    {
+        foreach(ItemSO item in items)
+        {
+            if (item.itemName == name) return item;
+        }
+        return default;
     }
     public void SetUI(bool value)
     {
