@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class TableUI : InteractionUI
 {
+    [SerializeField] private SpriteRenderer _houseRenderer;
     private ClothUI _coreCloth;
     private ItemSO _leather;
+    private ItemSO _wood;
+    private ItemSO _rock;
     protected override void Awake()
     {
         base.Awake();
         _coreCloth = GetComponentInChildren<ClothUI>();
         _leather = GameManager.instance.GetItemSO("Leather");
+        _wood = GameManager.instance.GetItemSO("Wood");
+        _rock = GameManager.instance.GetItemSO("Rock");
     }
     public void ChangeCloth(ClothSO cloth)
     {
@@ -19,6 +24,15 @@ public class TableUI : InteractionUI
         {
             _leather.cnt.Value -= cloth.leatherCount;
             _coreCloth.SetCurCloth(cloth);
+        }
+    }
+    public void ChangeHouse(HouseSO house)
+    {
+        if (house.woodCount < _wood.cnt.Value && house.rockCount < _rock.cnt.Value)
+        {
+            _wood.cnt.Value -= house.woodCount;
+            _rock.cnt.Value -= house.rockCount;
+
         }
     }
     public override void AddDic()
