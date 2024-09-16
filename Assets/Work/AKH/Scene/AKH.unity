@@ -174,8 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facea0a515e4e7944aec63fe75520de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurCloth:
-    _value: {fileID: 0}
   _clothImage: {fileID: 1122486517}
   _durabilityTxt: {fileID: 2065032733}
   _noneCloth: {fileID: 11400000, guid: 775698b4eaf29da439701df8b225a2f5, type: 2}
@@ -648,7 +646,7 @@ GameObject:
   - component: {fileID: 150987406}
   - component: {fileID: 150987407}
   m_Layer: 5
-  m_Name: Cloth1
+  m_Name: House1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,13 +683,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 150987405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d74ce9a5e730474d80b3a81bf8ec6f6, type: 3}
+  m_Script: {fileID: 11500000, guid: da71f34236f7ce244b7210503f9b5787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloth: {fileID: 11400000, guid: 50b61f9fec693974ab8f52125fe8c45b, type: 2}
-  _goodsInfo: {fileID: 956464898}
-  _price: {fileID: 709533700}
-  _image: {fileID: 0}
 --- !u!1 &180861660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,7 +4089,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c3aac43ff0133847a212d2e7f58289e, type: 2}
   _hitTime: 0.3
   _coreWeatherCompo: {fileID: 546543438}
-  _coreClothCompo: {fileID: 11802999}
   <weathers>k__BackingField:
   - {fileID: 11400000, guid: 9b29095166e635b459b37a3a9b74dd2c, type: 2}
   - {fileID: 11400000, guid: 0274588fb56184b459467fe4cb90b342, type: 2}
@@ -4103,6 +4096,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a79d6b03d52144d488cc75f56e804453, type: 2}
   - {fileID: 11400000, guid: d557c799c4d3b65449f556fc6b56368b, type: 2}
   curWeathers: []
+  CurCloth:
+    _value: {fileID: 0}
+  CurHouse:
+    _value: {fileID: 0}
 --- !u!1 &778545169
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,6 +6393,7 @@ MonoBehaviour:
   _firstPos: 500
   _secondPos: 1797
   <MyType>k__BackingField: 2
+  _houseRenderer: {fileID: 0}
 --- !u!1 &1165372444
 GameObject:
   m_ObjectHideFlags: 0
@@ -10628,19 +10626,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2009732809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1152981477}
-        m_TargetAssemblyTypeName: TableUI, Assembly-CSharp
-        m_MethodName: ChangeCloth
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 50b61f9fec693974ab8f52125fe8c45b, type: 2}
-          m_ObjectArgumentAssemblyTypeName: ClothSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2009732809
 MonoBehaviour:
   m_ObjectHideFlags: 0

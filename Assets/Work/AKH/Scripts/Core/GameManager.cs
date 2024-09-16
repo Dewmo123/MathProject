@@ -31,13 +31,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float _hitTime;
     [SerializeField] private WeatherUI _coreWeatherCompo;
-    [SerializeField] private ClothUI _coreClothCompo;
 
     private WeatherSO _curWeather;
-    private ClothSO _curCloth;
 
     [field: SerializeField] public List<WeatherSO> weathers { get; private set; }
     public List<WeatherSO> curWeathers;
+
+    public NotifyValue<ClothSO> CurCloth = new NotifyValue<ClothSO>();
+    public NotifyValue<HouseSO> CurHouse = new NotifyValue<HouseSO>();
 
     private float _currentTime;
     private int cnt = -1;
@@ -67,11 +68,11 @@ public class GameManager : MonoBehaviour
             if (_currentTime >= _hitTime && _player != null)
             {
                 _curWeather = _coreWeatherCompo.curWeather.Value;
-                _curCloth = _coreClothCompo.CurCloth.Value;
+               
                 _currentTime = 0;
-                _player.healthCompo.ChangeValue(_curWeather.healthPerSec*_curCloth.decHealthPerSec);
+                _player.healthCompo.ChangeValue(_curWeather.healthPerSec*CurCloth.Value.decHealthPerSec);
                 _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
-                _player.waterCompo.ChangeValue(_curWeather.waterPerSec * _curCloth.decWaterPerSec);
+                _player.waterCompo.ChangeValue(_curWeather.waterPerSec * CurCloth.Value.decWaterPerSec);
             }
             _currentTime += Time.deltaTime;
         }
