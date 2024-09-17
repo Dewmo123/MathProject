@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     [SerializeField] private List<ProblemSO> problems;
     public SerializableDictionary<DiffucultEnum, List<ProblemSO>> problemDic;
     public bool isUI { get; private set; } = false;
@@ -116,5 +115,9 @@ public class GameManager : MonoBehaviour
     {
         cnt++;
         return curWeathers[cnt % 57];
+    }
+    public void SetHouseSO(HouseSO house)
+    {
+        CurHouse.Value = house;
     }
 }

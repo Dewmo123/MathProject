@@ -32,7 +32,8 @@ public class TableUI : InteractionUI
         {
             _wood.cnt.Value -= house.woodCount;
             _rock.cnt.Value -= house.rockCount;
-
+            GameManager.instance.SetHouseSO(house);
+            _houseRenderer.sprite = house.houseImage;
         }
     }
     public override void AddDic()
