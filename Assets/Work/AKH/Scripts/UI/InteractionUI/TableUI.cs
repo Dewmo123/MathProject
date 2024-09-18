@@ -20,7 +20,7 @@ public class TableUI : InteractionUI
     }
     public void ChangeCloth(ClothSO cloth)
     {
-        if (_leather.cnt.Value > cloth.leatherCount)
+        if (cloth != GameManager.instance.CurCloth.Value && _leather.cnt.Value > cloth.leatherCount)
         {
             _leather.cnt.Value -= cloth.leatherCount;
             _coreCloth.SetCurCloth(cloth);
@@ -28,7 +28,7 @@ public class TableUI : InteractionUI
     }
     public void ChangeHouse(HouseSO house)
     {
-        if (house.woodCount < _wood.cnt.Value && house.rockCount < _rock.cnt.Value)
+        if (house != GameManager.instance.CurHouse.Value && house.woodCount < _wood.cnt.Value && house.rockCount < _rock.cnt.Value)
         {
             _wood.cnt.Value -= house.woodCount;
             _rock.cnt.Value -= house.rockCount;

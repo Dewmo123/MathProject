@@ -7,7 +7,7 @@ public class HouseSO : ScriptableObject
 {
     public string houseName;
     public Sprite houseImage;
-    public int decDayHealth;
+    public float decDayHealth;
     public int woodCount;
     public int rockCount;
     public string info;

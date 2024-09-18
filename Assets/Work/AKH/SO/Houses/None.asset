@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be31d3798650a2c4c875ab259e71e226, type: 3}
-  m_Name: House2
+  m_Name: None
   m_EditorClassIdentifier: 
-  houseName: "\uC9D1"
-  houseImage: {fileID: 21300000, guid: 0afc7cd84f19b5d498d0e4212f032fde, type: 3}
-  decDayHealth: 1.25
-  woodCount: 20
-  rockCount: 40
-  info: "\uCDE8\uCE68 \uC2DC \uCCB4\uB825 \uAC10\uC18C\uB7C9 25% \uAC10\uC18C"
+  houseName: "\uC9D1 \uD130"
+  houseImage: {fileID: 21300000, guid: 4d36033ecd1fc024f925bbda6bcbccff, type: 3}
+  decDayHealth: 1
+  woodCount: 0
+  rockCount: 0
+  info: "\uAE30\uBCF8 \uC9D1\uC774\uB2E4"

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   houseName: "\uD5C8\uB984\uD55C \uC9D1"
   houseImage: {fileID: 21300000, guid: 4c8bd7738dce2ec4089cf75dba7f47a6, type: 3}
-  decDayHealth: 10
+  decDayHealth: 1.1
   woodCount: 20
   rockCount: 40
-  info: "\uCCB4\uB825 \uAC10\uC18C\uB7C9 10 \uAC10\uC18C"
+  info: "\uCDE8\uCE68 \uC2DC \uCCB4\uB825 \uAC10\uC18C\uB7C9 10% \uAC10\uC18C"
