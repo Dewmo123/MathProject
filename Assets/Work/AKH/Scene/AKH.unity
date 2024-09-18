@@ -265,7 +265,7 @@ MonoBehaviour:
         m_MethodName: ChangeHouse
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 933555945dfcc3d4c97e3da4320a90b2, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: a60c1677117cec4469ba4b4697ea5c9b, type: 2}
           m_ObjectArgumentAssemblyTypeName: HouseSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2669,6 +2669,7 @@ Transform:
   m_Children:
   - {fileID: 1998410522}
   - {fileID: 1389384829}
+  - {fileID: 1204088973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &468546955
@@ -7429,6 +7430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204088973}
   - component: {fileID: 1204088972}
+  - component: {fileID: 1204088974}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -7496,13 +7498,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204088971}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.1, y: -1.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.023774, y: -1.9898157, z: -0.024750598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 462652232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204088974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204088971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1ef21af4cb97b40b28aa4ff9e69f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _shape: 1
+  _movePosition: {x: 0, y: 0}
+  _size: {x: 2, y: 2}
+  _interactionObjectInfo: {fileID: 11400000, guid: 3a970562aa5ac7d47bf50b49096d54b0, type: 2}
+  _type: 3
+  _canInteractionSet: 1
+  _titleSet: 1
+  _bigTitleSet: 0
+  _strSet: "\uC9D1"
 --- !u!1 &1207752025
 GameObject:
   m_ObjectHideFlags: 0
@@ -9597,7 +9623,7 @@ MonoBehaviour:
         m_MethodName: ChangeHouse
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 933555945dfcc3d4c97e3da4320a90b2, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: e2543a0e8d84dd94a98803272a5d33fd, type: 2}
           m_ObjectArgumentAssemblyTypeName: HouseSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13442,6 +13468,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7897342161277198464, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f9ea01a8282dc794c8647ae3d53f2876, type: 2}
+    - target: {fileID: 7897342161277198464, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3343106513212194144, guid: f9ea01a8282dc794c8647ae3d53f2876, type: 2}
+    - target: {fileID: 7897342161277198464, guid: 9bca9fd41061f8746b9e22deb5446651, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13513,7 +13551,6 @@ SceneRoots:
   - {fileID: 678936019}
   - {fileID: 1066168399}
   - {fileID: 665256124}
-  - {fileID: 1204088973}
   - {fileID: 480240403208311384}
   - {fileID: 8890465707467125368}
   - {fileID: 462652232}
