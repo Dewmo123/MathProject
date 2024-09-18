@@ -74,6 +74,11 @@ public class InteractionObject : MonoBehaviour
 
     private void HandleInteraction(InputAction.CallbackContext context)
     {
+        if(context.performed && _canInteraction&&_type == UIType.Sleep)
+        {
+            TimeManager.instance.DayCnt.Value++;
+            return;
+        }
         if (context.performed&&_canInteraction&&InteractionManager.instance.InteractionUIDic[_type].MoveCnt==0&&!GameManager.instance.isInteractionUI)
         {
             InteractionManager.instance.InteractionUIDic[_type].IncreaseCnt();

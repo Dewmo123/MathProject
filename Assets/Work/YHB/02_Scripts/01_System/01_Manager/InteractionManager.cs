@@ -9,6 +9,7 @@ public enum UIType
     Problem,
     Totem,
     Table,
+    Sleep
 }
 public class InteractionManager : MonoBehaviour
 {

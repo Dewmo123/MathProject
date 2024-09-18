@@ -4,13 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClothInfoUI : MonoBehaviour
+public class ClothInfoUI : GoodsInfoUI
 {
     [SerializeField] private ClothSO cloth;
-    [SerializeField] private TextMeshProUGUI _goodsInfo;
-    [SerializeField] private TextMeshProUGUI _price;
-    [SerializeField] private Image _image; 
-    private void Awake()
+    private void Start()
     {
         _goodsInfo.text = cloth.clothName + "\n" + cloth.info;
         _price.text = $"Ãµ {cloth.leatherCount}°³";

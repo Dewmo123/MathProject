@@ -19,16 +19,27 @@ public class TimeManager : MonoBehaviour
     private WaitForSeconds _waitSleep;
     [SerializeField] private float _sleepTime;
 
+    public NotifyValue<int> min;
+    public NotifyValue<int> hour;
+    [field: SerializeField] public float changeMinVal { get; private set; } = 0;
+    public float curTime { get; private set; } = 0;
+    [SerializeField]private TextMeshProUGUI _timeTxt;
+
     private void Awake()
     {
         if (instance == null) instance = this;
         DayCnt = new NotifyValue<int>(1);
         _waitSleep = new WaitForSeconds(_sleepTime);
         DayCnt.OnvalueChanged += HandleDayChange;
+        min.OnvalueChanged += HandleMinChange;
+        hour.OnvalueChanged += HandleHourChange;
+        hour.Value = 8;
     }
     private void HandleDayChange(int prev, int next)
     {
         _dayCntTxt.text = $"Day : {next}";
+        min.Value = 0;
+        hour.Value = 8;
         StartCoroutine(Sleep());
     }
     private IEnumerator Sleep()
@@ -39,6 +50,38 @@ public class TimeManager : MonoBehaviour
         _fadePanel.DOFade(0f, _sleepTime / 2);
         GameManager.instance.Player.transform.position = _bedPos.position;
         SetTimeStop(false);
+    }
+    private void HandleHourChange(int prev, int next)
+    {
+        if (next == 24)
+        {
+            DayCnt.Value++;
+            hour.Value = 8;
+        }
+        _timeTxt.text = (hour.Value < 10 ? "0" : "") + $"{next}:{min.Value}" + (min.Value == 0 ? "0" : "");
+    }
+
+    private void HandleMinChange(int prev, int next)
+    {
+        if (next == 60)
+        {
+            min.Value = 0;
+            hour.Value++;
+            next = 0;
+        }
+        _timeTxt.text = (hour.Value < 10 ? "0" : "") + $"{hour.Value}:{next}" + (next == 0 ? "0" : "");
+    }
+    private void Update()
+    {
+        if (!isTimeStop)
+        {
+            curTime += Time.deltaTime;
+            if (curTime >= changeMinVal)
+            {
+                min.Value += 10;
+                curTime = 0;
+            }
+        }
     }
     public void SetTimeStop(bool value)
     {

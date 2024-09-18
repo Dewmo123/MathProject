@@ -15,7 +15,7 @@ MonoBehaviour:
   cnt:
     _value: 10
   itemName: Meat
-  sprite: {fileID: 21300000, guid: cf7832a9bf21583408d569c052862e23, type: 3}
+  sprite: {fileID: -677989541, guid: a2dcee93853562c4587ae315191d353b, type: 3}
   canUse: 1
   restoreHp: 15
   restoreHungry: 0

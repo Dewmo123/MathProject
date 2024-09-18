@@ -35,6 +35,10 @@ public abstract class Stat : MonoBehaviour
         if (value <= 0)
             OnDeadEvent?.Invoke();
     }
+    public void Multiply(float val)
+    {
+        value *= val;
+    }
     public float GetNormalizedValue()
     {
         return value / _maxValue;

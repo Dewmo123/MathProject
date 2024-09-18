@@ -47,9 +47,12 @@ public class Player : Agent
     }
     private void ChangeAxeState(InputAction.CallbackContext context)
     {
-        if (GameManager.instance.isUI||GameManager.instance.isInteractionUI) return;
+        if (GameManager.instance.isUI || GameManager.instance.isInteractionUI) return;
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        HandleSpriteFlip(mouse);
+        if (mouse.x > transform.position.x)
+            HandleSpriteFlip(Vector2.one);
+        else
+            HandleSpriteFlip(-Vector2.one);
         StateMachine.ChangeState(PlayerEnum.Axe);
     }
 
@@ -73,7 +76,7 @@ public class Player : Agent
 
     public override void HandleSpriteFlip(Vector2 dir)
     {
-        if(isStop) return;
+        if (isStop) return;
         bool isRight = IsFacingRight();
         if (dir.x < 0 && isRight)
         {
