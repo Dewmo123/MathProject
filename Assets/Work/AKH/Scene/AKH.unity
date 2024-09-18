@@ -13118,7 +13118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090208243069986910, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 5
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1090208243069986910, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -13230,7 +13230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986366646619431145, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6986366646619431145, guid: 903bc524fdc2be944a19adad8986177f, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
