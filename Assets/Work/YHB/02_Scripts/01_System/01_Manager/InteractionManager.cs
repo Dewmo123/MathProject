@@ -18,8 +18,10 @@ public class InteractionManager : MonoBehaviour
     public Dictionary<UIType, InteractionUI> InteractionUIDic;
 
     [Header("FKeySet")]
-    [Tooltip("중앙에서 얼마나 올릴지 여부입니다.")]
+    [Tooltip("플레이어에게서 얼마나 올릴지 여부입니다. RectTransform기준으로 하지마세요.")]
     [SerializeField] private float _upYPos = 200;
+    [Tooltip("플레이어에게서 얼마나 올릴지 여부입니다. RectTransform기준으로 하지마세요.")]
+    [SerializeField] private float _downYPos = 200;
     [Tooltip("F키가 뜰때 까지의 애니메이션의 한 과정의 시간입니다. (그냥 / 3한 값 ㄱㄱ)")]
     [SerializeField] private float _OnSecond = 0.5f;
 
@@ -82,8 +84,8 @@ public class InteractionManager : MonoBehaviour
     {
         Vector2 playerPos = mainCam.WorldToScreenPoint(_playerTrm.position);
 
-        _fKeyImage.position = new Vector2(playerPos.x, _fKeyImage.position.y);
-        _titleImage.position = new Vector2(playerPos.x, _titleImage.position.y);
+        _fKeyImage.position = new Vector2(playerPos.x, playerPos.y + _upYPos * 100);
+        _titleImage.position = new Vector2(playerPos.x, playerPos.y + _downYPos * 100);
     }
 
     public void FadeInteractionUI(string code)
