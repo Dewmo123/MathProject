@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   cnt:
-    _value: 10
+    _value: 4
   itemName: Meat
   sprite: {fileID: -677989541, guid: a2dcee93853562c4587ae315191d353b, type: 3}
   canUse: 1

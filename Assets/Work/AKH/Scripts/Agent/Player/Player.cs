@@ -39,7 +39,7 @@ public class Player : Agent
     public void SetDeadState()
     {
         StateMachine.ChangeState(PlayerEnum.Dead);
-    }
+    }   
     public void SetDead()
     {
         isStop = true;
