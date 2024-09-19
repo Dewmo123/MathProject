@@ -12,6 +12,9 @@ public class TimeManager : MonoBehaviour
 
     public NotifyValue<int> DayCnt;
 
+    [SerializeField] private int _fireTime;
+    public int curFireTime { get; private set; }
+
     [SerializeField] private TextMeshProUGUI _dayCntTxt;
     [SerializeField] private Image _fadePanel;
     [SerializeField] private Transform _bedPos;
@@ -23,7 +26,8 @@ public class TimeManager : MonoBehaviour
     public NotifyValue<int> hour;
     [field: SerializeField] public float changeMinVal { get; private set; } = 0;
     public float curTime { get; private set; } = 0;
-    [SerializeField]private TextMeshProUGUI _timeTxt;
+    [SerializeField] private TextMeshProUGUI _timeTxt;
+    [SerializeField] private TextMeshProUGUI _fireTimeTxt;
 
     private void Awake()
     {
@@ -69,6 +73,7 @@ public class TimeManager : MonoBehaviour
             hour.Value++;
             next = 0;
         }
+        _fireTimeTxt.text = (curFireTime / 60 < 10 ? "0" : "") + $"{curFireTime / 60}:{curFireTime % 60}" + (curFireTime % 60 == 0 ? "0" : "");
         _timeTxt.text = (hour.Value < 10 ? "0" : "") + $"{hour.Value}:{next}" + (next == 0 ? "0" : "");
     }
     private void Update()
@@ -78,6 +83,7 @@ public class TimeManager : MonoBehaviour
             curTime += Time.deltaTime;
             if (curTime >= changeMinVal)
             {
+                if (curFireTime > 0) curFireTime -= 10;
                 min.Value += 10;
                 curTime = 0;
             }
@@ -86,6 +92,10 @@ public class TimeManager : MonoBehaviour
     public void SetTimeStop(bool value)
     {
         isTimeStop = value;
+    }
+    public void Fire(int cnt)
+    {
+        curFireTime = cnt * _fireTime;
     }
     private void OnDestroy()
     {

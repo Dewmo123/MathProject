@@ -16,5 +16,5 @@ MonoBehaviour:
   weatherName: "\uBE44"
   sprite: {fileID: 1794273872, guid: 708ff1a67e5be4d46a9bcb3eefd486a0, type: 3}
   healthPerSec: 0
-  hungryPerSec: 0
-  waterPerSec: 0
+  hungryPerSec: -0.02
+  waterPerSec: -0.04

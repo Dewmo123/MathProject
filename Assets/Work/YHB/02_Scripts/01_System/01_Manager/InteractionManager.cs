@@ -6,10 +6,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public enum UIType
 {
+    None,
     Problem,
     Totem,
     Table,
-    Sleep
+    Sleep,
+    Bonfire
 }
 public class InteractionManager : MonoBehaviour
 {

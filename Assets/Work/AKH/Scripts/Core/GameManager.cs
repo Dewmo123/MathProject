@@ -1,10 +1,6 @@
 using SerializableDictionary.Scripts;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +10,7 @@ public class GameManager : MonoBehaviour
     public SerializableDictionary<DiffucultEnum, List<ProblemSO>> problemDic;
     public bool isUI { get; private set; } = false;
     public bool isInteractionUI { get; private set; } = false;
+
     private Player _player;
     public Player Player
     {
@@ -28,17 +25,17 @@ public class GameManager : MonoBehaviour
     }
 
     [field: SerializeField] public List<ItemSO> items { get; private set; }
-
+    [SerializeField] private float _decHungryPerSec;
     [SerializeField] private float _hitTime;
     [SerializeField] private WeatherUI _coreWeatherCompo;
     [SerializeField] private float _whenDayChangedDecHealth;
-
     private WeatherSO _curWeather;
+
 
     [field: SerializeField] public List<WeatherSO> weathers { get; private set; }
     public List<WeatherSO> curWeathers;
 
-    [SerializeField]private HouseSO _noneHouse;
+    [SerializeField] private HouseSO _noneHouse;
     public NotifyValue<ClothSO> CurCloth = new NotifyValue<ClothSO>();
     public NotifyValue<HouseSO> CurHouse = new NotifyValue<HouseSO>();
     private float _currentTime;
@@ -61,7 +58,7 @@ public class GameManager : MonoBehaviour
         TimeManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
         _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1];
     }
-    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P)) TimeManager.instance.DayCnt.Value++;
@@ -70,10 +67,10 @@ public class GameManager : MonoBehaviour
             if (_currentTime >= _hitTime && _player != null)
             {
                 _curWeather = _coreWeatherCompo.curWeather.Value;
-               
+
                 _currentTime = 0;
-                _player.healthCompo.ChangeValue(_curWeather.healthPerSec*CurCloth.Value.decHealthPerSec);
-                _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec);
+                _player.healthCompo.ChangeValue(_curWeather.healthPerSec * CurCloth.Value.decHealthPerSec);
+                _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F));
                 _player.waterCompo.ChangeValue(_curWeather.waterPerSec * CurCloth.Value.decWaterPerSec);
             }
             _currentTime += Time.deltaTime;
@@ -97,11 +94,11 @@ public class GameManager : MonoBehaviour
     {
         cnt = next - 2;
         _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % _curWeatherNum];
-        _player.healthCompo.Multiply(_whenDayChangedDecHealth*CurHouse.Value.decDayHealth);
+        _player.healthCompo.Multiply(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
     }
     public ItemSO GetItemSO(string name)
     {
-        foreach(ItemSO item in items)
+        foreach (ItemSO item in items)
         {
             if (item.itemName == name) return item;
         }
@@ -124,4 +121,5 @@ public class GameManager : MonoBehaviour
     {
         CurHouse.Value = house;
     }
+
 }
