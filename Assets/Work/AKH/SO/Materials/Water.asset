@@ -15,8 +15,8 @@ MonoBehaviour:
   cnt:
     _value: 3
   itemName: Water
-  sprite: {fileID: 21300000, guid: f3732796e9a55df4a8caa4182b08c63a, type: 3}
-  canUse: 0
+  sprite: {fileID: 21300000, guid: f4df2a93fdd611242a775d4d2dad734c, type: 3}
+  canUse: 1
   restoreHp: 0
   restoreHungry: 0
   restoreWater: 0
