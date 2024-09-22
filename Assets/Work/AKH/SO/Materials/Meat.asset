@@ -15,11 +15,11 @@ MonoBehaviour:
   cnt:
     _value: 4
   itemName: Meat
-  sprite: {fileID: -677989541, guid: a2dcee93853562c4587ae315191d353b, type: 3}
+  sprite: {fileID: 21300000, guid: f034b733b2b9e174891129cbc2ad1c26, type: 3}
   canUse: 1
   restoreHp: 15
   restoreHungry: 0
   restoreWater: 0
   restoreTemperature: 0
-  canCook: 0
-  complete: {fileID: 0}
+  canCook: 1
+  complete: {fileID: 11400000, guid: 139dbf610e3413044908be31c3e1703a, type: 2}
