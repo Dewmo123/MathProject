@@ -30,6 +30,7 @@ public class InventorySlotUI : PlayerConnectUI
     private void HandleItemChanged(ItemSO prev, ItemSO next)
     {
         _item = next;
+        Debug.Log(next.itemName);
         if (next != null)
         {
             gameObject.SetActive(true);

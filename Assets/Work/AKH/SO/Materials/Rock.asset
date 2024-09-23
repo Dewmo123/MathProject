@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   cnt:
-    _value: 10
+    _value: 880
   itemName: "\uB3CC"
   sprite: {fileID: 21300000, guid: dd1a74fedb5ef414392562a6647f1302, type: 3}
   canUse: 0
@@ -21,5 +21,6 @@ MonoBehaviour:
   restoreHungry: 0
   restoreWater: 0
   restoreTemperature: 0
+  rockCount: 0
   canCook: 0
   complete: {fileID: 0}
