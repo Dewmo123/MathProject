@@ -18,7 +18,7 @@ public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager instance = null;
 
-    public Dictionary<UIType, InteractionUI> InteractionUIDic;
+    public Dictionary<UIType, InteractionUI> InteractionUIDic = new Dictionary<UIType, InteractionUI>();
 
     [Header("FKeySet")]
     [Tooltip("플레이어에게서 얼마나 올릴지 여부입니다. RectTransform기준으로 하지마세요.")]
@@ -61,7 +61,6 @@ public class InteractionManager : MonoBehaviour
         {
             Debug.LogWarning($"{gameObject.name} can't find player. So, You have to put {gameObject.name}'s interactor");
         }
-        InteractionUIDic = new Dictionary<UIType, InteractionUI>();
         _interactionObjectInfo = new();
         mainCam = Camera.main;
         _bigTitleText = _bigTitleImage.rectTransform.Find("Text").GetComponent<TextMeshProUGUI>();

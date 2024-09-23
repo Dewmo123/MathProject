@@ -14,6 +14,7 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private int _fireTime;
     public int curFireTime { get; private set; }
+    public bool isFire => curFireTime > 0;
 
     [SerializeField] private TextMeshProUGUI _dayCntTxt;
     [SerializeField] private Image _fadePanel;

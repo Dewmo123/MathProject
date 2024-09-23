@@ -21,5 +21,6 @@ MonoBehaviour:
   restoreHungry: 0
   restoreWater: 0
   restoreTemperature: 0
+  rockCount: 1
   canCook: 1
   complete: {fileID: 11400000, guid: 9fdd94d396ce81e4db79fb92f9e18282, type: 2}

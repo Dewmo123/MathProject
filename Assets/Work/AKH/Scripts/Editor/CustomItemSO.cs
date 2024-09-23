@@ -13,6 +13,7 @@ public class CustomItemSO : Editor
     private SerializedProperty itemRestoreHungryProp;
     private SerializedProperty itemRestoreWaterProp;
     private SerializedProperty itemCanCookProp;
+    private SerializedProperty itemRockCountProp;
     private SerializedProperty itemCompleteProp;
     private void OnEnable()
     {
@@ -24,6 +25,7 @@ public class CustomItemSO : Editor
         itemRestoreHungryProp = serializedObject.FindProperty("restoreHungry");
         itemRestoreWaterProp = serializedObject.FindProperty("restoreWater");
         itemCanCookProp = serializedObject.FindProperty("canCook");
+        itemRockCountProp = serializedObject.FindProperty("rockCount");
         itemCompleteProp = serializedObject.FindProperty("complete");
     }
     public override void OnInspectorGUI()
@@ -38,6 +40,7 @@ public class CustomItemSO : Editor
             EditorGUILayout.PropertyField(itemRestoreHpProp);
             EditorGUILayout.PropertyField(itemRestoreHungryProp);
             EditorGUILayout.PropertyField(itemRestoreWaterProp);
+            EditorGUILayout.PropertyField(itemRockCountProp);
         }
         EditorGUILayout.PropertyField(itemCanCookProp);
         if (itemCanCookProp.boolValue)
