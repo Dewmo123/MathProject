@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DiffucultEnum
+public enum DifficultEnum
 {
     Easy,
     Medium,
@@ -11,7 +11,7 @@ public enum DiffucultEnum
 [CreateAssetMenu(menuName = "SO/Problem")]
 public class ProblemSO : ScriptableObject
 {
-    public DiffucultEnum diffucult;
+    public DifficultEnum diffucult;
     public Sprite Question;
     public string Answer;
     public int Width;

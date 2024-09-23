@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CookedMeat
   m_EditorClassIdentifier: 
   cnt:
-    _value: 2
-  itemName: CookedMeat
+    _value: 6
+  itemName: "\uC775\uD78C \uACE0\uAE30"
   sprite: {fileID: 21300000, guid: 5432900d7857c6a4eae3b4e784f2ac24, type: 3}
   canUse: 1
   restoreHp: 0
