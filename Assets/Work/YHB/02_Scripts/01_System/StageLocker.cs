@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 public class StageLocker : MonoBehaviour
 {
     [SerializeField] private LayerMask _layer;
+    [SerializeField] private InteractionObjectInfoSo _StageLockerSo;
     private TilemapCollider2D _tilemapCollider;
     private bool _canInteraction = false;
     private bool _canStageLock = false;
@@ -14,12 +15,23 @@ public class StageLocker : MonoBehaviour
     private void Awake()
     {
         _tilemapCollider = GetComponent<TilemapCollider2D>();
+        InteractionInfoAdd(_StageLockerSo);
     }
 
     private void Start()
     {
         GameManager.instance.Player.playerInput.Input.Interaction.performed += HandleInteraction;
 
+    }
+
+    public void InteractionInfoAdd(InteractionObjectInfoSo interObj)
+    {
+        foreach (InteractionObjectInfoSo item in InteractionManager.instance._interactionObjectInfo.Values)
+        {
+            if (item == interObj) return;
+        }
+
+        InteractionManager.instance._interactionObjectInfo.Add(interObj._code, interObj);
     }
 
     private void HandleInteraction(InputAction.CallbackContext context)
@@ -47,6 +59,7 @@ public class StageLocker : MonoBehaviour
         if (1 << collision.gameObject.layer == _layer)
         {
             _canInteraction = true;
+            InteractionManager.instance.FadeInteractionUI(_StageLockerSo._code);
         }
     }
 
@@ -55,7 +68,18 @@ public class StageLocker : MonoBehaviour
         if (1 << collision.gameObject.layer == _layer)
         {
             _canInteraction = false;
+            InteractionManager.instance.OutFadeInteractionUI(_StageLockerSo._code);
             ProblemPass();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
     }
 }
