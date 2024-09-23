@@ -13,9 +13,8 @@ public class QuestionUI : InteractionUI
     [SerializeField] private TMP_InputField _answerTxt;
 
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
         Solved += HandleSolved;
     }
 
