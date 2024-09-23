@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TotemUI : InteractionUI
@@ -9,7 +10,12 @@ public class TotemUI : InteractionUI
     private DifficultEnum _difficult;
     private Dictionary<ItemSO, int> _increasedItem = new Dictionary<ItemSO, int>();
     [SerializeField] private int _defaultRange;
-    [SerializeField] private GameObject _resultUI;
+    private SolvedResultUI _resultUI;
+    public override void Start()
+    {
+        base.Start();
+        _resultUI = InteractionManager.instance.InteractionUIDic[UIType.Solved] as SolvedResultUI;
+    }
     public void ShowQuestion(int type)
     {
         IncreaseCnt();
@@ -22,6 +28,7 @@ public class TotemUI : InteractionUI
     public void HandleSolved(bool val)
     {
         _question.Solved -= HandleSolved;
+        string message = "";
         if (val)
         {
             switch (_difficult)
@@ -36,18 +43,27 @@ public class TotemUI : InteractionUI
                     GetRandomItem(5);
                     break;
             }
-            _resultUI.SetActive(true);
+            foreach (var a in _increasedItem)
+                message += $"{a.Key.itemName} {a.Value} °³, ";
         }
+        _increasedItem.Clear();
+        _resultUI.IncreaseCnt();
+        _resultUI.SetResultTxt(val);
+        _resultUI.SetItemTxt(message);
         _question = null;
     }
 
     private void GetRandomItem(int range)
     {
-        for(int i = 0; i < range + _defaultRange; i++)
+        for (int i = 0; i < range + _defaultRange; i++)
         {
             int val = UnityEngine.Random.Range(_defaultRange, _defaultRange + range);
             ItemSO item = GameManager.instance.GetRandomItem();
-            _increasedItem.Add(item, val);
+            if (_increasedItem.ContainsKey(item))
+                _increasedItem[item] += val;
+            else
+                _increasedItem.Add(item, val);
+            item.cnt.Value += val;
         }
     }
 

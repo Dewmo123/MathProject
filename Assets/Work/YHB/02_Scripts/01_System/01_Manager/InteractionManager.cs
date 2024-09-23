@@ -11,7 +11,8 @@ public enum UIType
     Totem,
     Table,
     Sleep,
-    Bonfire
+    Bonfire,
+    Solved
 }
 public class InteractionManager : MonoBehaviour
 {

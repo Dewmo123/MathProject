@@ -20,7 +20,7 @@ public class ChooseWoodUI : MonoBehaviour
     private IEnumerator WaitGameManager()
     {
         yield return new WaitUntil(() => GameManager.instance != null);
-        _wood = GameManager.instance.GetItemSO("Wood");
+        _wood = GameManager.instance.GetItemSO("³ª¹«");
         _wood.cnt.OnvalueChanged += HandleWoodChanged;
         HandleWoodChanged(0, _wood.cnt.Value);
     }

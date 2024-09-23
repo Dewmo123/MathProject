@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   cnt:
-    _value: 960
-  itemName: Rock
+    _value: 10
+  itemName: "\uB3CC"
   sprite: {fileID: 21300000, guid: dd1a74fedb5ef414392562a6647f1302, type: 3}
   canUse: 0
   restoreHp: 0

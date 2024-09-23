@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   cnt:
-    _value: 2
-  itemName: Fish
+    _value: 13
+  itemName: "\uBB3C\uACE0\uAE30"
   sprite: {fileID: 21300000, guid: 7257a89f823fc7e46b0124da343cf1e2, type: 3}
   canUse: 1
   restoreHp: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cnt:
     _value: 3
-  itemName: Water
+  itemName: "\uBB3C"
   sprite: {fileID: 21300000, guid: f4df2a93fdd611242a775d4d2dad734c, type: 3}
   canUse: 1
   restoreHp: 0

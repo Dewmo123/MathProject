@@ -12,6 +12,7 @@ public class QuestionUI : InteractionUI
     [SerializeField] private Image _problemImage;
     [SerializeField] private TMP_InputField _answerTxt;
 
+
     public override void Start()
     {
         base.Start();
