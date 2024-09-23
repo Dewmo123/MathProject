@@ -23,7 +23,7 @@ public class QuestionUI : InteractionUI
         IncreaseCnt();
     }
 
-    public void Set(DiffucultEnum type)
+    public void Set(DifficultEnum type)
     {
         _problem = GameManager.instance.GetRandomProblem(type);
         SetProblem();
