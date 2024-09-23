@@ -10,6 +10,7 @@ public class ItemSO : ScriptableObject
 
     public bool canUse;
     public int restoreHp,restoreHungry,restoreWater,restoreTemperature;
+    public int rockCount;
     public bool canCook;
     public ItemSO complete;
 }

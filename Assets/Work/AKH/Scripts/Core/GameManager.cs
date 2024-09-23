@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private int _curWeatherNum;
     [SerializeField] private List<ProblemSO> problems;
-    public SerializableDictionary<DiffucultEnum, List<ProblemSO>> problemDic;
+    public SerializableDictionary<DifficultEnum, List<ProblemSO>> problemDic;
     public bool isUI { get; private set; } = false;
     public bool isInteractionUI { get; private set; } = false;
 
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             curWeathers.Add(weather);
         }
     }
-    public ProblemSO GetRandomProblem(DiffucultEnum type)
+    public ProblemSO GetRandomProblem(DifficultEnum type)
     {
         int num = UnityEngine.Random.Range(0, problemDic.Dictionary[type].Count);
         return problemDic.Dictionary[type][num];
@@ -103,6 +103,10 @@ public class GameManager : MonoBehaviour
             if (item.itemName == name) return item;
         }
         return default;
+    }
+    public ItemSO GetRandomItem()
+    {
+        return items[Random.Range(0, items.Count)];
     }
     public void SetUI(bool value)
     {
