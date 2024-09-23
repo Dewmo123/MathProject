@@ -11,12 +11,16 @@ public class TotemUI : InteractionUI
     private Dictionary<ItemSO, int> _increasedItem = new Dictionary<ItemSO, int>();
     [SerializeField] private int _defaultRange;
     private SolvedResultUI _resultUI;
-    public override void Start()
+    public void Start()
     {
-        base.Start();
+        StartCoroutine(WaitInteractionManager());
+    }
+    private IEnumerator WaitInteractionManager()
+    {
+        yield return null;
         _resultUI = InteractionManager.instance.InteractionUIDic[UIType.Solved] as SolvedResultUI;
     }
-    public void ShowQuestion(int type)
+        public void ShowQuestion(int type)
     {
         IncreaseCnt();
         _difficult = (DifficultEnum)type;

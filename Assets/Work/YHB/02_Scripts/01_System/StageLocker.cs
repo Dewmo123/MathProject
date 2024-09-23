@@ -22,6 +22,12 @@ public class StageLocker : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(WaitInteractionManager());
+    }
+
+    private IEnumerator WaitInteractionManager()
+    {
+        yield return null;
         GameManager.instance.Player.playerInput.Input.Interaction.performed += HandleInteraction;
         QuestionUI question = InteractionManager.instance.InteractionUIDic[UIType.Problem] as QuestionUI;
         question.Solved += HandleProblemResult;
