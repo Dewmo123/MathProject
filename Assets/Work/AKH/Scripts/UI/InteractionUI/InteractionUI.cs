@@ -7,8 +7,14 @@ public abstract class InteractionUI : MoveUI
 {
     [field:SerializeField]public UIType MyType { get; protected set; }
     public abstract void AddDic();
-    public virtual void Start()
+    protected override void Awake()
     {
+        base.Awake();
+        StartCoroutine(WaitInteractionManager());
+    }
+    private IEnumerator WaitInteractionManager()
+    {
+        yield return new WaitUntil(()=>InteractionManager.instance != null);
         AddDic();
     }
     protected override void HandleCnt(int prev, int next)
