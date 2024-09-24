@@ -1,4 +1,5 @@
 using SerializableDictionary.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,17 +28,17 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public List<ItemSO> items { get; private set; }
     [SerializeField] private float _decHungryPerSec;
     [SerializeField] private float _hitTime;
-    [SerializeField] private WeatherUI _coreWeatherCompo;
     [SerializeField] private float _whenDayChangedDecHealth;
-    private WeatherSO _curWeather;
+
 
 
     [field: SerializeField] public List<WeatherSO> weathers { get; private set; }
     public List<WeatherSO> curWeathers;
 
     [SerializeField] private HouseSO _noneHouse;
-    public NotifyValue<ClothSO> CurCloth = new NotifyValue<ClothSO>();
-    public NotifyValue<HouseSO> CurHouse = new NotifyValue<HouseSO>();
+    public NotifyValue<WeatherSO> CurWeather;
+    public NotifyValue<ClothSO> CurCloth;
+    public NotifyValue<HouseSO> CurHouse;
     private float _currentTime;
     private int cnt = -1;
 
@@ -47,41 +48,52 @@ public class GameManager : MonoBehaviour
             instance = this;
         SetWeathers();
         CurHouse.Value = _noneHouse;
+
         foreach (var item in problems)
         {
             if (!problemDic.Dictionary[item.diffucult].Contains(item))
                 problemDic.Dictionary[item.diffucult].Add(item);
         }
     }
+
+
     private void Start()
     {
         TimeManager.instance.DayCnt.OnvalueChanged += HandleDayChange;
-        _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1];
+        CurWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1];
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) TimeManager.instance.DayCnt.Value++;
+        ChangeStats();
+    }
+
+    private void ChangeStats()
+    {
         if (!TimeManager.instance.isTimeStop)
         {
             if (_currentTime >= _hitTime && _player != null)
             {
-                _curWeather = _coreWeatherCompo.curWeather.Value;
-
                 _currentTime = 0;
-                _player.healthCompo.ChangeValue(_curWeather.healthPerSec * CurCloth.Value.decHealthPerSec);
-                _player.hungryCompo.ChangeValue(_curWeather.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F));
-                _player.waterCompo.ChangeValue(_curWeather.waterPerSec * CurCloth.Value.decWaterPerSec);
+                _player.healthCompo.ChangeValue(CurWeather.Value.healthPerSec * CurCloth.Value.decHealthPerSec);
+                _player.hungryCompo.ChangeValue(CurWeather.Value.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F));
+                _player.waterCompo.ChangeValue(CurWeather.Value.waterPerSec * CurCloth.Value.decWaterPerSec);
             }
             _currentTime += Time.deltaTime;
         }
     }
+
     private void SetWeathers()
     {
         curWeathers = new List<WeatherSO>();
         for (int i = 1; i <= _curWeatherNum; i++)
         {
-            WeatherSO weather = weathers[UnityEngine.Random.Range(0, weathers.Count)];
+            int num = UnityEngine.Random.Range(0, weathers.Count + 3);
+            WeatherSO weather;
+            if (num >= weathers.Count)
+                weather = weathers[3];
+            else
+                weather = weathers[num];
             curWeathers.Add(weather);
         }
     }
@@ -93,7 +105,7 @@ public class GameManager : MonoBehaviour
     private void HandleDayChange(int prev, int next)
     {
         cnt = next - 2;
-        _coreWeatherCompo.curWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % _curWeatherNum];
+        CurWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % _curWeatherNum];
         _player.healthCompo.Multiply(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
     }
     public ItemSO GetItemSO(string name)

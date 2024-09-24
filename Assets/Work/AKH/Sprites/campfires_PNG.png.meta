@@ -1,0 +1,2491 @@
+fileFormatVersion: 2
+guid: a9ce43d6c6300464c8f3d18e0c4a3821
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: campfires_PNG_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 551
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f656da0dc2aed4397ed2711260a2f7
+      internalID: -1935680303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 523
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b10a8a1cb0175c4081e1185caf9ab94
+      internalID: -66478592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 523
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a616ec8288facd4d8c6de8023065280
+      internalID: 2121974543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 523
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195cec09b672f8b4198d35ff8068b39b
+      internalID: 1335245163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 551
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7bc025a0986274f8e5f1e37baf79b0
+      internalID: -1205219538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 533
+        width: 11
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca111e0d6867ffc429374aff6c7c1406
+      internalID: 1618924070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 533
+        width: 10
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a4c9352d1af8442a3969704c684309
+      internalID: -1317570738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_7
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 533
+        width: 11
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803cde575a47a3b41a8d7a8ccbf39eee
+      internalID: -1342369772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 523
+        width: 25
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a95405dab81fff4f904e52080ead2ae
+      internalID: 1267234843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_9
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 534
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55cdcfa1a3602b48bb2981643c9fe94
+      internalID: -1037399977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_10
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 519
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69823ab0a51e4946a4732b52ac1c205
+      internalID: 470741699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 501
+        width: 11
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c30fb5186129624bb5a1d5211e9be95
+      internalID: -2111629010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_12
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 501
+        width: 10
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6a492da2d36a94ca93cf56eb597347
+      internalID: -1115529520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_13
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 501
+        width: 11
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9447e09c253aad64d9b46defc291ddd5
+      internalID: 1124106690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 503
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66768f9d371e1ec4c80e39a7e2d08274
+      internalID: 1713540511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_15
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 475
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd07798c7e4f57a46bdc3ab4cf3602dc
+      internalID: -374550951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_16
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 475
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326961f1f32845f4286c160c09490b54
+      internalID: -1664704446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_17
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 475
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2140a9cbf486042aba18aae1c89e99
+      internalID: 41071396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_18
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 502
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd256587a3d0e0d4a9c23065733d4262
+      internalID: -897053900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_19
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 475
+        width: 25
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df511e0963ccbce44ac6d6d9d61bb53d
+      internalID: -1312612554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_20
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 487
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80e1baca4b2dee4ea84e43a400a9e04
+      internalID: 1378683210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 469
+        width: 11
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0777c3c3084ae84428cbf49c7054725f
+      internalID: -727040947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_22
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 469
+        width: 10
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8917d56cd892de4d951864a3489dd24
+      internalID: -225504646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_23
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 469
+        width: 11
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289c4e85c83347b45a24ec13d0682384
+      internalID: -1711845134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_24
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 470
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704c994bc84b43d46825874265b80aac
+      internalID: 1851224159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_25
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 455
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dba510e68974e44be15dfb3e72b39c
+      internalID: -1456965499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_26
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 427
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966bb5ffb2d8dbe4194086270b055474
+      internalID: 1239549499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_27
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 427
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f6c96c6ed514245ae9e96d69d1e6df
+      internalID: 1728002352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_28
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 427
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acf13f085658464996456f32137f19a
+      internalID: -1302353708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_29
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 455
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ae92b9725024443bb12b2a639a3f37
+      internalID: 789022958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_30
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 437
+        width: 11
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c4609230cf94946b482dc1a81bc973
+      internalID: -522483302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_31
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 437
+        width: 10
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12667a212688d6439027852aa1ea234
+      internalID: -1753032478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_32
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 437
+        width: 11
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2204ed743090a642acfc713fc23ce6c
+      internalID: -650767238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_33
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 427
+        width: 25
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05bf217ac5a123e49bba451dcf1c47f8
+      internalID: 1239732317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_34
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 438
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b92f910c3bb7b43861e58decc652e6
+      internalID: 1737276262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_35
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 423
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ba408dc1ef3c54595021502abd2b7c
+      internalID: -2080965618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_36
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 405
+        width: 11
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5e8b18066a48d4b93e17bc5b1c6b2d
+      internalID: 184324004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_37
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 405
+        width: 10
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca831cc7c6036da44be1014c46650c7a
+      internalID: 1672992688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_38
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 405
+        width: 11
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dada267951a4414a91f99d480234497
+      internalID: 603373784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_40
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 379
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145e9614bb57bbd4ab14ebdc993511d5
+      internalID: -1770702867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_41
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 379
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cc4ecf839f37143bfc4e71c707b0de
+      internalID: -851517636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_42
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 379
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f9331d652facd4b8287c308af5cc44
+      internalID: -829800978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_43
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 406
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3776780b4416e41a42b11186083326
+      internalID: 924115837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_44
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 379
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f49c399b402934ebd48670bf2cf4ef
+      internalID: 1914493306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_45
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 384
+        width: 7
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb26d1b791609004d94a2efe1047b0fd
+      internalID: 1269694486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_46
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 382
+        width: 7
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a5f602337aaa44781609e5989ceafc
+      internalID: -433312613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_47
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 383
+        width: 7
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282d59b0b3878b24e9508210d5650845
+      internalID: -116576694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_48
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 384
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792b3c03faaa3094a91735af20b571ae
+      internalID: -1752033964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_49
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 368
+        width: 7
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7ec7d4f86664646b23be272b8ba30f
+      internalID: -2000084311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_50
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 366
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6a7e02e1ddb40438a97d2c9789b1ea
+      internalID: 1189584404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_51
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 367
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96310e21ae07a2448abbce996086b0f
+      internalID: -1235868322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_52
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 368
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6f134e86e67be40bdf1537c2c320ac
+      internalID: -1204663084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_53
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 359
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cefb926608370a4c9831482323ac732
+      internalID: -1173367991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_54
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 331
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803d86c3859a7af4d9fc5968dbbba81b
+      internalID: -1182413516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_55
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 331
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7a1814fbd2f4a4c85a54f06c13ce06
+      internalID: 973464859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_56
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 331
+        width: 25
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e393f1eab993324dae6a25b7afd7aca
+      internalID: -2030697491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_57
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 352
+        width: 7
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb3989e779978e4c802d8889daecb4c
+      internalID: 1139287880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_58
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 350
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039a14369fef070469f8b7e42d78eda0
+      internalID: 559387093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_59
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 351
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e65f94a9d47f574b9875a36c4645b12
+      internalID: 635060735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_60
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 352
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b93357445e520847bd665b2a723164e
+      internalID: -2022709586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_61
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 331
+        width: 25
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d373ea68777342041a6545b638b0c6d7
+      internalID: -1320074424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_62
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 336
+        width: 7
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3504a58f473af8549a32deefcea7a00d
+      internalID: 354199450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_63
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 334
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6592c8d620cdfa944ae7dae6d41ce175
+      internalID: -934852827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_64
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 335
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83d3b38688e7b742b9d8229c02785c2
+      internalID: 1997806103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_65
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 336
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0911658aceda22845b2033d441caff61
+      internalID: 829611633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_66
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 320
+        width: 7
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b150c03b85c2204eab986f0d7a2bf03
+      internalID: 1138352039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_67
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 320
+        width: 7
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d198aa68c5d824a80cc938756718a6
+      internalID: -1165034305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_68
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 320
+        width: 7
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab1c7d1d6957844b8a54eff1b02072e
+      internalID: 1546500949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_69
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 320
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ac216bb1c09f24ca631e59b50b00fa
+      internalID: -1299483145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_70
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 267
+        width: 25
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45984f434bc406e4f86677c6f259a34f
+      internalID: -1004065764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_71
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 267
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce9c1b374a614141bd97537e9047135
+      internalID: 442572699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_72
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 267
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848747a4c5df54b4cb1873e1dae433b1
+      internalID: 1620728149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_73
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 267
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e242e319329be44974ec1d4186b5ea
+      internalID: 1099967455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_74
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 304
+        width: 7
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cb90db6d5a4324e8105c5fe830beb2
+      internalID: -1607408795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_75
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 304
+        width: 7
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b325f97e926b554469181a0ba66277a1
+      internalID: 2089421122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_76
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 304
+        width: 7
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c068da4c23438664595bb19ff80ef6cd
+      internalID: 326802280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_77
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 304
+        width: 7
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be427c1584f5c3f4b80504230af1d89d
+      internalID: -1459316592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_78
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 256
+        width: 12
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57f94af3e2643d43b0eefb442f95975
+      internalID: 819051401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_79
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 256
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8daf3ef8e1f094b9b1c8aa2355b81a
+      internalID: -1232561212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_80
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 256
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6a00b5e3311424cb46656beca3c700
+      internalID: 984939634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_81
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 256
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9e95e30bb846a4a8fe18cd31e11f9c
+      internalID: -70537661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_82
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 203
+        width: 25
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da673728474e4504cbea377df801fc39
+      internalID: -761898002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_83
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 203
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbe1bbd381b15f4fa093bc2bb891043
+      internalID: -1066822425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_84
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 203
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135523ec050edb74ba8749afacea297e
+      internalID: 761909424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_85
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 203
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d8524276cd4d943916e2400a00e222
+      internalID: -207402821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_86
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 224
+        width: 12
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7985698aebc6fbd4eb6b141276e58205
+      internalID: -332472316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_87
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 224
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b6f92354a894f489ae834fdb1d3e8f
+      internalID: -1261274291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_88
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 224
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01c66ca664eb4940a95605f88174ab2
+      internalID: 1963290617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_89
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 224
+        width: 12
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50f64414f4d89d418fc35f7749cdecd
+      internalID: 779496034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 31
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e8c5a2d3a2ade4ab46a493305ddaee
+      internalID: 956403139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_91
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 209
+        width: 15
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b969b5a051368e5439b6d87ae7d7fcaa
+      internalID: -1007243037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_92
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 193
+        width: 16
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17898dc9a42bd74da35691babd60fb3
+      internalID: -2103016343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_93
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 193
+        width: 15
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9569f41753013741aa1df04ace1f3b9
+      internalID: -572418646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_94
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 139
+        width: 25
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa941e3b8f86784ca94d83419775b3b
+      internalID: -298921332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_95
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 139
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc0ab6440e40724cb2a3d72e9fb47e2
+      internalID: -1221640645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_96
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 139
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075678463c3e1d8449cf8478ecd6d20b
+      internalID: -1353947991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_97
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 139
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237150bb6874b3d4f91008d6d2c04dce
+      internalID: 1610380426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_98
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 139
+        width: 25
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c184ef2930089f446b90db1cc022c160
+      internalID: -1086756067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_99
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 75
+        width: 25
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09d91b1fb761f64884b96cb109e3466
+      internalID: -1259044136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_100
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 75
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc2b3eec780b9748b8b18a69c622874
+      internalID: -1106273802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_101
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 75
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeae96b28b145b145bc2fc8a187f3f1c
+      internalID: 371511046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_102
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 75
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcb0330abd50524689f40aa03fe4663
+      internalID: 264397030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_103
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 75
+        width: 25
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb222fa880ff484283fdf6c08eca5c5
+      internalID: 1165197956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_104
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 11
+        width: 25
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b546b647eae8c40a3d9f0d011f4a36
+      internalID: -1989800425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_105
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 11
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2561e9e6f269b2749b95eaba7e0671be
+      internalID: 445537791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_106
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 11
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b75fa90c76153f478d6f22a3920a388
+      internalID: -950529500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_107
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 11
+        width: 25
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789fe7cb81c8d494bb67f028925fd562
+      internalID: -619854715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfires_PNG_108
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 11
+        width: 25
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aff74cac12561e4cb1449e9a2f691fd
+      internalID: -833118607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      campfires_PNG_0: -1935680303
+      campfires_PNG_1: -66478592
+      campfires_PNG_10: 470741699
+      campfires_PNG_100: -1106273802
+      campfires_PNG_101: 371511046
+      campfires_PNG_102: 264397030
+      campfires_PNG_103: 1165197956
+      campfires_PNG_104: -1989800425
+      campfires_PNG_105: 445537791
+      campfires_PNG_106: -950529500
+      campfires_PNG_107: -619854715
+      campfires_PNG_108: -833118607
+      campfires_PNG_11: -2111629010
+      campfires_PNG_12: -1115529520
+      campfires_PNG_13: 1124106690
+      campfires_PNG_14: 1713540511
+      campfires_PNG_15: -374550951
+      campfires_PNG_16: -1664704446
+      campfires_PNG_17: 41071396
+      campfires_PNG_18: -897053900
+      campfires_PNG_19: -1312612554
+      campfires_PNG_2: 2121974543
+      campfires_PNG_20: 1378683210
+      campfires_PNG_21: -727040947
+      campfires_PNG_22: -225504646
+      campfires_PNG_23: -1711845134
+      campfires_PNG_24: 1851224159
+      campfires_PNG_25: -1456965499
+      campfires_PNG_26: 1239549499
+      campfires_PNG_27: 1728002352
+      campfires_PNG_28: -1302353708
+      campfires_PNG_29: 789022958
+      campfires_PNG_3: 1335245163
+      campfires_PNG_30: -522483302
+      campfires_PNG_31: -1753032478
+      campfires_PNG_32: -650767238
+      campfires_PNG_33: 1239732317
+      campfires_PNG_34: 1737276262
+      campfires_PNG_35: -2080965618
+      campfires_PNG_36: 184324004
+      campfires_PNG_37: 1672992688
+      campfires_PNG_38: 603373784
+      campfires_PNG_39: -173556540
+      campfires_PNG_4: -1205219538
+      campfires_PNG_40: -1770702867
+      campfires_PNG_41: -851517636
+      campfires_PNG_42: -829800978
+      campfires_PNG_43: 924115837
+      campfires_PNG_44: 1914493306
+      campfires_PNG_45: 1269694486
+      campfires_PNG_46: -433312613
+      campfires_PNG_47: -116576694
+      campfires_PNG_48: -1752033964
+      campfires_PNG_49: -2000084311
+      campfires_PNG_5: 1618924070
+      campfires_PNG_50: 1189584404
+      campfires_PNG_51: -1235868322
+      campfires_PNG_52: -1204663084
+      campfires_PNG_53: -1173367991
+      campfires_PNG_54: -1182413516
+      campfires_PNG_55: 973464859
+      campfires_PNG_56: -2030697491
+      campfires_PNG_57: 1139287880
+      campfires_PNG_58: 559387093
+      campfires_PNG_59: 635060735
+      campfires_PNG_6: -1317570738
+      campfires_PNG_60: -2022709586
+      campfires_PNG_61: -1320074424
+      campfires_PNG_62: 354199450
+      campfires_PNG_63: -934852827
+      campfires_PNG_64: 1997806103
+      campfires_PNG_65: 829611633
+      campfires_PNG_66: 1138352039
+      campfires_PNG_67: -1165034305
+      campfires_PNG_68: 1546500949
+      campfires_PNG_69: -1299483145
+      campfires_PNG_7: -1342369772
+      campfires_PNG_70: -1004065764
+      campfires_PNG_71: 442572699
+      campfires_PNG_72: 1620728149
+      campfires_PNG_73: 1099967455
+      campfires_PNG_74: -1607408795
+      campfires_PNG_75: 2089421122
+      campfires_PNG_76: 326802280
+      campfires_PNG_77: -1459316592
+      campfires_PNG_78: 819051401
+      campfires_PNG_79: -1232561212
+      campfires_PNG_8: 1267234843
+      campfires_PNG_80: 984939634
+      campfires_PNG_81: -70537661
+      campfires_PNG_82: -761898002
+      campfires_PNG_83: -1066822425
+      campfires_PNG_84: 761909424
+      campfires_PNG_85: -207402821
+      campfires_PNG_86: -332472316
+      campfires_PNG_87: -1261274291
+      campfires_PNG_88: 1963290617
+      campfires_PNG_89: 779496034
+      campfires_PNG_9: -1037399977
+      campfires_PNG_90: 956403139
+      campfires_PNG_91: -1007243037
+      campfires_PNG_92: -2103016343
+      campfires_PNG_93: -572418646
+      campfires_PNG_94: -298921332
+      campfires_PNG_95: -1221640645
+      campfires_PNG_96: -1353947991
+      campfires_PNG_97: 1610380426
+      campfires_PNG_98: -1086756067
+      campfires_PNG_99: -1259044136
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

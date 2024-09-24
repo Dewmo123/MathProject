@@ -30,7 +30,6 @@ public class InventorySlotUI : PlayerConnectUI
     private void HandleItemChanged(ItemSO prev, ItemSO next)
     {
         _item = next;
-        Debug.Log(next.itemName);
         if (next != null)
         {
             gameObject.SetActive(true);
@@ -48,6 +47,7 @@ public class InventorySlotUI : PlayerConnectUI
     {
         if (_item != null&&_item.canUse&&_item.cnt.Value>0)
         {
+            Debug.Log(_playerHealth.ToString());
             _playerHealth.ChangeValue(_item.restoreHp);
             _playerHungry.ChangeValue(_item.restoreHungry);
             _item.cnt.Value--;
