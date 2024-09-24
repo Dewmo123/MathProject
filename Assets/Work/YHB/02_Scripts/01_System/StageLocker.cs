@@ -8,16 +8,17 @@ public class StageLocker : MonoBehaviour
 {
     [SerializeField] private InteractionObjectInfoSo _stageLocker;
     [SerializeField] private LayerMask _layer;
-    [SerializeField] private bool _horizon;
+    [Tooltip("upOpen을 키면 아래에서 위로 올라가 통과하면 닫칩니다. 좌우의 경우 왼쪽에서 오른쪽으로 통과 할 때 입니다.")]
+    [SerializeField] private bool _upOpen;
 
     private Collider2D _col;
-
+    private QuestionUI _question;
     private bool _canInteraction;
     private Vector3 _playerPos;
 
     private void Awake()
     {
-        _col = GetComponent<TilemapCollider2D>();
+        _col = transform.GetComponent<TilemapCollider2D>();
     }
 
     private void Start()
@@ -29,8 +30,7 @@ public class StageLocker : MonoBehaviour
     {
         yield return null;
         GameManager.instance.Player.playerInput.Input.Interaction.performed += HandleInteraction;
-        QuestionUI question = InteractionManager.instance.InteractionUIDic[UIType.Problem] as QuestionUI;
-        question.Solved += HandleProblemResult;
+        _question = InteractionManager.instance.InteractionUIDic[UIType.Problem] as QuestionUI;
 
         InteractionManager.instance.InteractionInfoAdd(_stageLocker);
     }
@@ -39,19 +39,23 @@ public class StageLocker : MonoBehaviour
     {
         if (context.performed && _canInteraction && InteractionManager.instance.InteractionUIDic[UIType.Problem].MoveCnt == 0 && !GameManager.instance.isInteractionUI)
         {
-            InteractionManager.instance.InteractionUIDic[UIType.Problem].IncreaseCnt();
+            _question.IncreaseCnt();
+            _question.Set((DifficultEnum)Random.Range(0,3));
         }
     }
 
     private void HandleProblemResult(bool pass)
     {
         _col.isTrigger = pass;
+        InteractionManager.instance.OutFadeInteractionUI(_stageLocker._code);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (1 << collision.gameObject.layer == _layer)
         {
+            _question.Solved += HandleProblemResult;
+
             _playerPos = collision.transform.position;
             Debug.Log(_playerPos.x);
             _canInteraction = true;
@@ -73,7 +77,7 @@ public class StageLocker : MonoBehaviour
     {
         if (1 << collision.gameObject.layer == _layer)
         {
-            if (_horizon && _playerPos.y <= collision.transform.position.y)
+            if (_upOpen ? _playerPos.y <= collision.transform.position.y : _playerPos.y >= collision.transform.position.y)
             {
                 _col.isTrigger = false;
             }

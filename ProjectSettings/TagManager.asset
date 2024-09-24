@@ -47,3 +47,6 @@ TagManager:
   - name: Object
     uniqueID: 341248669
     locked: 0
+  - name: VFX
+    uniqueID: 1589403243
+    locked: 0
