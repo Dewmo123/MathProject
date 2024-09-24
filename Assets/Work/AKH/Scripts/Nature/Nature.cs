@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,18 @@ public class Nature : Agent
         _stateMachine.Add(NatureType.Dead, new NatureDeadState(_stateMachine, this, "Dead"));
         _stateMachine.Init(NatureType.Idle);
     }
+    private void Start()
+    {
+        TimeManager.instance.DayCnt.OnvalueChanged += Revive;
+    }
+
+    private void Revive(int prev, int next)
+    {
+        healthCompo.ResetValue();
+        SetDead(false);
+        _stateMachine.ChangeState(NatureType.Idle);
+    }
+
     private void Update()
     {
         _stateMachine.currentState.UpdateState();

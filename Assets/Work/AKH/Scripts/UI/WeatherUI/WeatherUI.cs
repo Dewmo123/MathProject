@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class WeatherUI : MonoBehaviour
 {
-    public NotifyValue<WeatherSO> curWeather { get; private set; }
 
     [SerializeField] private Image _weatherImage;
     [SerializeField] private TextMeshProUGUI _weatherTxt;
+    public NotifyValue<WeatherSO> curWeather;
+
     protected void Awake()
     {
-        curWeather = new NotifyValue<WeatherSO>();
         curWeather.OnvalueChanged += HandleWeatherChanged;
     }
     protected void HandleWeatherChanged(WeatherSO prev, WeatherSO next)

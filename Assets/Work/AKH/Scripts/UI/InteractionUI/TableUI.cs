@@ -14,9 +14,9 @@ public class TableUI : InteractionUI
     {
         base.Awake();
         _coreCloth = GetComponentInChildren<ClothUI>();
-        _leather = GameManager.instance.GetItemSO("Leather");
-        _wood = GameManager.instance.GetItemSO("Wood");
-        _rock = GameManager.instance.GetItemSO("Rock");
+        _leather = GameManager.instance.GetItemSO("°¡Á×");
+        _wood = GameManager.instance.GetItemSO("³ª¹«");
+        _rock = GameManager.instance.GetItemSO("µ¹");
     }
     public void ChangeCloth(ClothSO cloth)
     {
