@@ -33,7 +33,7 @@ public class InteractionObject : MonoBehaviour
     [Tooltip("해당 오브젝트의 So")]
     [SerializeField] private InteractionObjectInfoSo _interactionObjectInfo;
 
-    [SerializeField] private UIType _type;
+    [SerializeField] protected UIType _type;
     #region SoSynchronization
 
     [Header("So Setting")]
@@ -50,7 +50,7 @@ public class InteractionObject : MonoBehaviour
 
     private Vector2 _position;
 
-    private bool _canInteraction = false;
+    protected bool _canInteraction = false;
     private bool _enterCollision = false;
 
     private void Update()
@@ -72,14 +72,10 @@ public class InteractionObject : MonoBehaviour
         InteractionManager.instance.InteractionInfoAdd(_interactionObjectInfo);
     }
 
-    private void HandleInteraction(InputAction.CallbackContext context)
+    protected virtual void HandleInteraction(InputAction.CallbackContext context)
     {
-        if(context.performed && _canInteraction&&_type == UIType.Sleep)
-        {
-            TimeManager.instance.DayCnt.Value++;
-            return;
-        }
-        if (context.performed&&_canInteraction&&InteractionManager.instance.InteractionUIDic[_type].MoveCnt==0&&!GameManager.instance.isInteractionUI)
+
+        if (_canInteraction && InteractionManager.instance.InteractionUIDic[_type].MoveCnt == 0 && !GameManager.instance.isInteractionUI)
         {
             InteractionManager.instance.InteractionUIDic[_type].IncreaseCnt();
         }

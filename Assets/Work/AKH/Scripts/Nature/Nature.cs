@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Nature : Agent
 {
     private NatureStateMachine _stateMachine;
+    [SerializeField] private int _minCnt;
+    [SerializeField] private int _maxCnt;
     protected override void Awake()
     {
         base.Awake();
@@ -37,7 +40,7 @@ public class Nature : Agent
         if (isDead) return;
         _stateMachine.ChangeState(NatureType.Hit);
     }
-    public void ChangeDeadState()       
+    public void ChangeDeadState()
     {
         _stateMachine.ChangeState(NatureType.Dead);
         SetDead(true);
@@ -45,5 +48,13 @@ public class Nature : Agent
     public override void EndTriggerCall()
     {
         _stateMachine.currentState.EndTriggerCalled();
+    }
+    public void AddItem(ItemSO item)
+    {
+        int num = UnityEngine.Random.Range(_minCnt, _maxCnt);
+        item.cnt.Value += num;
+        var text = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
+        text.GetComponent<TextMeshProUGUI>().text = $"{item.name} + {num} ";
+        text.gameObject.SetActive(true);
     }
 }

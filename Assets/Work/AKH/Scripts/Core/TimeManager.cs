@@ -10,7 +10,6 @@ public class TimeManager : MonoBehaviour
     public static TimeManager instance = null;
     public bool isTimeStop { get; private set; } = false;
 
-    public NotifyValue<int> DayCnt;
 
     [SerializeField] private int _fireTime;
     public int curFireTime { get; private set; }
@@ -22,7 +21,9 @@ public class TimeManager : MonoBehaviour
 
     private WaitForSeconds _waitSleep;
     [SerializeField] private float _sleepTime;
+    public float canSleepTime;
 
+    public NotifyValue<int> DayCnt;
     public NotifyValue<int> min;
     public NotifyValue<int> hour;
     [field: SerializeField] public float changeMinVal { get; private set; } = 0;

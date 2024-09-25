@@ -26,6 +26,7 @@ public abstract class Stat : MonoBehaviour
     }
     public void ChangeValue(float damage)
     {
+        if (_agent.isDead) return;
         value = Mathf.Clamp(value + damage, 0, _maxValue);
         OnChangeEvent?.Invoke();
         if (damage < 0)
