@@ -9,12 +9,13 @@ public class ParticleManager : MonoBehaviour
     private void Start()
     {
         GameManager.instance.CurWeather.OnvalueChanged += HandleWeatherChanged;
+        HandleWeatherChanged(null,GameManager.instance.CurWeather.Value);
     }
 
     private void HandleWeatherChanged(WeatherSO prev, WeatherSO next)
     {
         
-        if (prev != null)
+        if (_item != null)
         {
             _item.gameObject.SetActive(false);
            PoolManager.instance.Push(_item);

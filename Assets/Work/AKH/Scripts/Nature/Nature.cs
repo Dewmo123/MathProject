@@ -37,7 +37,7 @@ public class Nature : Agent
         if (isDead) return;
         _stateMachine.ChangeState(NatureType.Hit);
     }
-    public void ChangeDeadState()       
+    public void ChangeDeadState()
     {
         _stateMachine.ChangeState(NatureType.Dead);
         SetDead(true);

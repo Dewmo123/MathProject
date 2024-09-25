@@ -1496,7 +1496,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4844,4 +4844,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolName: Rainy
-  _playerDistance: {x: -4, y: 6.6, z: 0}
+  _playerDistance: {x: 0, y: 6.6, z: 0}

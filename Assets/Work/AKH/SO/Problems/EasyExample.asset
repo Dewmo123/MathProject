@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad4e09558523f148a397cdcf7c06022, type: 3}
-  m_Name: Problem1 2
+  m_Name: EasyExample
   m_EditorClassIdentifier: 
-  diffucult: 2
-  Question: {fileID: 1134565369, guid: 242ddea8e4a7a5b4dafd7640465c8142, type: 3}
+  diffucult: 0
+  Question: {fileID: 21300000, guid: a2ba351a969ec7f4e8572ebcd27b3e06, type: 3}
   Answer: 1
-  Width: 1200
-  Height: 400
+  Width: 960
+  Height: 540
