@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class Totem : InteractionObject
     private void ShowSystemText()
     {
         SystemTxtUI system = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
+        system.GetComponent<TextMeshProUGUI>().text = "오늘은 더이상 토템을 사용할 수 없습니다.";
         system.gameObject.SetActive(true);
     }
 }
