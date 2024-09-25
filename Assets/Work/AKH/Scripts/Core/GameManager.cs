@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public SerializableDictionary<DifficultEnum, List<ProblemSO>> problemDic;
     public bool isUI { get; private set; } = false;
     public bool isInteractionUI { get; private set; } = false;
+    public bool isTotem { get; private set; } = false;
 
     private Player _player;
     public Player Player
@@ -105,6 +106,7 @@ public class GameManager : MonoBehaviour
     private void HandleDayChange(int prev, int next)
     {
         cnt = next - 2;
+        isTotem = false;
         CurWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % _curWeatherNum];
         _player.healthCompo.Multiply(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
     }
@@ -137,5 +139,8 @@ public class GameManager : MonoBehaviour
     {
         CurHouse.Value = house;
     }
-
+    public void UseTotem()
+    {
+        isTotem = true;
+    }
 }

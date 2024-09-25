@@ -33,7 +33,7 @@ public class InteractionObject : MonoBehaviour
     [Tooltip("해당 오브젝트의 So")]
     [SerializeField] private InteractionObjectInfoSo _interactionObjectInfo;
 
-    [SerializeField] private UIType _type;
+    [SerializeField] protected UIType _type;
     #region SoSynchronization
 
     [Header("So Setting")]
@@ -75,7 +75,7 @@ public class InteractionObject : MonoBehaviour
     protected virtual void HandleInteraction(InputAction.CallbackContext context)
     {
 
-        if (context.performed && _canInteraction && InteractionManager.instance.InteractionUIDic[_type].MoveCnt == 0 && !GameManager.instance.isInteractionUI)
+        if (_canInteraction && InteractionManager.instance.InteractionUIDic[_type].MoveCnt == 0 && !GameManager.instance.isInteractionUI)
         {
             InteractionManager.instance.InteractionUIDic[_type].IncreaseCnt();
         }

@@ -9,6 +9,9 @@ public class ParticlePoolItem : MonoBehaviour, IPoolable
     public string PoolName => _poolName;
 
     public GameObject ObjectPrefab => gameObject;
+
+    public bool isUI => false;
+
     private void Update()
     {
         if(GameManager.instance.Player != null)

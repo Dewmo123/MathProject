@@ -7,6 +7,8 @@ public class PoolManager : MonoBehaviour
 {
     public static PoolManager instance = null;
     public PoolListSO poolList;
+    [SerializeField]private Transform UIPool;
+
 
     private Dictionary<string, Pool> _pools;
 
@@ -14,7 +16,7 @@ public class PoolManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         _pools = new Dictionary<string, Pool>();
-        foreach(PoolItemSO  so in poolList.list)
+        foreach (PoolItemSO so in poolList.list)
         {
             CreatePool(so);
         }
@@ -28,12 +30,18 @@ public class PoolManager : MonoBehaviour
             Debug.LogWarning($"GameObject {so.prefab.name} has no IPoolable Script");
             return;
         }
-        Pool pool = new Pool(poolable, transform, so.count);
+        Pool pool;
+        if (!poolable.isUI)
+            pool = new Pool(poolable, transform, so.count);
+        else
+            pool = new Pool(poolable, UIPool, so.count);
+
         _pools.Add(poolable.PoolName, pool);
     }
     public IPoolable Pop(string itemName)
     {
-        if (_pools.ContainsKey(itemName)){
+        if (_pools.ContainsKey(itemName))
+        {
             IPoolable item = _pools[itemName].Pop();
             item.ResetItem();
             return item;

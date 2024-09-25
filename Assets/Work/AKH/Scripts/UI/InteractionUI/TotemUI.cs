@@ -51,9 +51,13 @@ public class TotemUI : InteractionUI
                 message += $"{a.Key.itemName} {a.Value} °³, ";
         }
         _increasedItem.Clear();
+
         _resultUI.IncreaseCnt();
         _resultUI.SetResultTxt(val);
         _resultUI.SetItemTxt(message);
+
+        GameManager.instance.UseTotem();
+
         _question = null;
     }
 
