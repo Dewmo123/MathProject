@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Transform _bedPos;
 
     private WaitForSeconds _waitSleep;
-    [SerializeField] private float _sleepTime;
+    [SerializeField] public float _sleepTime;
 
     public NotifyValue<int> min;
     public NotifyValue<int> hour;
