@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStop: 0
-  _minCnt: 8
-  _maxCnt: 15
+  _minCnt: 0
+  _maxCnt: 0
 --- !u!114 &8913182377244373377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,18 +281,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1140202803413752603}
-        m_TargetAssemblyTypeName: Nature, Assembly-CSharp
-        m_MethodName: AddItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9c3aac43ff0133847a212d2e7f58289e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: ItemSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -321,6 +309,7 @@ MonoBehaviour:
       m_Calls: []
   <value>k__BackingField: 0
   _maxValue: 100
+  _hitColor: {r: 0.554717, g: 0.3131752, b: 0, a: 1}
 --- !u!50 &1613759526900769875
 Rigidbody2D:
   serializedVersion: 4

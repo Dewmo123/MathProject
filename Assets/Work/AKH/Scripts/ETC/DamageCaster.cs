@@ -8,6 +8,10 @@ public class DamageCaster : MonoBehaviour
     public float damageRadius;
     public int detectCount = 1;
 
+    [SerializeField] private PoolItemSO _hitParticleSo;
+    [SerializeField] private Vector2 _randomMinPos;
+    [SerializeField] private Vector2 _randomMaxPos;
+
     private Collider2D[] _colliders;
 
     private void Awake()
@@ -22,6 +26,8 @@ public class DamageCaster : MonoBehaviour
             if(_colliders[i].TryGetComponent(out Health health))
             {
                 health.ChangeValue(-damage);
+                HitParticle hitParticle = PoolManager.instance.Pop(_hitParticleSo.poolName) as HitParticle;
+                hitParticle.ParticlePlay(new Vector3(transform.position.x + Random.Range(_randomMinPos.x, _randomMaxPos.x), transform.position.y + Random.Range(_randomMinPos.y, _randomMaxPos.y)), health._hitColor);
             }
         }
 
