@@ -25,7 +25,7 @@ public class SystemTxtUI : MonoBehaviour, IPoolable
     {
         yield return null;
         transform.DOMoveY(_secondPos, _time).SetEase(Ease.InQuad);
-        transform.DOScale(Vector3.zero, _time).SetEase(Ease.InQuad);
+        transform.DOScale(Vector3.one/2, _time).SetEase(Ease.InQuad);
         yield return new WaitForSeconds(_time);
         transform.localScale = Vector3.one;
         PoolManager.instance.Push(this);
