@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStop: 0
+  _minCnt: 0
+  _maxCnt: 0
 --- !u!114 &8913182377244373377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +309,7 @@ MonoBehaviour:
       m_Calls: []
   <value>k__BackingField: 0
   _maxValue: 100
+  _hitColor: {r: 0.554717, g: 0.3131752, b: 0, a: 1}
 --- !u!50 &1613759526900769875
 Rigidbody2D:
   serializedVersion: 4
