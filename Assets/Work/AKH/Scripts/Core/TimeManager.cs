@@ -20,7 +20,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Transform _bedPos;
 
     private WaitForSeconds _waitSleep;
-    [SerializeField] private float _sleepTime;
+    [SerializeField] public float _sleepTime;
     public float canSleepTime;
 
     public NotifyValue<int> DayCnt;
