@@ -99,8 +99,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01307762, y: 0.020488158}
-  m_Size: {x: 0.7262477, y: 0.18018493}
+  m_Offset: {x: -0.012162241, y: -0.009395361}
+  m_Size: {x: 0.60826033, y: 0.14876942}
   m_Direction: 1
 --- !u!114 &4101045865045738417
 MonoBehaviour:
@@ -186,15 +186,15 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4101045865045738417}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SetDeadState
-        m_Mode: 1
+      - m_Target: {fileID: 3586214426937932231}
+        m_TargetAssemblyTypeName: Stat, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: -3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -224,15 +224,15 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4101045865045738417}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SetDeadState
-        m_Mode: 1
+      - m_Target: {fileID: 3586214426937932231}
+        m_TargetAssemblyTypeName: Stat, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: -7
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -321,7 +321,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 341248669
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2129764409, guid: 6763369489715bd4587a6ddb8c73ec18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
