@@ -18,3 +18,4 @@ MonoBehaviour:
   woodCount: 0
   rockCount: 0
   info: "\uAE30\uBCF8 \uC9D1\uC774\uB2E4"
+  colliderSize: {x: 1.5, y: 1.5}

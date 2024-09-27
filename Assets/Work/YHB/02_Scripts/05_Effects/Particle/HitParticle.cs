@@ -15,20 +15,21 @@ public class HitParticle : MonoBehaviour, IPoolable
         _particle = transform.GetComponent<ParticleSystem>();
     }
 
-    public void ResetItem() { }
-
-    public void ParticlePlay(Vector3 position, Color hitColor)
+    public void ResetItem()
     {
-        transform.position = position;
-
-        _particle.startColor = hitColor;
         _particle.Play();
         StartCoroutine(PushReady());
     }
 
+    public void SetParticle(Vector3 pos)
+    {
+        _particle.transform.position = pos;
+        
+    }
+
     private IEnumerator PushReady()
     {
-        yield return new WaitForSeconds(_particle.startLifetime + 0.5f);
+        yield return new WaitForSeconds(0.5f);
         PoolManager.instance.Push(this);
     }
 }

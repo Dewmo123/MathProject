@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TableUI : InteractionUI
 {
     [SerializeField] private SpriteRenderer _houseRenderer;
+    [SerializeField] private BoxCollider2D _houseCollider;
     private ClothUI _coreCloth;
     private ItemSO _leather;
     private ItemSO _wood;
@@ -34,6 +35,7 @@ public class TableUI : InteractionUI
             _rock.cnt.Value -= house.rockCount;
             GameManager.instance.SetHouseSO(house);
             _houseRenderer.sprite = house.houseImage;
+            _houseCollider.size = house.colliderSize;
         }
     }
     public override void AddDic()

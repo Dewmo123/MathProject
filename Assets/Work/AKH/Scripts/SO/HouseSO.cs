@@ -11,4 +11,5 @@ public class HouseSO : ScriptableObject
     public int woodCount;
     public int rockCount;
     public string info;
+    public Vector2 colliderSize;
 }
