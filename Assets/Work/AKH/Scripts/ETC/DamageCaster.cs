@@ -27,7 +27,7 @@ public class DamageCaster : MonoBehaviour
             {
                 health.ChangeValue(-damage);
                 HitParticle hitParticle = PoolManager.instance.Pop(_hitParticleSo.poolName) as HitParticle;
-                hitParticle.ParticlePlay(new Vector3(transform.position.x + Random.Range(_randomMinPos.x, _randomMaxPos.x), transform.position.y + Random.Range(_randomMinPos.y, _randomMaxPos.y)), health._hitColor);
+                hitParticle.SetParticle(transform.position);
             }
         }
 
