@@ -20,7 +20,7 @@ public class TotemUI : InteractionUI
         yield return null;
         _resultUI = InteractionManager.instance.InteractionUIDic[UIType.Solved] as SolvedResultUI;
     }
-        public void ShowQuestion(int type)
+    public void ShowQuestion(int type)
     {
         IncreaseCnt();
         _difficult = (DifficultEnum)type;

@@ -40,8 +40,7 @@ public class QuestionUI : InteractionUI
             Solved?.Invoke(true);
         else
             Solved?.Invoke(false);
-        _answerTxt.DeactivateInputField();
-        _answerTxt.text = "";
+        _answerTxt.DeactivateInputField(true);
     }
     public override void AddDic()
     {

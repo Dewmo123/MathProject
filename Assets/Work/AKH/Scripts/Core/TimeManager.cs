@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,6 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance = null;
     public bool isTimeStop { get; private set; } = false;
-
 
     [SerializeField] private int _fireTime;
     public int curFireTime { get; private set; }

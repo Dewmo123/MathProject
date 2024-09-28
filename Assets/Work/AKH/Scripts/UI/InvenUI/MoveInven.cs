@@ -1,8 +1,4 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveInven : MoveUI
@@ -19,6 +15,6 @@ public class MoveInven : MoveUI
 
     public override void Move(int pos)
     {
-        rTransform.DOMoveX(pos,time);
+        rTransform.DOMoveX(pos, time);
     }
 }
