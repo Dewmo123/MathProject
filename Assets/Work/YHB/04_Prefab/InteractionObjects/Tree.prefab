@@ -259,6 +259,7 @@ MonoBehaviour:
   isStop: 0
   _minCnt: 8
   _maxCnt: 12
+  _hitSound: {fileID: 11400000, guid: 2809b3d4994102542a422072f153d6dd, type: 2}
 --- !u!114 &8913182377244373377
 MonoBehaviour:
   m_ObjectHideFlags: 0

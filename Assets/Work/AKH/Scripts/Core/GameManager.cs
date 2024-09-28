@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     public NotifyValue<ClothSO> CurCloth;
     public NotifyValue<HouseSO> CurHouse;
     private float _currentTime;
-    private int cnt = -1;
 
     private void Awake()
     {
@@ -105,9 +104,8 @@ public class GameManager : MonoBehaviour
     }
     private void HandleDayChange(int prev, int next)
     {
-        cnt = next - 2;
         isTotem = false;
-        CurWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1 % _curWeatherNum];
+        CurWeather.Value = curWeathers[(TimeManager.instance.DayCnt.Value - 1) % _curWeatherNum];
         _player.healthCompo.Multiply(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
     }
     public ItemSO GetItemSO(string name)
@@ -130,9 +128,8 @@ public class GameManager : MonoBehaviour
     {
         isInteractionUI = value;
     }
-    public WeatherSO GetNextWeather()
+    public WeatherSO GetWeather(int cnt)
     {
-        cnt++;
         return curWeathers[cnt % _curWeatherNum];
     }
     public void SetHouseSO(HouseSO house)
