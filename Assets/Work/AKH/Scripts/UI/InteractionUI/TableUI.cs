@@ -14,6 +14,9 @@ public class TableUI : InteractionUI
     protected override void Awake()
     {
         base.Awake();
+    }
+    private void Start()
+    {
         _coreCloth = GetComponentInChildren<ClothUI>();
         _leather = GameManager.instance.GetItemSO("°¡Á×");
         _wood = GameManager.instance.GetItemSO("³ª¹«");
@@ -21,7 +24,7 @@ public class TableUI : InteractionUI
     }
     public void ChangeCloth(ClothSO cloth)
     {
-        if (cloth != GameManager.instance.CurCloth.Value && _leather.cnt.Value > cloth.leatherCount)
+        if (cloth != GameManager.instance.CurCloth.Value && _leather.cnt.Value >= cloth.leatherCount)
         {
             _leather.cnt.Value -= cloth.leatherCount;
             _coreCloth.SetCurCloth(cloth);
@@ -29,7 +32,7 @@ public class TableUI : InteractionUI
     }
     public void ChangeHouse(HouseSO house)
     {
-        if (house != GameManager.instance.CurHouse.Value && house.woodCount < _wood.cnt.Value && house.rockCount < _rock.cnt.Value)
+        if (house != GameManager.instance.CurHouse.Value && house.woodCount <= _wood.cnt.Value && house.rockCount <= _rock.cnt.Value)
         {
             _wood.cnt.Value -= house.woodCount;
             _rock.cnt.Value -= house.rockCount;
