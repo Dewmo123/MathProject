@@ -19,5 +19,6 @@ public class WeatherSO : ScriptableObject
     public float healthPerSec;
     public float hungryPerSec;
     public float waterPerSec;
+    public SoundSO sound;
     
 }

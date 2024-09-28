@@ -18,3 +18,4 @@ MonoBehaviour:
   healthPerSec: 0
   hungryPerSec: -0.02
   waterPerSec: -0.04
+  sound: {fileID: 11400000, guid: 46573179037825e43ba41bcb3ae1b557, type: 2}
