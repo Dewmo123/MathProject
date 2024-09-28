@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public NotifyValue<HouseSO> CurHouse;
 
     private float _currentTime;
-
+    public SoundSO eatSound;
     private void Awake()
     {
         if (instance == null)
