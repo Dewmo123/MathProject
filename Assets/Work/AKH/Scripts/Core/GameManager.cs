@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     }
 
     [field: SerializeField] public List<ItemSO> items { get; private set; }
+
     [SerializeField] private float _decHungryPerSec;
     [SerializeField] private float _hitTime;
     [SerializeField] private float _whenDayChangedDecHealth;
@@ -37,9 +38,11 @@ public class GameManager : MonoBehaviour
     public List<WeatherSO> curWeathers;
 
     [SerializeField] private HouseSO _noneHouse;
+
     public NotifyValue<WeatherSO> CurWeather;
     public NotifyValue<ClothSO> CurCloth;
     public NotifyValue<HouseSO> CurHouse;
+
     private float _currentTime;
 
     private void Awake()
