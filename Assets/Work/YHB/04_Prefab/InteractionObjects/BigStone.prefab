@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStop: 0
-  _minCnt: 0
-  _maxCnt: 0
+  _minCnt: 8
+  _maxCnt: 12
+  _hitSound: {fileID: 11400000, guid: 1c8de0a387a7f6746aff6157a0264ab6, type: 2}
 --- !u!114 &4281312132861174840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3279506571778143729}
+        m_TargetAssemblyTypeName: Nature, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0b442b10f388ece4998d63f5ebccaf9e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ItemSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -99,8 +99,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012162241, y: -0.009395361}
-  m_Size: {x: 0.60826033, y: 0.14876942}
+  m_Offset: {x: -0.066446126, y: -0.009395354}
+  m_Size: {x: 0.55062336, y: 0.1487687}
   m_Direction: 1
 --- !u!114 &4101045865045738417
 MonoBehaviour:
@@ -171,6 +171,7 @@ MonoBehaviour:
       m_Calls: []
   <value>k__BackingField: 0
   _maxValue: 100
+  _hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &6986366646619431145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,3 +428,6 @@ MonoBehaviour:
     maxNormalAngle: 0
   damageRadius: 0.5
   detectCount: 1
+  _hitParticleSo: {fileID: 0}
+  _randomMinPos: {x: 0, y: 0}
+  _randomMaxPos: {x: 0, y: 0}

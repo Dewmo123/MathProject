@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 3592977899061452100}
   - component: {fileID: 8358216136063031985}
   - component: {fileID: 1648597703014111301}
-  m_Layer: 0
+  - component: {fileID: 9208846265912513769}
+  - component: {fileID: -1038779584270472619}
+  - component: {fileID: 4007108219996147059}
+  - component: {fileID: 7709289312944168017}
+  m_Layer: 8
   m_Name: Sheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +57,7 @@ MonoBehaviour:
   _movePosition: {x: 0, y: 0.4}
   _size: {x: 1.2, y: 1.2}
   _interactionObjectInfo: {fileID: 11400000, guid: 25c53858a35ae7046b6334c8212431f9, type: 2}
+  _type: 0
   _canInteractionSet: 0
   _titleSet: 1
   _bigTitleSet: 0
@@ -92,6 +97,126 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0000000030886507, y: 0.025909483}
   m_Size: {x: 1.0000005, y: 0.25380406}
   m_Direction: 1
+--- !u!114 &9208846265912513769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360323864165517420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2baebbe1d50f34eb3d4613d8f995f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStop: 0
+  _minCnt: 3
+  _maxCnt: 5
+  _hitSound: {fileID: 11400000, guid: 6b52c328f7bb6f64c8240ed38c907ba8, type: 2}
+--- !u!114 &-1038779584270472619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360323864165517420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d71a412e3cd10a4480d1ed14b47ea6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9208846265912513769}
+        m_TargetAssemblyTypeName: Nature, Assembly-CSharp
+        m_MethodName: ChangeDeadState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9208846265912513769}
+        m_TargetAssemblyTypeName: Nature, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2bfc7b6b67e351f4b814ad85bc0f36dd, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ItemSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDecEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9208846265912513769}
+        m_TargetAssemblyTypeName: Nature, Assembly-CSharp
+        m_MethodName: ChangeHitState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnIncEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  <value>k__BackingField: 0
+  _maxValue: 100
+  _hitColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &4007108219996147059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360323864165517420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc0278c9befdef4699c6405c8dddb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  rbCompo: {fileID: 0}
+--- !u!50 &7709289312944168017
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360323864165517420}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5808358410830896003
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +228,8 @@ GameObject:
   - component: {fileID: 5493469239542267032}
   - component: {fileID: 7213276433743060465}
   - component: {fileID: 4769202383606149101}
+  - component: {fileID: 2312611773359317415}
+  - component: {fileID: 6079337389445241946}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -189,3 +316,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bd8ac413435324c8039fc37f099829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2312611773359317415
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808358410830896003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e957fa0e1c2a4d04d9541837efb9ebd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6079337389445241946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808358410830896003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0063aea2016aab4e87f2c44f6035e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _char: {fileID: 9208846265912513769}

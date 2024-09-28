@@ -47,6 +47,7 @@ public class StageLocker : MonoBehaviour
     private void HandleProblemResult(bool pass)
     {
         _col.isTrigger = pass;
+        _canInteraction = false;
         InteractionManager.instance.OutFadeInteractionUI(_stageLocker._code);
     }
 

@@ -9,6 +9,7 @@ public class Nature : Agent
     private NatureStateMachine _stateMachine;
     [SerializeField] private int _minCnt;
     [SerializeField] private int _maxCnt;
+    [SerializeField] private SoundSO _hitSound;
     protected override void Awake()
     {
         base.Awake();
@@ -17,7 +18,16 @@ public class Nature : Agent
         _stateMachine.Add(NatureType.Hit, new NatureHitState(_stateMachine, this, "Hit"));
         _stateMachine.Add(NatureType.Dead, new NatureDeadState(_stateMachine, this, "Dead"));
         _stateMachine.Init(NatureType.Idle);
+
+        healthCompo.OnDecEvent.AddListener(PlayHitSound);
     }
+
+    private void PlayHitSound()
+    {
+        var soundPlayer = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
+        soundPlayer.PlaySound(_hitSound);
+    }
+
     private void Start()
     {
         TimeManager.instance.DayCnt.OnvalueChanged += Revive;
