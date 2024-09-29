@@ -68,7 +68,6 @@ public class StageLocker : MonoBehaviour
             _question.Solved += HandleProblemResult;
 
             _playerPos = collision.transform.position;
-            Debug.Log(_playerPos.x);
             _canInteraction = true;
             InteractionManager.instance.FadeInteractionUI(_stageLocker._code);
         }

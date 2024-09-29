@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class TileTypeChanger : MonoBehaviour
 {
+    [SerializeField] private LayerMask _collisionLayer;
     [SerializeField] private TileType _myTileType;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerSoundManager.instance.TileTypeChage(_myTileType);
+        if (1 << collision.gameObject.layer == _collisionLayer)
+        {
+            PlayerSoundManager.instance.TileTypeChange(_myTileType);
+        }
     }
 }
