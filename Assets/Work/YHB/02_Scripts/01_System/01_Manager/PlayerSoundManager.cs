@@ -7,7 +7,7 @@ using UnityEngine;
 public enum TileType
 {
     sea,
-    snad,
+    sand,
     grass,
     stone
 }
@@ -27,13 +27,14 @@ public class PlayerSoundManager : MonoBehaviour
 
     public void TileTypeChange(TileType tileType)
     {
+        Debug.Log(tileType);
         _presentType = tileType;
     }
 
     public SoundSO GetPlayerMoveSound() => _presentType switch
     {
         TileType.sea => _seaSoundSO,
-        TileType.snad => _sandSoundSO,
+        TileType.sand => _sandSoundSO,
         TileType.grass => _grassSoundSO,
         TileType.stone => _stoneSoundSO,
         _ => throw new Exception("SoundSO not difine")

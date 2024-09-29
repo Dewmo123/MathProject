@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
   m_Name: CaelidIsland
   m_EditorClassIdentifier: 
-  _code: 
+  _code: CaelidIsland
   _canInteraction: 0
   _title: 0
-  _bigTitle: 0
-  _activationTime: 0
-  _str: 
-  _canActivation: 1
+  _bigTitle: 1
+  _str: "\uCF00\uC77C\uB9AC\uB4DC \uC12C"

@@ -78,11 +78,8 @@ public class InteractionManager : MonoBehaviour
 
     public void InteractionInfoAdd(InteractionObjectInfoSo interObj)
     {
-        foreach (InteractionObjectInfoSo item in _interactionObjectInfo.Values)
-        {
-            if (item == interObj) return;
-        }
-
+        Debug.Log(interObj._code);
+        if (_interactionObjectInfo.ContainsKey(interObj._code)) return;
         _interactionObjectInfo.Add(interObj._code, interObj);
     }
 
