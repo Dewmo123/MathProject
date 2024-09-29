@@ -43,7 +43,6 @@ public class Nature : Agent
     private void Update()
     {
         _stateMachine.currentState.UpdateState();
-        if (Input.GetKeyDown(KeyCode.P)) healthCompo.ChangeValue(-10);
     }
     public void ChangeHitState()
     {
