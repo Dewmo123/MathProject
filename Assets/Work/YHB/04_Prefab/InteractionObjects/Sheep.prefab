@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1038779584270472619}
   - component: {fileID: 4007108219996147059}
   - component: {fileID: 7709289312944168017}
+  - component: {fileID: 810190602480855572}
   m_Layer: 8
   m_Name: Sheep
   m_TagString: Untagged
@@ -152,6 +153,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 810190602480855572}
+        m_TargetAssemblyTypeName: DeathParticleCall, Assembly-CSharp
+        m_MethodName: DeathParitleCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -175,7 +188,6 @@ MonoBehaviour:
       m_Calls: []
   <value>k__BackingField: 0
   _maxValue: 100
-  _hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4007108219996147059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +229,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &810190602480855572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360323864165517420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c99d3bef853b24da26becc551cdaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathColor: {r: 0.7584905, g: 0, b: 0, a: 1}
+  _destoryParticleSo: {fileID: 11400000, guid: 31d8eef13e95d3b41a03e7a8cf5d127e, type: 2}
 --- !u!1 &5808358410830896003
 GameObject:
   m_ObjectHideFlags: 0
