@@ -12,7 +12,7 @@ public enum DifficultEnum
 public class ProblemSO : ScriptableObject
 {
     public DifficultEnum diffucult;
-    public Sprite Question;
+    public Sprite Image;
     public string Answer;
     public int Width;
     public int Height;
