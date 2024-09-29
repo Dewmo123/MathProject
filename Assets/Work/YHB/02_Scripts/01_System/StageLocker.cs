@@ -11,6 +11,10 @@ public class StageLocker : MonoBehaviour
     [Tooltip("upOpen을 키면 아래에서 위로 올라가 통과하면 닫칩니다. 좌우의 경우 왼쪽에서 오른쪽으로 통과 할 때 입니다.")]
     [SerializeField] private bool _upOpen;
 
+    [SerializeField] private Color _onColor;
+    [SerializeField] private Color _offColor;
+
+    private Tilemap _tilemap;
     private Collider2D _col;
     private QuestionUI _question;
     private bool _canInteraction;
@@ -19,6 +23,8 @@ public class StageLocker : MonoBehaviour
     private void Awake()
     {
         _col = transform.GetComponent<TilemapCollider2D>();
+        _tilemap = transform.GetComponent<Tilemap>();
+        _tilemap.color = _onColor;
     }
 
     private void Start()
@@ -46,6 +52,10 @@ public class StageLocker : MonoBehaviour
 
     private void HandleProblemResult(bool pass)
     {
+        if (pass)
+        {
+            _tilemap.color = _offColor;
+        }
         _col.isTrigger = pass;
         _canInteraction = false;
         InteractionManager.instance.OutFadeInteractionUI(_stageLocker._code);
@@ -80,6 +90,7 @@ public class StageLocker : MonoBehaviour
         {
             if (_upOpen ? _playerPos.y <= collision.transform.position.y : _playerPos.y >= collision.transform.position.y)
             {
+                _tilemap.color = _onColor;
                 _col.isTrigger = false;
             }
         }
