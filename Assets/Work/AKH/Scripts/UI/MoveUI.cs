@@ -24,26 +24,37 @@ public abstract class MoveUI : MonoBehaviour
 
         rTransform = GetComponent<RectTransform>();
     }
-    protected virtual void HandleCnt(int prev, int next)
+    protected void HandleCnt(int prev, int next)
     {
         if (next == 1)
         {
-            Move(_firstPos);
-            GameManager.instance.SetUI(true);
+            Open();
         }
         else if (next == 2)
         {
-            Move(_secondPos);
-            moveCnt.Value = 0;
-            GameManager.instance.SetUI(false);
+            Close();
         }
     }
+
+    protected virtual void Close()
+    {
+        Move(_secondPos);
+        moveCnt.Value = 0;
+        GameManager.instance.SetUI(false);
+    }
+
+    protected virtual void Open()
+    {
+        Move(_firstPos);
+        GameManager.instance.SetUI(true);
+    }
+
     public abstract void Move(int pos);
     private void OnDestroy()
     {
         moveCnt.OnvalueChanged -= HandleCnt;
     }
-    public void IncreaseCnt()
+    public virtual void IncreaseCnt()
     {
         moveCnt.Value++;
     }

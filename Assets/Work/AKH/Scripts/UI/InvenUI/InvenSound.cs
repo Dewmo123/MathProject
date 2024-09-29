@@ -16,18 +16,16 @@ public class InvenSound : MoveInven
         if (GameManager.instance.isInteractionUI) return;
         IncreaseCnt();
     }
-    protected override void HandleCnt(int prev, int next)
+    protected override void Open()
     {
-        if (next == 1)
-        {
-            SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
-            player.PlaySound(_open);
-        }
-        else if (next == 2)
-        {
-            SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
-            player.PlaySound(_close);
-            moveCnt.Value = 0;
-        }
+        SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
+        player.PlaySound(_open);
     }
+    protected override void Close()
+    {
+        SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
+        player.PlaySound(_close);
+        moveCnt.Value = 0;
+    }
+
 }
