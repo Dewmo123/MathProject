@@ -31,7 +31,7 @@ public class QuestionUI : InteractionUI
     private void SetProblem()
     {
         _problemImage.rectTransform.sizeDelta = new Vector2(_problem.Width, _problem.Height);
-        _problemImage.sprite = _problem.Question;
+        _problemImage.sprite = _problem.Image;
     }
 
     public void Answer()
