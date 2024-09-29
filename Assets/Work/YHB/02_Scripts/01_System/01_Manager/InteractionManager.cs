@@ -12,11 +12,14 @@ public enum UIType
     Table,
     Sleep,
     Bonfire,
-    Solved
+    Solved,
+    Config
 }
 public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager instance = null;
+
+    public SoundSO openUI, closeUI;
 
     public Dictionary<UIType, InteractionUI> InteractionUIDic;
 
