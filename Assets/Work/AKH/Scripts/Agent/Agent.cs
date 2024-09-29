@@ -14,7 +14,7 @@ public abstract class Agent : MonoBehaviour
     {
         healthCompo = GetComponent<Health>();
         animatorCompo = transform.Find("Visual").GetComponent<Animator>();
-        movementCompo = GetComponent <AgentMovement>();
+        movementCompo = GetComponent<AgentMovement>();
         healthCompo.Initialize(this);
         movementCompo.Initialize(this);
     }
@@ -27,6 +27,11 @@ public abstract class Agent : MonoBehaviour
 
     }
     public abstract void EndTriggerCall();
+    public virtual void WalkTriggerCall()
+    {
+        SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
+        player.PlaySound(PlayerSoundManager.instance.GetPlayerMoveSound());
+    }
     #region Flip Character
     public bool IsFacingRight()
     {

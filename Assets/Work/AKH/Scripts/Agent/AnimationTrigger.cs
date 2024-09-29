@@ -13,4 +13,8 @@ public class AnimationTrigger : MonoBehaviour
     {
         _char.Attack();
     }
+    public void WalkTriggerCall()
+    {
+        _char.WalkTriggerCall();
+    }
 }

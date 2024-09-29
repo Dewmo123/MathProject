@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalExample2
   m_EditorClassIdentifier: 
   diffucult: 1
-  Question: {fileID: 21300000, guid: 56917ee52de7c2144a9734d1a6ec3c17, type: 3}
+  Image: {fileID: 21300000, guid: 56917ee52de7c2144a9734d1a6ec3c17, type: 3}
   Answer: 1
   Width: 1152
   Height: 648

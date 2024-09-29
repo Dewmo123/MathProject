@@ -14,7 +14,7 @@ public class ConfigUI : InteractionUI
     [SerializeField] private Slider _BGMSlider;
     [SerializeField] private Slider _MAINSlider;
     private WaitForSeconds _wait;
-    private bool _isMove=false;
+    private bool _isMove = false;
     private void Start()
     {
         _wait = new WaitForSeconds(time);
@@ -25,14 +25,9 @@ public class ConfigUI : InteractionUI
         _isMove = true;
         base.Open();
         SetSlider(true);
-        StartCoroutine(WaitMove(0));
+        StartCoroutine(WaitMove(time));
     }
 
-    private void Update()
-    {
-        Debug.Log(_isMove);
-
-    }
     protected override void Close()
     {
         base.Close();
@@ -41,11 +36,11 @@ public class ConfigUI : InteractionUI
     }
     private void SetSlider(bool v)
     {
+        _MAINSlider.interactable = v;
         _SFXSlider.interactable = v;
-        _SFXSlider.interactable = v;
-        _SFXSlider.interactable = v;
+        _BGMSlider.interactable = v;
     }
-    private IEnumerator WaitMove(int num)
+    private IEnumerator WaitMove(float num)
     {
         yield return _wait;
         _isMove = false;
@@ -55,14 +50,20 @@ public class ConfigUI : InteractionUI
     public void ChangeMAINVolume()
     {
         _mixer.SetFloat("MVol", _MAINSlider.value);
+        if (_MAINSlider.value == -40)
+            _mixer.SetFloat("MVol", -80);
     }
     public void ChangeBGMVolume()
     {
         _mixer.SetFloat("BVol", _BGMSlider.value);
+        if (_BGMSlider.value == -40)
+            _mixer.SetFloat("BVol", -80);
     }
     public void ChangeSFXVolume()
     {
         _mixer.SetFloat("SVol", _SFXSlider.value);
+        if (_SFXSlider.value == -40)
+            _mixer.SetFloat("SVol", -80);
     }
     #endregion
     public void Restart()
