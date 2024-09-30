@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,7 @@ public abstract class StatUI : PlayerConnectUI
     private bool _ischaseFill;
     public override void AfterFindPlayer()
     {
-        _barImage = transform.Find(_barName+"Bar").GetComponent<Image>();
+        _barImage = transform.Find(_barName + "Bar").GetComponent<Image>();
         _backBarImage = transform.Find("BackBar").GetComponent<Image>();
 
         _playerStat.OnChangeEvent.AddListener(HandleHitEvnet);

@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public enum TileType
@@ -27,7 +24,6 @@ public class PlayerSoundManager : MonoBehaviour
 
     public void TileTypeChange(TileType tileType)
     {
-        Debug.Log(tileType);
         _presentType = tileType;
     }
 

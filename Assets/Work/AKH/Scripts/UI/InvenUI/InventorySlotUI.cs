@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +7,7 @@ public class InventorySlotUI : PlayerConnectUI
     public NotifyValue<ItemSO> item;
 
     [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private Image _image; 
+    [SerializeField] private Image _image;
 
     private ItemSO _item;
 
@@ -23,7 +20,7 @@ public class InventorySlotUI : PlayerConnectUI
     }
     private void Update()
     {
-        if(_item != null)
+        if (_item != null)
         {
             _text.text = _item.cnt.Value.ToString();
         }
@@ -46,7 +43,7 @@ public class InventorySlotUI : PlayerConnectUI
     }
     public void UseItem()
     {
-        if (_item != null&&_item.canUse&&_item.cnt.Value>0)
+        if (_item != null && _item.canUse && _item.cnt.Value > 0)
         {
             SoundPlayer player = PoolManager.instance.Pop("SoundPlayer") as SoundPlayer;
             player.PlaySound(GameManager.instance.eatSound);

@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -86,8 +85,8 @@ public class InteractionManager : MonoBehaviour
     {
         Vector2 playerPos = mainCam.WorldToScreenPoint(_playerTrm.position);
         int cHei = Screen.height;
-        _fKeyImage.position = new Vector2(playerPos.x, (playerPos.y + _upYPos * 100)  * (cHei / 1080));
-        _titleImage.position = new Vector2(playerPos.x, (playerPos.y + _downYPos * 100)  *(cHei/1080));
+        _fKeyImage.position = new Vector2(playerPos.x, (playerPos.y + _upYPos * 100) * (cHei / 1080));
+        _titleImage.position = new Vector2(playerPos.x, (playerPos.y + _downYPos * 100) * (cHei / 1080));
     }
 
     public void FadeInteractionUI(string code)
@@ -160,7 +159,7 @@ public class InteractionManager : MonoBehaviour
             interactionUISequence.Append(_fKeyImage.DOScale(0, _OnSecond)); // »ç¶óÁü
             _fKeyImage.gameObject.SetActive(false);
         }
-        else if(_interactionObjectInfo[code]._title)
+        else if (_interactionObjectInfo[code]._title)
         {
             interactionUISequence.Join(_titleImage.DOScale(new Vector3(4, 1), 0));
             interactionUISequence.Append(_titleImage.DOScale(1, _OnSecond));
