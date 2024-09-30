@@ -30,6 +30,7 @@ public class StageLocker : MonoBehaviour
     private void Start()
     {
         StartCoroutine(WaitInteractionManager());
+        TimeManager.instance.DayCnt.OnvalueChanged += HandleDayChangeLock;
     }
 
     private IEnumerator WaitInteractionManager()
@@ -59,6 +60,13 @@ public class StageLocker : MonoBehaviour
         _col.isTrigger = pass;
         _canInteraction = false;
         InteractionManager.instance.OutFadeInteractionUI(_stageLocker._code);
+    }
+
+    private void HandleDayChangeLock(int prev, int cur)
+    {
+        _tilemap.color = _onColor;
+        _canInteraction = false;
+        _col.isTrigger = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
