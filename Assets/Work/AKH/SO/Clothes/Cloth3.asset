@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothName: "\uB6F0\uC5B4\uB09C \uCC9C \uC637"
   clothImage: {fileID: 127421489, guid: 94939fa41a0fd124eba8cc2c09ee5bd3, type: 3}
-  decHealthPerSec: 0.5
-  decWaterPerSec: 0.5
+  decHealthPerSec: 0.8
+  decWaterPerSec: 0.8
   leatherCount: 50
-  durability: 3
-  info: "\uCD08\uB2F9 \uCCB4\uB825, \uC218\uBD84 \uAC10\uC18C\uB7C9 50% \uAC10\uC18C"
+  durability: 10
+  info: "\uCD08\uB2F9 \uCCB4\uB825, \uC218\uBD84 \uAC10\uC18C\uB7C9 20% \uAC10\uC18C"

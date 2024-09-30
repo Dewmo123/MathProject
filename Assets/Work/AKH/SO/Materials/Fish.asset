@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   cnt:
-    _value: 83
+    _value: 3
   itemName: "\uBB3C\uACE0\uAE30"
   sprite: {fileID: 21300000, guid: 7257a89f823fc7e46b0124da343cf1e2, type: 3}
   canUse: 1
-  restoreHp: 0
-  restoreHungry: 0
+  restoreHp: 3
+  restoreHungry: 5
   restoreWater: 0
   restoreTemperature: 0
   rockCount: 1

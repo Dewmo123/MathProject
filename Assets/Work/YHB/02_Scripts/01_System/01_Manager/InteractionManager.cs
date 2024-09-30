@@ -86,8 +86,8 @@ public class InteractionManager : MonoBehaviour
     {
         Vector2 playerPos = mainCam.WorldToScreenPoint(_playerTrm.position);
         int cHei = Screen.height;
-        _fKeyImage.position = new Vector2(playerPos.x, playerPos.y + _upYPos * 100 * (cHei / 1080));
-        _titleImage.position = new Vector2(playerPos.x, playerPos.y + _downYPos * 100 *(cHei/1080));
+        _fKeyImage.position = new Vector2(playerPos.x, (playerPos.y + _upYPos * 100)  * (cHei / 1080));
+        _titleImage.position = new Vector2(playerPos.x, (playerPos.y + _downYPos * 100)  *(cHei/1080));
     }
 
     public void FadeInteractionUI(string code)

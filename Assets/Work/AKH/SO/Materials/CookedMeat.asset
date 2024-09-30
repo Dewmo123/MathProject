@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: CookedMeat
   m_EditorClassIdentifier: 
   cnt:
-    _value: 6
+    _value: 0
   itemName: "\uC775\uD78C \uACE0\uAE30"
   sprite: {fileID: 21300000, guid: 5432900d7857c6a4eae3b4e784f2ac24, type: 3}
   canUse: 1
-  restoreHp: 0
-  restoreHungry: 0
-  restoreWater: 0
+  restoreHp: 5
+  restoreHungry: 15
+  restoreWater: -2
   restoreTemperature: 0
+  rockCount: 0
   canCook: 0
   complete: {fileID: 0}

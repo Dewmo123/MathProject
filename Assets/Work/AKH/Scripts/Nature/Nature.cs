@@ -67,7 +67,7 @@ public class Nature : Agent
         {
             int num = UnityEngine.Random.Range(_minCnt, _maxCnt);
             item.cnt.Value += num;
-            message += $"{item.name} + {num}, ";
+            message += $"{item.itemName} + {num}, ";
         }
         text.GetComponent<TextMeshProUGUI>().text = message;
         text.gameObject.SetActive(true);

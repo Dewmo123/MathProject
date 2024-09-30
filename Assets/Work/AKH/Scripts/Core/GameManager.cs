@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField] private float _dayStatIncrease;
     [SerializeField] private int _curWeatherNum;
     [SerializeField] private List<ProblemSO> problems;
     public SerializableDictionary<DifficultEnum, List<ProblemSO>> problemDic;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
         CurWeather.Value = curWeathers[TimeManager.instance.DayCnt.Value - 1];
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         ChangeStats();
     }
@@ -86,11 +87,11 @@ public class GameManager : MonoBehaviour
             if (_currentTime >= _hitTime && _player != null)
             {
                 _currentTime = 0;
-                _player.healthCompo.ChangeValue(CurWeather.Value.healthPerSec * CurCloth.Value.decHealthPerSec);
-                _player.hungryCompo.ChangeValue(CurWeather.Value.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F));
-                _player.waterCompo.ChangeValue(CurWeather.Value.waterPerSec * CurCloth.Value.decWaterPerSec);
+                _player.healthCompo.ChangeValue(CurWeather.Value.healthPerSec * CurCloth.Value.decHealthPerSec* _dayStatIncrease);
+                _player.hungryCompo.ChangeValue(CurWeather.Value.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F)* _dayStatIncrease);
+                _player.waterCompo.ChangeValue(CurWeather.Value.waterPerSec * CurCloth.Value.decWaterPerSec* _dayStatIncrease);
             }
-            _currentTime += Time.deltaTime;
+            _currentTime += Time.fixedDeltaTime;
         }
     }
 
@@ -116,8 +117,9 @@ public class GameManager : MonoBehaviour
     private void HandleDayChange(int prev, int next)
     {
         isTotem = false;
+        _dayStatIncrease += 0.02f;
         CurWeather.Value = curWeathers[(TimeManager.instance.DayCnt.Value - 1) % _curWeatherNum];
-        _player.healthCompo.Multiply(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
+        _player.healthCompo.ChangeValue(_whenDayChangedDecHealth * CurHouse.Value.decDayHealth);
     }
     public ItemSO GetItemSO(string name)
     {

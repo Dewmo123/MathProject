@@ -15,7 +15,7 @@ MonoBehaviour:
   weatherEnum: 4
   weatherName: "\uB208"
   sprite: {fileID: -1911000012, guid: 708ff1a67e5be4d46a9bcb3eefd486a0, type: 3}
-  healthPerSec: 0
-  hungryPerSec: -0.02
-  waterPerSec: -0.04
+  healthPerSec: -0.02
+  hungryPerSec: -0.045
+  waterPerSec: -0.055
   sound: {fileID: 11400000, guid: 5c953c0d298e633408ee185c155dcdfb, type: 2}

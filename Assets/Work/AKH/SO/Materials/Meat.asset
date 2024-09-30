@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   cnt:
-    _value: 7
+    _value: 0
   itemName: "\uACE0\uAE30"
   sprite: {fileID: 21300000, guid: f034b733b2b9e174891129cbc2ad1c26, type: 3}
   canUse: 1
-  restoreHp: 15
-  restoreHungry: 0
-  restoreWater: 0
+  restoreHp: 0
+  restoreHungry: 7
+  restoreWater: -5
   restoreTemperature: 0
   rockCount: 2
   canCook: 1

@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStop: 0
-  _minCnt: 8
-  _maxCnt: 12
+  _minCnt: 3
+  _maxCnt: 4
   _hitSound: {fileID: 11400000, guid: 1c8de0a387a7f6746aff6157a0264ab6, type: 2}
   items:
   - {fileID: 11400000, guid: 0b442b10f388ece4998d63f5ebccaf9e, type: 2}
@@ -203,7 +203,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <value>k__BackingField: 0
-  _maxValue: 99
+  _maxValue: 100
 --- !u!50 &6254827598340712359
 Rigidbody2D:
   serializedVersion: 4

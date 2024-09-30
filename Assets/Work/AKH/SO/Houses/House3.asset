@@ -15,7 +15,7 @@ MonoBehaviour:
   houseName: "\uC131"
   houseImage: {fileID: 21300000, guid: 131c797915ecd9348bf94513c360288e, type: 3}
   decDayHealth: 1.2
-  woodCount: 20
-  rockCount: 40
-  info: "\uCDE8\uCE68 \uC2DC \uCCB4\uB825 \uAC10\uC18C\uB7C9 50% \uAC10\uC18C"
+  woodCount: 180
+  rockCount: 120
+  info: "\uCDE8\uCE68 \uC2DC \uCCB4\uB825 \uC99D\uAC00\uB7C9 50% \uC99D\uAC00"
   colliderSize: {x: 5.5, y: 1.5}

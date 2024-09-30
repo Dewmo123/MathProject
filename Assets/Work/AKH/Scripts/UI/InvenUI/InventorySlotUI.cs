@@ -16,6 +16,7 @@ public class InventorySlotUI : PlayerConnectUI
 
     private Health _playerHealth;
     private Hungry _playerHungry;
+    private Water _playerWater;
     private void Awake()
     {
         item.OnvalueChanged += HandleItemChanged;
@@ -51,6 +52,7 @@ public class InventorySlotUI : PlayerConnectUI
             player.PlaySound(GameManager.instance.eatSound);
             _playerHealth.ChangeValue(_item.restoreHp);
             _playerHungry.ChangeValue(_item.restoreHungry);
+            _playerWater.ChangeValue(_item.restoreWater);
             _item.cnt.Value--;
         }
     }
@@ -59,5 +61,6 @@ public class InventorySlotUI : PlayerConnectUI
     {
         _playerHealth = _player.healthCompo;
         _playerHungry = _player.hungryCompo;
+        _playerWater = _player.waterCompo;
     }
 }

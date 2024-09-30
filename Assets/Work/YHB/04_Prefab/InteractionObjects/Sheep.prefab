@@ -190,7 +190,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <value>k__BackingField: 0
-  _maxValue: 100
+  _maxValue: 60
 --- !u!114 &4007108219996147059
 MonoBehaviour:
   m_ObjectHideFlags: 0
