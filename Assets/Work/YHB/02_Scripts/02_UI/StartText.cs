@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class StartText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private TextMeshProUGUI _textMeshPro;
+
+    [SerializeField] private float _fadeTime;
+
+    private void Awake()
     {
-        
+        _textMeshPro = transform.GetComponent<TextMeshProUGUI>();
+        Fade();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Fade()
     {
-        
+        _textMeshPro.DOFade(0, _fadeTime).SetDelay(_fadeTime).OnComplete(() => _textMeshPro.DOFade(1, _fadeTime).SetDelay(_fadeTime).OnComplete(() => Fade()));
     }
 }
