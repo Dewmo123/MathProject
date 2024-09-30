@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
         SetWeathers();
+        SetItems();
         CurHouse.Value = _noneHouse;
 
         foreach (var item in problems)
@@ -69,6 +70,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         ChangeStats();
+    }
+    private void SetItems()
+    {
+        foreach(ItemSO item in items)
+        {
+            item.cnt.Value = 0;
+        }
     }
 
     private void ChangeStats()

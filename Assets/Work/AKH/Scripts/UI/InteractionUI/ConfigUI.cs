@@ -15,8 +15,20 @@ public class ConfigUI : InteractionUI
     [SerializeField] private Slider _MAINSlider;
     private WaitForSeconds _wait;
     private bool _isMove = false;
+    protected override void Awake()
+    {
+        base.Awake();
+        float val;
+        _mixer.GetFloat("SVol", out val);
+        _SFXSlider.value = val;
+        _mixer.GetFloat("BVol", out val);
+        _BGMSlider.value = val;
+        _mixer.GetFloat("MVol", out val);
+        _MAINSlider.value = val;
+    }
     private void Start()
     {
+
         _wait = new WaitForSeconds(time);
         GameManager.instance.Player.playerInput.Input.Config.performed += (context) => IncreaseCnt();
     }
@@ -77,7 +89,8 @@ public class ConfigUI : InteractionUI
     }
     public override void Move(int pos)
     {
-        transform.DOMoveY(pos, time);
+        int cHei = Screen.height;
+        rTransform.DOMoveY(pos * ((float)cHei / 1080), time);
     }
     public override void IncreaseCnt()
     {
