@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Leather
   m_EditorClassIdentifier: 
   cnt:
-    _value: 12
+    _value: 930
   itemName: "\uAC00\uC8FD"
   sprite: {fileID: 21300000, guid: 164a9d2226286084b80a2c1f65b7c62f, type: 3}
   canUse: 0

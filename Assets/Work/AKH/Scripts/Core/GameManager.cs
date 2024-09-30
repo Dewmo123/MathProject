@@ -1,7 +1,7 @@
 using SerializableDictionary.Scripts;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -72,9 +72,13 @@ public class GameManager : MonoBehaviour
     {
         ChangeStats();
     }
+    public void Dead()
+    {
+        SceneManager.LoadScene(0);
+    }
     private void SetItems()
     {
-        foreach(ItemSO item in items)
+        foreach (ItemSO item in items)
         {
             item.cnt.Value = 0;
         }
@@ -87,9 +91,9 @@ public class GameManager : MonoBehaviour
             if (_currentTime >= _hitTime && _player != null)
             {
                 _currentTime = 0;
-                _player.healthCompo.ChangeValue(CurWeather.Value.healthPerSec * CurCloth.Value.decHealthPerSec* _dayStatIncrease);
-                _player.hungryCompo.ChangeValue(CurWeather.Value.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F)* _dayStatIncrease);
-                _player.waterCompo.ChangeValue(CurWeather.Value.waterPerSec * CurCloth.Value.decWaterPerSec* _dayStatIncrease);
+                _player.healthCompo.ChangeValue(CurWeather.Value.healthPerSec * CurCloth.Value.decHealthPerSec * _dayStatIncrease);
+                _player.hungryCompo.ChangeValue(CurWeather.Value.hungryPerSec * (TimeManager.instance.curFireTime > 0 ? _decHungryPerSec : 1F) * _dayStatIncrease);
+                _player.waterCompo.ChangeValue(CurWeather.Value.waterPerSec * CurCloth.Value.decWaterPerSec * _dayStatIncrease);
             }
             _currentTime += Time.fixedDeltaTime;
         }
