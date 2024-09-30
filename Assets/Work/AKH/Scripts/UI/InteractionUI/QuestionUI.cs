@@ -26,6 +26,7 @@ public class QuestionUI : InteractionUI
     public void Set(DifficultEnum type)
     {
         _problem = GameManager.instance.GetRandomProblem(type);
+        _answerTxt.interactable = true;
         SetProblem();
     }
     private void SetProblem()
@@ -40,7 +41,8 @@ public class QuestionUI : InteractionUI
             Solved?.Invoke(true);
         else
             Solved?.Invoke(false);
-        _answerTxt.DeactivateInputField(true);
+        _answerTxt.text = "";
+        _answerTxt.interactable = false;
     }
     public override void AddDic()
     {

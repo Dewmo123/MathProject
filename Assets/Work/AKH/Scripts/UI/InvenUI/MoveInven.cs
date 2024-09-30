@@ -1,4 +1,5 @@
 using DG.Tweening;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveInven : MoveUI
@@ -15,6 +16,7 @@ public class MoveInven : MoveUI
 
     public override void Move(int pos)
     {
-        rTransform.DOMoveX(pos, time);
+        float cWid = Screen.width;
+        rTransform.DOMoveX(pos*((float)cWid/1920), time);
     }
 }

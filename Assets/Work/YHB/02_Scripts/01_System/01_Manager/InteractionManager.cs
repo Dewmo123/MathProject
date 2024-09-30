@@ -78,20 +78,16 @@ public class InteractionManager : MonoBehaviour
 
     public void InteractionInfoAdd(InteractionObjectInfoSo interObj)
     {
-        foreach (InteractionObjectInfoSo item in _interactionObjectInfo.Values)
-        {
-            if (item == interObj) return;
-        }
-
+        if (_interactionObjectInfo.ContainsKey(interObj._code)) return;
         _interactionObjectInfo.Add(interObj._code, interObj);
     }
 
     private void GetPlayerPos()
     {
         Vector2 playerPos = mainCam.WorldToScreenPoint(_playerTrm.position);
-
-        _fKeyImage.position = new Vector2(playerPos.x, playerPos.y + _upYPos * 100);
-        _titleImage.position = new Vector2(playerPos.x, playerPos.y + _downYPos * 100);
+        int cHei = Screen.height;
+        _fKeyImage.position = new Vector2(playerPos.x, playerPos.y + _upYPos * 100 * (cHei / 1080));
+        _titleImage.position = new Vector2(playerPos.x, playerPos.y + _downYPos * 100 *(cHei/1080));
     }
 
     public void FadeInteractionUI(string code)

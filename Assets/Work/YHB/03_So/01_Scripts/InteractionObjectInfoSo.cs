@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/InteractionObjectString")]
 public class InteractionObjectInfoSo : ScriptableObject
 {
-    [HideInInspector] public string _code;
+     public string _code;
 
     [Header("FKeySet")]
     [Tooltip("F키를 띄울지 여부입니다.")]

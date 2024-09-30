@@ -10,6 +10,7 @@ public class Nature : Agent
     [SerializeField] private int _minCnt;
     [SerializeField] private int _maxCnt;
     [SerializeField] private SoundSO _hitSound;
+    [SerializeField] private List<ItemSO> items;
     protected override void Awake()
     {
         base.Awake();
@@ -58,12 +59,15 @@ public class Nature : Agent
     {
         _stateMachine.currentState.EndTriggerCalled();
     }
-    public void AddItem(ItemSO item)
+    public void AddItem()
     {
-        int num = UnityEngine.Random.Range(_minCnt, _maxCnt);
-        item.cnt.Value += num;
-        var text = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
-        text.GetComponent<TextMeshProUGUI>().text = $"{item.name} + {num} ";
-        text.gameObject.SetActive(true);
+        foreach (ItemSO item in items)
+        {
+            int num = UnityEngine.Random.Range(_minCnt, _maxCnt);
+            item.cnt.Value += num;
+            var text = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
+            text.GetComponent<TextMeshProUGUI>().text = $"{item.name} + {num} ";
+            text.gameObject.SetActive(true);
+        }
     }
 }

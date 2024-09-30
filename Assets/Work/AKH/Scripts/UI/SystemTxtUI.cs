@@ -17,15 +17,17 @@ public class SystemTxtUI : MonoBehaviour, IPoolable
 
     private void OnEnable()
     {
-        transform.position = _firstPos;
-        StartCoroutine(Move());
+        Vector2 cResolution = new Vector3(Screen.width, Screen.height);
+        Vector2 resolution = new Vector3(1920, 1080);
+        transform.position = _firstPos * (cResolution / resolution);
+        StartCoroutine(Move((cResolution / resolution).y));
     }
 
-    private IEnumerator Move()
+    private IEnumerator Move(float y )
     {
         yield return null;
-        transform.DOMoveY(_secondPos, _time).SetEase(Ease.InQuad);
-        transform.DOScale(Vector3.one/2, _time).SetEase(Ease.InQuad);
+        transform.DOMoveY(_secondPos*y, _time).SetEase(Ease.InQuad);
+        transform.DOScale(Vector3.one / 2, _time).SetEase(Ease.InQuad);
         yield return new WaitForSeconds(_time);
         transform.localScale = Vector3.one;
         PoolManager.instance.Push(this);

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
   m_Name: LimgraveIsland
   m_EditorClassIdentifier: 
-  _code: ArgyllIsland
+  _code: LimgraveIsland
   _canInteraction: 0
   _title: 0
   _bigTitle: 1
-  _activationTime: 60
-  _str: "\uC544\uAE38 \uC12C"
-  _canActivation: 1
+  _str: "\uB9BC\uADF8\uB808\uC774\uBE0C \uC12C"

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
   m_Name: AltusIsland
   m_EditorClassIdentifier: 
-  _code: 
+  _code: AltusIsland
   _canInteraction: 0
   _title: 0
-  _bigTitle: 0
-  _str: 
+  _bigTitle: 1
+  _str: "\uC54C\uD130 \uD3C9\uC6D0"

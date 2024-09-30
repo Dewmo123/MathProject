@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Table
   m_EditorClassIdentifier: 
   _code: Table
-  _canInteraction: 0
-  _title: 0
-  _bigTitle: 1
-  _str: 
+  _canInteraction: 1
+  _title: 1
+  _bigTitle: 0
+  _str: "\uC791\uC5C5\uB300"

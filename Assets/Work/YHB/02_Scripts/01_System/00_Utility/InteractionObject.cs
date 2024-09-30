@@ -114,25 +114,6 @@ public class InteractionObject : MonoBehaviour
                 _size.y = _size.x;
                 break;
         }
-
-        if (_canInteractionSet || _titleSet)
-        {
-            if (_bigTitleSet)
-            {
-                _bigTitleSet = false;
-            }
-        }
-        else
-        {
-            _bigTitleSet = true;
-            _titleSet = false;
-        }
-
-        _interactionObjectInfo._code = _interactionObjectInfo.name;
-        _interactionObjectInfo._canInteraction = _canInteractionSet;
-        _interactionObjectInfo._title = _titleSet;
-        _interactionObjectInfo._bigTitle = _bigTitleSet;
-        _interactionObjectInfo._str = _strSet;
     }
 
     protected virtual void OnDrawGizmosSelected()

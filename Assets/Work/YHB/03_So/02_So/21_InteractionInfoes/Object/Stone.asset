@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcf340b8ce001646bb9c8f1b4a484e5, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  _code: 
+  _code: Stone
   _canInteraction: 0
+  _title: 1
   _bigTitle: 0
-  _second: 0.5
-  _str: 
+  _str: "\uB3CC"
