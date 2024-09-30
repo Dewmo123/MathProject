@@ -61,13 +61,16 @@ public class Nature : Agent
     }
     public void AddItem()
     {
+        string message = "";
+        var text = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
         foreach (ItemSO item in items)
         {
             int num = UnityEngine.Random.Range(_minCnt, _maxCnt);
             item.cnt.Value += num;
-            var text = PoolManager.instance.Pop("SystemText") as SystemTxtUI;
-            text.GetComponent<TextMeshProUGUI>().text = $"{item.name} + {num} ";
-            text.gameObject.SetActive(true);
+            message += $"{item.name} + {num}, ";
         }
+        text.GetComponent<TextMeshProUGUI>().text = message;
+        text.gameObject.SetActive(true);
+
     }
 }

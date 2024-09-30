@@ -114,6 +114,9 @@ MonoBehaviour:
   _minCnt: 3
   _maxCnt: 5
   _hitSound: {fileID: 11400000, guid: 6b52c328f7bb6f64c8240ed38c907ba8, type: 2}
+  items:
+  - {fileID: 11400000, guid: a799d3ff39a0f3944a8d3e988523ab0e, type: 2}
+  - {fileID: 11400000, guid: 2bfc7b6b67e351f4b814ad85bc0f36dd, type: 2}
 --- !u!114 &-1038779584270472619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,10 +147,10 @@ MonoBehaviour:
       - m_Target: {fileID: 9208846265912513769}
         m_TargetAssemblyTypeName: Nature, Assembly-CSharp
         m_MethodName: AddItem
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 2bfc7b6b67e351f4b814ad85bc0f36dd, type: 2}
-          m_ObjectArgumentAssemblyTypeName: ItemSO, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
