@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
     public void Dead()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
     private void SetItems()
     {

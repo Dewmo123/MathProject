@@ -13,6 +13,7 @@ public abstract class InteractionUI : MoveUI
     protected override void Awake()
     {
         base.Awake();
+        SetButton(false);
         StartCoroutine(WaitInteractionManager());
     }
     private IEnumerator WaitInteractionManager()

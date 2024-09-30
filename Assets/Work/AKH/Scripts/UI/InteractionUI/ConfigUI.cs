@@ -18,6 +18,7 @@ public class ConfigUI : InteractionUI
     protected override void Awake()
     {
         base.Awake();
+        SetSlider(false);
         float val;
         _mixer.GetFloat("SVol", out val);
         _SFXSlider.value = val;

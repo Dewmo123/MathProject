@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Work/YHB/01_Scene/Main.unity
     guid: 611ab0a38d81abc45b9e6fe541c22b36
+  - enabled: 1
+    path: Assets/Work/YHB/01_Scene/Dead.unity
+    guid: 600e26b599ba7414ea34638de79c6f5a
   m_configObjects: {}
